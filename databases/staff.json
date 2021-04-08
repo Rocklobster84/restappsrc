@@ -1,0 +1,406 @@
+[{
+  "_id": {
+    "$oid": "5f493a141be54732402c4878"
+  },
+  "name": "John R. Chawner",
+  "anchor": "chawner",
+  "title": "President",
+  "executive": true,
+  "img": "./images/chawner-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2016/04/28/im-john-chawner-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "After starting his professional career doing applied CFD in the Propulsion Analysis Group at General Dynamics Fort Worth Division (now Lockheed Martin Aeronautics), co-founder John Chawner transferred into the CFD Group and began working as a Gridgen software developer in 1987. Since 1994, he has been involved in all facets of Pointwise's products - software development, projects, support, and training - leading to one of his current roles, product manager. He also oversees business operations and new business development. Mr. Chawner earned a B.S. in mechanical/aerospace engineering in 1984 from Syracuse University and an M.S. in aerospace engineering from the University of Texas at Arlington in 1990. He is an associate fellow of the American Institute of Aeronautics and Astronautics, a former chair of their Meshing, Visualization and Computational Environments technical committee, secretary of the AIAA CFD 2030 Integration Committee's steering committee, and a member of the mechanical and aerospace engineering advisory board for Syracuse University.",
+  "__v": 0,
+  "id": 1
+},{
+  "_id": {
+    "$oid": "5f493a891be54732402c4879"
+  },
+  "name": "John P. Steinbrenner, Ph.D.",
+  "anchor": "steinbrenner",
+  "title": "Executive Vice President",
+  "executive": true,
+  "img": "./images/steinbrenner-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2016/04/14/im-john-steinbrenner-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Co-founder John Steinbrenner initiated Gridgen's development in 1984 when he joined the nascent CFD Group at General Dynamics Fort Worth Division (now Lockheed Martin Aeronautics). Dr. Steinbrenner has been leading development of Gridgen and Pointwise ever since, including both internally funded and contractually funded development. Dr. Steinbrenner earned a B.S. in aerospace engineering from the University of Cincinnati in 1982, an M.S. in aerospace engineering from Iowa State University in 1984, and a Ph.D. in aerospace engineering from the University of Texas at Arlington in 1995. Dr. Steinbrenner is an associate fellow of the American Institute of Aeronautics and Astronautics.",
+  "__v": 0,
+  "id": 2
+},{
+  "_id": {
+    "$oid": "5f49566123ecb849d469fe7d"
+  },
+  "name": "Richard J. Matus, Ph.D.",
+  "anchor": "matus",
+  "title": "Executive Vice President",
+  "executive": true,
+  "img": "./images/matus-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2016/03/31/im-rick-matus-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Rick Matus joined Pointwise during its first year of operation. He leads the sales and marketing activities. Previously, Dr. Matus was product manager for the RAMPANT CFD solver, predecessor of Fluent, at Fluent, Inc. and for several years supervised and performed applied CFD at General Dynamics Fort Worth Division. Dr. Matus earned a B.S. in aerospace engineering from Texas A&M University in 1980, an M.S. in aerospace engineering from Texas A&M in 1981, and a Ph.D. in aerospace engineering from the University of Texas at Arlington in 1986.",
+  "__v": 0,
+  "id": 3
+},{
+  "_id": {
+    "$oid": "5f4956b923ecb849d469fe7e"
+  },
+  "name": "Nick Wyman",
+  "anchor": "wyman",
+  "title": "Director",
+  "appliedResearch": true,
+  "img": "./images/wyman-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/04/02/im-nick-wyman-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Nick Wyman directs Pointwise's research efforts, focusing contracted software development on solving problems faced by our customers. He joined Pointwise in 1998 as a Gridgen developer and became manager of the entire Development Team. He received a B.S. in aerospace engineering and an M.S. in mechanical engineering from Texas A&M University in 1992 and 1994. Before joining Pointwise, he worked for Advanced Scientific Computing (later AEA Technology), performing CFD applications work and developing grid generation software for turbomachinery. Mr. Wyman is an associate fellow of the American Institute of Aeronautics and Astronautics.",
+  "__v": 0,
+  "id": 1
+},{
+  "_id": {
+    "$oid": "5f49586c23ecb849d469fe7f"
+  },
+  "name": "Steve L. Karman, Jr., Ph.D.",
+  "anchor": "karman",
+  "title": "Senior Staff Research Engineer",
+  "appliedResearch": true,
+  "img": "./images/karman-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2016/02/04/im-steve-karman-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Steve Karman joined Pointwise's Applied Research Team in 2014. He had been a tenured professor in the Graduate School of Computational Engineering, University of Tennessee at Chattanooga since 2012. Dr. Karman, an associate fellow of the American Institute of Aeronautics and Astronautics, has served as chairman of the Meshing, Visualization and Computational Environments Technical Committee. He earned B.S. and M.Eng. degrees in aerospace engineering from Texas A&M University and a Ph.D. in aerospace engineering from the University of Texas at Arlington in 1991. At General Dynamics/Lockheed Martin, Dr. Karman developed CFD tools in support of the F-16, F-22 and F-35 programs.",
+  "__v": 0,
+  "id": 2
+},{
+  "_id": {
+    "$oid": "5f4958bc23ecb849d469fe80"
+  },
+  "name": "Pat Baker",
+  "anchor": "baker",
+  "title": "Director",
+  "productDev": true,
+  "img": "./images/baker-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2016/03/17/im-patrick-baker-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Pat Baker has decades of experience in software design and development for both scientific and business applications, including consulting on the port of Gridgen to Windows and work at Sabre, Hewlett-Packard, and Convex. Immediately prior to joining Pointwise, he was the principal developer at Softsmiths of a suite of applications for the electric industry. Mr. Baker earned a B.S. in aerospace engineering with a minor in computer science from the University of Missouri - Rolla in 1984",
+  "__v": 0,
+  "id": 1
+},{
+  "_id": {
+    "$oid": "5f49596423ecb849d469fe81"
+  },
+  "name": "Mike Jefferies",
+  "anchor": "mjefferies",
+  "title": "Manager",
+  "productDev": true,
+  "img": "./images/jefferiesm-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/10/29/im-mike-jefferies-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Mike Jefferies joined the Product Development Team at Pointwise in 2002. Prior to that, he worked at Intel developing audio decoders for a media appliance. He also took a short hiatus from Pointwise in 2012 to join Reel FX Creative Studios as a tools developer for the animated films <em>Free Birds</em> and <em>The Book of Life</em>. He earned B.S. and M.S. degrees in computer science at Arizona State University with an emphasis in computer graphics and geometric design.",
+  "__v": 0,
+  "id": 2
+},{
+  "_id": {
+    "$oid": "5f4959b923ecb849d469fe82"
+  },
+  "name": "Chris Fouts",
+  "anchor": "fouts",
+  "title": "Pointwise Fellow, Principal Software Engineer",
+  "productDev": true,
+  "img": "./images/fouts-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2016/01/21/im-chris-fouts-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Chris Fouts was one of the three original Gridgen developers and worked in the CFD group at General Dynamics Fort Worth Division (now Lockheed Martin Aeronautics). Prior to joining Pointwise, Mr. Fouts was a software developer at SGI, where he worked on Cosmo Player, Inventor, and related technology and a systems engineer in SGI's Dallas office. He earned a B.A.E. (Bachelors of Aerospace Engineering) and an M.S. in aerospace engineering at Georgia Institute of Technology in 1985 and 1986, respectively.",
+  "__v": 0,
+  "id": 3
+},{
+  "_id": {
+    "$oid": "5f495a3923ecb849d469fe83"
+  },
+  "name": "David Garlisch",
+  "anchor": "garlisch",
+  "title": "Staff Software Engineer",
+  "productDev": true,
+  "img": "./images/garlisch-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/09/17/im-david-garlisch-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "David Garlisch brings 23 years of software development experience to our product development team. Prior to joining Pointwise, he spent 10 years with CADSoft Solutions and Punch! Software, where he co-developed Concepts 3D, a cross-platform, ACIS-based, hybrid solid and surface modeling CAD system. He earned a B.S. in aeronautical and astronautical engineering from the University of Illinois in 1984.",
+  "__v": 0,
+  "id": 4
+},{
+  "_id": {
+    "$oid": "5f495a8f23ecb849d469fe84"
+  },
+  "name": "Michael Mirsky",
+  "anchor": "mirsky",
+  "title": "Staff Software Engineer",
+  "productDev": true,
+  "img": "./images/mirsky-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/08/06/im-michael-mirsky-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Michael Mirsky joined Pointwise in August 2012 after earning a B.S. in computer science from the University of Texas at Dallas. His capstone design project was team-based development of two iOS applications for Karsun Solutions of Herndon, Virginia.",
+  "__v": 0,
+  "id": 5
+},{
+  "_id": {
+    "$oid": "5f495ae823ecb849d469fe85"
+  },
+  "name": "Mike Remotigue, Ph.D.",
+  "anchor": "remotigue",
+  "title": "Staff Software Quality Engineer",
+  "productDev": true,
+  "img": "./images/remotigue-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2016/03/03/im-dr-michael-g-remotigue-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Dr. Remotigue joined Pointwise in August 2012 after nearly 21 years as a professor at Mississippi State University where his mesh generation research was focused on development of the unstructured mesh generation software SolidMesh and SolidMesh++. Dr. Remotigue also contributed to other meshing software such as GUMBO, GUM-B, NGP, and EAGLEView. Dr. Remotigue earned his Ph.D. in aerospace engineering from Mississippi State University in 1999, an M.S. in aerospace engineering from the University of Texas at Arlington in 1991, and a B.S. in engineering mechanics from the University of Cincinnati in 1986.",
+  "__v": 0,
+  "id": 6
+},{
+  "_id": {
+    "$oid": "5f495b5a23ecb849d469fe86"
+  },
+  "name": "Carolyn Dear Woeber",
+  "anchor": "woeber",
+  "title": "Manager",
+  "engineeringServ": true,
+  "img": "./images/woeber-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/12/10/im-carolyn-woeber-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Carolyn is a customer-oriented mesh generation expert with over 20 years of experience in a wide range of application areas and methodologies. At Pointwise, she manages the Engineering Services team’s activities in customer support, training, quality assurance, feature design, documentation, and consulting. Carolyn is an associate fellow of the American Institute of Aeronautics and Astronautics (AIAA), the vice chair of their Meshing, Visualization, and Computational Environments (MVCE) technical committee, the vice chair of the MVCE Meshing Subcommittee, chair of the 3rd AIAA Geometry and Mesh Generation Workshop planning committee, and a past member of the AIAA CFD High Lift Prediction Workshop planning committee. In these roles, she has been and continues to be an enthusiastic advocate for the quantification of mesh effects on CFD solutions and the establishment of evidence-based meshing best practices. Prior to joining Pointwise, Mrs. Woeber earned a B.S. and an M.S. in aerospace engineering from Mississippi State University.",
+  "__v": 0,
+  "id": 1
+},{
+  "_id": {
+    "$oid": "5f495ba823ecb849d469fe87"
+  },
+  "name": "John Dreese",
+  "anchor": "dreese",
+  "title": "Senior Applications Engineer",
+  "engineeringServ": true,
+  "img": "./images/dreese-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/10/01/im-john-dreese-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "John Dreese joined Pointwise in 2012 as a member of our Engineering Services Team. Prior to Pointwise, Mr. Dreese worked for 10 years at Lockheed Martin Aeronautics in the field of weapon separation analysis including simulation and wind tunnel and flight testing. Mr. Dreese earned a B.S. and an M.S. in aeronautical and astronautical engineering from The Ohio State University in 1996 and 1999, respectively.",
+  "__v": 0,
+  "id": 2
+},{
+  "_id": {
+    "$oid": "5f495bf423ecb849d469fe88"
+  },
+  "name": "Erick Gantt",
+  "anchor": "gantt",
+  "title": "Staff Applications Engineer",
+  "engineeringServ": true,
+  "img": "./images/gantt-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/05/14/im-erick-gantt-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Erick Gantt is the senior meshing specialist on our Engineering Services Team. After earning a B.S. in aerospace engineering (cooperative plan) from the Georgia Institute of Technology in 1987, Mr. Gantt joined General Dynamics, Fort Worth Division (now Lockheed Martin Aeronautics), where he worked for a short time on the National Aerospace Plane Project (NASP) program performing CFD analysis. He spent the remainder of his time at Lockheed Martin working in the CFD Group performing CFD analysis for advanced F-16 designs, the F-22 program, and finally the JSF program prior to joining Pointwise in 1997.",
+  "__v": 0,
+  "id": 3
+},{
+  "_id": {
+    "$oid": "5f495c7e23ecb849d469fe89"
+  },
+  "name": "Kristen Karman-Shoemake, Ph.D.",
+  "anchor": "shoemake",
+  "title": "Applications Engineer II",
+  "engineeringServ": true,
+  "img": "./images/shoemake-800x1000.jpg",
+  "howIMesh": "",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Kristen Karman-Shoemake joined the Engineering Services team at Pointwise in July 2019. Prior to Pointwise, Dr. Karman-Shoemake worked at EndoVantage as a Computational Geometry Engineer, aiding in the development of computational tools for the treatment planning of cerebral aneurysms. Dr. Karman-Shoemake earned a B.S. in Mathematics and Classical Languages from the University of Tennessee at Knoxville in 2011 and an M.S. and Ph.D. in Computational Engineering from the University of Tennessee at Chattanooga in 2013 and 2017, respectively. Her Master’s research involved the &ldquo;2-D CFD Design of the Cross-Sectional Shape of Arterial Stents&rdquo; and her Ph.D. research involved &ldquo;Higher Order Mesh Curving Using Geometry Curvature Extrapolation&rdquo;.",
+  "__v": 0,
+  "id": 4
+},{
+  "_id": {
+    "$oid": "5f495d6223ecb849d469fe8a"
+  },
+  "name": "Daniel LaCroix, Ph.D.",
+  "anchor": "lacroix",
+  "title": "Senior Applications Engineer",
+  "engineeringServ": true,
+  "img": "./images/lacroix-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/08/20/im-daniel-lacroix-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Daniel LaCroix joined the Engineering Services Team at Pointwise in January 2013 after completing a Ph.D. in mechanical engineering at Texas A&M University, where his dissertation topic was &ldquo;A Mathematical Model of Blood Coagulation Utilizing the Intrinsic and Extrinsic Pathways.&rdquo; Dr. LaCroix also earned an M.S. in mechanical engineering from TAMU in 2008 and a Bachelor of Engineering Science (concentration in mechanical engineering and minor in mathematics) from Trinity University in 2005.",
+  "__v": 0,
+  "id": 5
+},{
+  "_id": {
+    "$oid": "5f495e5623ecb849d469fe8b"
+  },
+  "name": "Claudio Pita, Ph.D.",
+  "anchor": "pita",
+  "title": "Staff Applications Engineer",
+  "engineeringServ": true,
+  "img": "./images/pita-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/03/19/im-claudio-pita-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Dr. Pita joined Pointwise as a senior engineer on the Applied Research Team in September 2010 after completing a year-long term as Postdoctoral Fellow at MIT. In 2013, he joined the Engineering Services Team. Dr. Pita earned a B.S. and an M.S. in Nuclear Engineering from the Instituto Balseiro in Argentina and a Ph.D. in Mechanical Engineering from Mississippi State University. His Ph.D. research involved &ldquo;Modeling of oxide bifilms in aluminum castings using the Immersed Element-Free Galerkin Method.&rdquo; ",
+  "__v": 0,
+  "id": 6
+},{
+  "_id": {
+    "$oid": "5f49795a23ecb849d469fe8c"
+  },
+  "name": "Heather McCoy",
+  "anchor": "mccoy",
+  "title": "Manager",
+  "marketing": true,
+  "img": "./images/mccoy-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/04/16/im-heather-mccoy-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "In addition to managing Pointwise's marketing and partner relations activities, Heather McCoy is the company's community relations coordinator. She joined Pointwise in January 1999. Ms. McCoy graduated from Trinity University, San Antonio, Texas, in 1991 with a B.A. in political science.",
+  "__v": 0,
+  "id": 1
+},{
+  "_id": {
+    "$oid": "5f497b3823ecb849d469fe8d"
+  },
+  "name": "Andrea Alvarado",
+  "anchor": "alvarado",
+  "title": "Senior Marketing Coordinator",
+  "marketing": true,
+  "img": "./images/alvarado-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/10/15/im-andrea-alvarado-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Andrea Alvarado has more than 10 years of sales and marketing experience, which includes marketing analysis, competitive analysis and project management of webinars, promotions and events. Prior to joining Pointwise in 2009, Ms. Alvarado worked for Levin Consulting and as an independent marketing consultant. She earned her B.B.A. in finance from Texas Christian University.",
+  "__v": 0,
+  "id": 2
+},{
+  "_id": {
+    "$oid": "5f497c1023ecb849d469fe8e"
+  },
+  "name": "Travis Carrigan",
+  "anchor": "carrigan",
+  "title": "Manager",
+  "businessDev": true,
+  "img": "./images/carrigan-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/06/11/im-travis-carrigan-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Travis Carrigan leads our Business Development Team. He received his M.S. in aerospace engineering from the University of Texas at Arlington in May 2011, where his thesis subject was &ldquo;Aerodynamic Shape Optimization of a Vertical Axis Wind Turbine.&rdquo; Mr. Carrigan received his B.S. in aerospace engineering in 2009 from UTA and began working at Pointwise as an intern on our Technical Support Team in 2008.",
+  "__v": 0,
+  "id": 1
+},{
+  "_id": {
+    "$oid": "5f497e3d23ecb849d469fe8f"
+  },
+  "name": "Josh Dawson",
+  "anchor": "dawson",
+  "title": "Senior Applications Engineer",
+  "businessDev": true,
+  "img": "./images/dawson-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2019/04/04/im-josh-dawson-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Josh Dawson joined our Business Development Team in January of 2019. Prior to Pointwise, Mr. Dawson worked for two years as a Department of Defense Contractor with Applied Research Associates in simulating extreme thermal environments following high explosive detonations. Mr. Dawson earned a B.S. in Psychology from Texas A&M University in 2004. In 2015, Mr. Dawson earned an M.S. in Aerospace Engineering from the University of Texas at Arlington.",
+  "__v": 0,
+  "id": 2
+},{
+  "_id": {
+    "$oid": "5f497f6e23ecb849d469fe90"
+  },
+  "name": "Randy Spencer",
+  "anchor": "spencer",
+  "title": "Manager",
+  "informationTech": true,
+  "img": "./images/spencer-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/04/30/im-randy-spencer-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Randy Spencer served five years in the U.S. Marine Corps as an electronic intelligence analyst, completing tours in Kuwait and Iraq. After leaving the service, he earned an A.S. in Business and an A.A.S in Information Security Technology from Tarrant County College and a B.S. in Information Systems from the University of Texas at Arlington. Mr. Spencer has earned the MCSE Cloud Platform and Infrastructure and MSCA Server 2012 from Microsoft as well as the A+, Linux+, and Security+ certifications from CompTIA. At Pointwise, Mr. Spencer designs, builds, and maintains the IT infrastructure.",
+  "__v": 0,
+  "id": 1
+},{
+  "_id": {
+    "$oid": "5f497fd323ecb849d469fe91"
+  },
+  "name": "Christopher Jobe",
+  "anchor": "jobe",
+  "title": "Senior Systems Administrator",
+  "informationTech": true,
+  "img": "./images/jobe-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/09/03/im-chris-jobe-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Christopher Jobe helps maintain the IT systems at Pointwise. He has more than 15 years experience with technology in several different industries, allowing him to provide unique IT solutions and advancements. Mr. Jobe started his education in drafting, but soon found himself returning to his first interest and pursued his career in IT. He is well experienced with all Windows platforms and their integration with Linux.",
+  "__v": 0,
+  "id": 2
+},{
+  "_id": {
+    "$oid": "5f49803523ecb849d469fe92"
+  },
+  "name": "Stephanie Thompson",
+  "anchor": "thompson",
+  "title": "Senior Full Stack Web Developer",
+  "informationTech": true,
+  "img": "./images/thompson-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/11/26/im-stephanie-moyes-and-this-is-how-i-mesh/",
+  "linkedIn": "https://www.linkedin.com/in/thompson-steph/",
+  "twitter": "https://twitter.com/Rocklobster1984",
+  "bio": "Stephanie Thompson joined Pointwise in 2015 as the company web programmer. In 2019 she was promoted to the position of Senior Full Stack Web Developer under which she maintains all aspects of the Pointwise website. In 2020 she earned a B.S. in Computer Science from Southern New Hampshire University. She began volunteering for the Women Who Code DFW chapter in 2019 as a mentor for under-represented coders to assist them in being successful in their technology careers. ",
+  "__v": 0,
+  "id": 3
+},{
+  "_id": {
+    "$oid": "5f4980c823ecb849d469fe93"
+  },
+  "name": "Carrie Jefferies",
+  "anchor": "cjefferies",
+  "title": "Manager",
+  "businessOps": true,
+  "img": "./images/jefferiesc-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2015/11/12/im-carrie-jefferies-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Carrie Jefferies earned a B.S. in Accountancy from Arizona State University in 1999. She joined Pointwise in 2012 and manages the Business Operations Team’s activities which includes Accounting, Human Resources, general office operations, and administrative support for the other Pointwise teams.",
+  "__v": 0,
+  "id": 1
+},{
+  "_id": {
+    "$oid": "5f49810d23ecb849d469fe94"
+  },
+  "name": "Amy Harris",
+  "anchor": "harris",
+  "title": "Senior Business Coordinator",
+  "businessOps": true,
+  "img": "./images/harris-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2017/11/02/im-amy-harris-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "Amy Harris has over 10 years of experience in Business and Office Management and a B.A. in English. She joined the Pointwise team in 2017 as the Administrative Assistant and is responsible for creating and revising systems and procedures alongside the Business Operations Manager by analyzing operating practices, record-keeping systems, and personnel requirements.",
+  "__v": 0,
+  "id": 2
+},{
+  "_id": {
+    "$oid": "5f49816523ecb849d469fe95"
+  },
+  "name": "Jennifer Quirarte",
+  "anchor": "quirarte",
+  "title": "Operations Assistant II",
+  "businessOps": "true",
+  "img": "./images/quirarte-800x1000.jpg",
+  "howIMesh": "https://blog.pointwise.com/2019/01/03/im-jennifer-quirarte-and-this-is-how-i-mesh/",
+  "linkedIn": "",
+  "twitter": "",
+  "bio": "In 2018, Jennifer Quirarte graduated with a B.A. in Business management & Spanish from the University of North Texas. She joined the Business Operations Services Team of Pointwise in October 2018. You can find her in the reception area answering phones and welcoming people. Jenn enjoys working at Pointwise because she has the opportunity to work with multiple teams and absorb more about the administrative, marketing, and sales departments. ",
+  "__v": 0,
+  "id": 3
+}]
