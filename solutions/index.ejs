@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google Analytics -->
+  <% include ../partials/ga-includes %>
+
+  <!-- META SETTINGS -->
+  <% include ../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title>CFD Mesh Generation Solutions Using Pointwise</title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/solutions/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CFD Mesh Generation Solutions Using Pointwise" />
+  <meta property="og:description" content="Since 1984, mesh generation software from Pointwise and its co-founders has been used for CFD preprocessing on applications as diverse as aerodynamic performance of the F-35 Lightning II and reducing fish mortality rates in a hydroelectric project." />
+
+  <!-- META DATA -->
+  <meta name="description" content="Since 1984, mesh generation software from Pointwise and its co-founders has been used for CFD preprocessing on applications as diverse as aerodynamic performance of the F-35 Lightning II and reducing fish mortality rates in a hydroelectric project.">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+  <!-- NAVBAR -->
+  <% include ../partials/navbar %>
+
+  <div class="solutions-intro img-fluid" data-src="images/V18-Grid.png">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="intro-message-pw">
+            <h1>Pointwise Solutions</h1>
+            <h3>for CFD Mesh Generation</h3>
+            <hr class="intro-divider">
+            <p>
+              You can generate structured multi-block, unstructured, hybrid, and overset meshes for viscous simulations with precise control over point placement and clustering to get the resolution you need. At the same time, Pointwise’s core meshing methods produce cells of high quality to ensure convergence and accuracy in your CFD solution.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <br>
+    <!--THIS CLASS IS USED IN SOLUTIONS JS-->
+    <div class="solutions-container">
+    
+      <% Solutions.forEach(function(allSolutions){ %>
+      <div class="row solution spacer">
+        <div class="col-lg-3 col-md-5 col-sm-6">
+          <div class="media-left media-middle">
+            <a href="<%= allSolutions.postUrl %>">
+              <img data-src="<%= allSolutions.imgUrl %>" class="img-fluid" alt="<%= allSolutions.imgAltText %>">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-7 col-sm-6">
+          <div class="media-body">
+            <a href="<%= allSolutions.postUrl %>">
+              <h3><%= allSolutions.title %></h3>
+            </a>
+            <p>
+              <%= allSolutions.abstract %>
+            </p>
+            <p>
+              <a href="<%= allSolutions.postUrl %>" class="btn btn-primary" role="button">More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+
+    <!-- PAGINATION -->
+        <%# include ../partials/pagination-solutions %>
+  </div>
+
+      <!--SPACE BETWEEN COLUMNS -->
+      <div class="col-lg-1"></div>
+
+      <div class="col-lg-3 spacer">
+      <h4>Search Solutions</h4>
+        <svg class="nav-lines">
+          <line class="nav-blue-social" x1="0" y1="1" x2="140" y2="1"/>
+          <line class="nav-grey-social" x1="140" y1="1" x2="275" y2="1"/>
+        </svg>
+
+        <div class="search-container">
+        <div class="no-padding solution-search">
+            <form action="/solutions" method="GET" class="form-inline">
+              <label for="Search" class="sr-only">Search </label>
+              <input type="text" name="search" aria-label="Search" class="form-control" placeholder="Search">
+
+              <button class="btn btn-primary my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
+            </form>
+            <br />
+            <% if(error && error.length > 0){ %>
+              <div class="alert dark-red" role="alert">
+                <strong>
+                  <%= error %>
+                </strong>
+              </div>
+            <% } %>
+          </div>
+        </div>
+
+        <div class="spacer">
+        <h4>Filter Results</h4>
+        <svg class="nav-lines">
+          <line class="nav-blue-social" x1="0" y1="1" x2="140" y2="1"/>
+          <line class="nav-grey-social" x1="140" y1="1" x2="275" y2="1"/>
+        </svg>
+
+        <form class="solution-filter" action="/solutions" method="GET">
+
+          <h5 class="solutions-h5">Type</h5>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="article" id="article" class="form-check-input" />
+                <label for="article" class="form-check-label">
+                  Things to Read
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="webinar" id="webinar" class="form-check-input"/>
+                <label for="webinar" class="form-check-label">
+                  Things to Watch
+                </label>
+              </div>
+
+
+          <h5 class="solutions-h5">Industry</h5>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="aerospace" id="aerospace" class="form-check-input"/>
+                <label for="aerospace" class="form-check-label">
+                  Aerospace
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="automotive" id="automotive" class="form-check-input"/>
+                <label for="automotive" class="form-check-label">
+                  Automotive
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="biomedical" id="biomedical" class="form-check-input"/>
+                <label for="biomedical" class="form-check-label">
+                  Biomedical
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="chemical" id="chemical" class="form-check-input"/>
+                <label for="chemical" class="form-check-label">
+                  Chemical Processing
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="heavy-ind" id="heavy-ind" class="form-check-input"/>
+                <label for="heavy-ind" class="form-check-label">
+                  Heavy Industry
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="marine" id="marine" class="form-check-input"/>
+                <label for="marine" class="form-check-label">
+                  Marine
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="turbo" id="turbo" class="form-check-input"/>
+                <label for="turbo" class="form-check-label">
+                  Turbomachinery
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="wind-energy" id="wind-energy" class="form-check-input"/>
+                <label for="wind-energy" class="form-check-label">
+                  Wind Energy
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="other" id="other" class="form-check-input"/>
+                <label for="other" class="form-check-label">
+                  Other
+                </label>
+              </div>
+
+            <h5 class="solutions-h5">Technology</h5>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="adaptation" id="adaptation" class="form-check-input"/>
+                <label for="adaptation" class="form-check-label">
+                  Adaptive
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="geometry" id="geometry" class="form-check-input"/>
+                <label for="geometry" class="form-check-label">
+                  Geometry Modeling
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="glyph" id="glyph" class="form-check-input"/>
+                <label for="glyph" class="form-check-label">
+                  Glyph/Scripting
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="high-order" id="high-order" class="form-check-input"/>
+                <label for="high-order" class="form-check-label">
+                  High-Order
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="overset" id="overset" class="form-check-input"/>
+                <label for="overset" class="form-check-label">
+                  Overset
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="structured" id="structured" class="form-check-input"/>
+                <label for="structured" class="form-check-label">
+                  Structured
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="t-rex" id="t-rex" class="form-check-input"/>
+                <label for="t-rex" class="form-check-label">
+                  T-Rex/Hybrid
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="unstructured" id="unstructured" class="form-check-input"/>
+                <label for="unstructured" class="form-check-label">
+                  Unstructured
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" name="tags" value="voxel" id="voxel" class="form-check-input" />
+                <label for="voxel" class="form-check-label">
+                  Voxel
+                </label>
+              </div>
+
+          <div class="row inline-buttons">
+          <div class="solutions-button">
+            <input type="submit" class="solutions-submit" value="Submit" role="button">
+          </div>
+            <div class="solutions-button">
+              <a href="/solutions" class="solutions-reset">Reset</a>
+            </div>
+          </div>
+        </form>
+        </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- FOOTER -->
+  <% include ../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../partials/js-includes %>
+
+</body>
+</html>

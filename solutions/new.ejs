@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-73031930-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-73031930-1');
+</script>
+<!-- End Google Analytics -->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PAGE TITLE -->
+  <title>CFD Mesh Generation Solutions Using Pointwise</title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/solutions/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CFD Mesh Generation Solutions Using Pointwise" />
+  <meta property="og:description" content="Since 1984, mesh generation software from Pointwise and its co-founders has been used for CFD preprocessing on applications as diverse as aerodynamic performance of the F-35 Lightning II and reducing fish mortality rates in a hydroelectric project." />
+
+  <!-- META DATA -->
+  <meta name="description" content="Since 1984, mesh generation software from Pointwise and its co-founders has been used for CFD preprocessing on applications as diverse as aerodynamic performance of the F-35 Lightning II and reducing fish mortality rates in a hydroelectric project.">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/pointwise-style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body id="page-top">
+
+  <!-- NAVBAR -->
+  <% include ../partials/navbar %>
+
+  <div class="container">
+
+  <div class="support-nav col-lg-8">
+    <h3 class="text-center">New Solution Entry</h3>
+    <hr />
+    <form data-toggle="validator"
+    role="form"
+    method="post"
+    action="/solutions">
+
+    <div class="form-group">
+      <label for="ID" class="control-label">ID </label>
+      <input type="text" class="form-control" name="solution[ID]"/>
+    </div>
+
+    <div class="form-group">
+      <label for="Title" class="control-label">Title </label>
+      <input type="text" class="form-control" name="solution[title]"/>
+    </div>
+
+    <div class="form-group">
+      <label for="Abstract" class="control-label">Abstract </label>
+      <input type="text" class="form-control" name="solution[abstract]"/>
+    </div>
+
+    <div class="form-group">
+      <label for="Post URL" class="control-label">Post URL (relative) </label>
+      <input type="text" class="form-control" name="solution[postUrl]"/>
+    </div>
+
+    <div class="form-group">
+      <label for="Image URL" class="control-label">Image URL (relative) </label>
+      <input type="text" class="form-control" name="solution[imgUrl]"/>
+    </div>
+
+    <div class="form-group">
+      <label for="Image Alt Text" class="control-label">Image Alt Text</label>
+      <input type="text" class="form-control" name="solution[imgAltText]"/>
+    </div>
+
+    <div class="form-group">
+      <label for="Post Date" class="control-label">Post Date </label>
+      <input type="date" class="form-control" name="solution[postDate]"/>
+    </div>
+
+    <div class="form-group">
+      <label for="Tags" class="control-label">Tags</label>
+      <div class="container">
+        <p>Type: </p>
+        <input type="checkbox" name="solution[tags]" value="article">Article &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="webinar">Webinar &nbsp; 
+      </div>
+      <br>
+      <div class="container">
+        <p>Industry: </p>
+        <input type="checkbox" name="solution[tags]" value="aerospace">Aerospace &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="automotive">Automotive &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="biomedical">biomedical &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="automotive">Chemical Processing &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="heavy-ind">Heavy Industry &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="marine">Marine &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="turbo">Turbomachinery &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="wind-energy">Wind Energy &nbsp;
+        <input type="checkbox" name="solution[tags]" value="other">Other &nbsp;
+      </div>
+      <br>
+      <div class="container">
+        <p>Technology: </p>
+        <input type="checkbox" name="solution[tags]" value="2-D">2-D &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="3-D">3-D &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="geometry">Geometry Modeling &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="glyph">Glyph/Scripting &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="high-order">High-Order &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="overset">Overset &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="structured">Structured &nbsp; 
+        <input type="checkbox" name="solution[tags]" value="t-rex">T-Rex/Hybrid &nbsp;
+        <input type="checkbox" name="solution[tags]" value="unstructured">Unstructured &nbsp;
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  
+</div>
+
+</div>
+
+  <!-- FOOTER -->
+  <% include ../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <script src="../js/lazy-load.js" defer></script>
+  <script src="../js/jquery-3.1.1.min.js" defer></script>
+  <script src="../js/solutions.js" defer></script>
+  <script src="../js/bootstrap.min.js" defer></script>
+  <script src="../js/modernizr-custom.js" defer></script>
+  <script src="../js/navigation.js" defer></script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="../js/html5shiv.min.js" defer></script>
+  <script src="../js/respond.min.js" defer></script>
+  <![endif]-->
+  <script src="../js/easing.js" defer></script>
+</body>
+</html>

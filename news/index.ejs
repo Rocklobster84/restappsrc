@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title>Recent News Releases | Pointwise</title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/news/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Recent News Releases | Pointwise" />
+  <meta property="og:description" content="Recent News Releases about Pointwise and CFD Meshing." />
+
+  <!-- META DATA -->
+  <meta name="description" content="Recent News Releases about Pointwise and CFD Meshing.">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+	<!-- TOP NAVIGATION -->
+  <% include ../partials/navbar %>
+
+  <div class="container">
+
+      <h1 class="news-home-title">Recent News Releases from Pointwise</h1>
+    <div class="row">
+
+      <div class="col-lg-9 news-home">
+
+<br>
+
+          <% NewsPosts.forEach(function(allNews){ %>
+        <div class="card mb-3">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+            <a href="<%= allNews.year %>/<%= allNews.slug %>">
+                <% if (allNews.imgUrl) { %>
+              <img class="card-img img-fluid" data-src="<%= allNews.imgUrl %>" alt="<%- allNews.imgAltText %>">
+                    <% } %>
+            </a>
+            </div>
+          <div class="col-md-8">
+            <div class="card-body">
+            <a href="<%= allNews.year %>/<%= allNews.slug %>">
+              <h4 class="card-title"><%- allNews.title %></h4>
+            </a>
+            <p class="card-text text-muted">
+              <%- allNews.displayDate %>
+            </p>
+            <p class="card-text">
+              <%- allNews.abstract %>
+            </p>
+            <a class="btn btn-primary" href="<%= allNews.year %>/<%= allNews.slug %>">Read More</a>
+          </div>
+        </div>
+          </div>
+        </div>
+            <% }); %>
+
+          <!-- PAGINATION -->
+          <% include ../partials/pagination %>
+
+      </div>
+  
+          <!--CONTACT-->
+          <div class="col-lg-3">
+            <div class="news-contact">
+  
+              <h4>Media Contact</h4>
+              <svg class="nav-lines">
+                <line class="nav-blue-social" x1="0" y1="1" x2="140" y2="1"/>
+                <line class="nav-grey-social" x1="140" y1="1" x2="275" y2="1"/>
+              </svg>
+              <p>
+                <strong><a href="mailto:news@pointwise.com">Andrea Alvarado</a></strong><br />
+                817-377-2807<br />
+                <a href="mailto:news@pointwise.com">news@pointwise.com</a>
+              </p>
+
+        <!-- SEARCH -->
+            <h4>Search News</h4>
+            <svg class="nav-lines">
+                <line class="nav-blue-social" x1="0" y1="1" x2="140" y2="1"/>
+                <line class="nav-grey-social" x1="140" y1="1" x2="275" y2="1"/>
+            </svg>
+
+                <div class="row">
+                <form action="/news" method="GET" class="form-inline">
+                    <label for="Search" class="sr-only">Search News Releases</label>
+                        <input type="text" name="search" aria-label="Search" class="form-control" placeholder="Search">
+
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
+                </form>
+                    <br />
+                    <% if(error && error.length > 0){ %>
+                        <div class="alert dark-red" role="alert">
+                            <strong>
+                            <%= error %>
+                            </strong>
+                        </div>
+                    <% } %>
+
+                </div>
+
+<br>
+              <h4>Filter by Year</h4>
+                <svg class="nav-lines">
+                    <line class="nav-blue-social" x1="0" y1="1" x2="140" y2="1"/>
+                    <line class="nav-grey-social" x1="140" y1="1" x2="275" y2="1"/>
+                </svg>
+
+                <form action="/news" method="GET">
+
+                    <div class="form-check">
+                        <input type="radio" value="2021" id="2021" name="year" class="form-check-input" />
+                        <label for="2021" class="form-check-label">
+                            2021
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2020" id="2020" name="year" class="form-check-input" />
+                        <label for="2020" class="form-check-label">
+                            2020
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2019" id="2019" name="year" class="form-check-input"  />
+                        <label for="2019" class="form-check-label">
+                            2019
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2018" id="2018" name="year" class="form-check-input" />
+                        <label for="2018" class="form-check-label">
+                            2018
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2017" id="2017" name="year" class="form-check-input" />
+                        <label for="2017" class="form-check-label">
+                            2017
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2016" id="2016" name="year" class="form-check-input" />
+                        <label for="2016" class="form-check-label">
+                            2016
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2015" id="2015" name="year" class="form-check-input" />
+                        <label for="2015" class="form-check-label">
+                            2015
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2014" id="2014" name="year" class="form-check-input" />
+                        <label for="2014" class="form-check-label">
+                            2014
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2013" id="2013" name="year" class="form-check-input" />
+                        <label for="2013" class="form-check-label">
+                            2013
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2012" id="2012" name="year" class="form-check-input" />
+                        <label for="2012" class="form-check-label">
+                            2012
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2011" id="2011" name="year" class="form-check-input" />
+                        <label for="2011" class="form-check-label">
+                            2011
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" value="2010" id="2010" name="year" class="form-check-input" />
+                        <label for="2010" class="form-check-label">
+                            2010
+                        </label>
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Filter</button>
+
+                </form>
+            </div>
+          </div>
+    </div>
+    </div>
+      
+  <!-- FOOTER -->
+  <% include ../partials/footer %>
+
+    <!-- JAVASCRIPT -->
+    <% include ../partials/js-includes %>
+    <script src="../js/tab-fragment.js" defer></script>
+  
+</body>
+</html>

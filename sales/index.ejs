@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title><%- sales.title %> | Pointwise</title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/sales/<%- sales.slug %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<%- sales.title %> | Pointwise" />
+  <meta property="og:description" content="<%- sales.description %>" />
+
+  <!-- META DATA -->
+  <meta name="description" content="<%- sales.description %>">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+        
+  <!-- TOP NAVIGATION -->
+  <% include ../partials/navbar %>
+
+  <div class="grey-main">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
+          <img data-src="images/world-map-400x240.svg" class="img-fluid center-block" alt="Sales and Support Contacts for Pointwise"/>
+        </div>
+
+        <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12">
+          <h1><%- sales.title %></h1>
+          <p>
+              <%- sales.subHeader %>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+     <div class="col-lg-8">
+         <%- sales.copy %>
+      </div>
+
+    <!-- Space between columns -->
+    <div class="col-lg-1">
+    </div>
+
+    <!-- Column Contents -->
+    <div class="col-lg-3 cta-space">
+        <% include ../partials/nav-about %>
+    </div>
+
+    </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cta-space">
+            <%- sales.rfqCopy %>
+        </div>
+      </div>
+  </div>
+
+
+<!-- FOOTER -->
+<% include ../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../partials/js-includes %>
+<script src="../js/tab-fragment-sales.js" defer></script>
+</body>
+</html>
