@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title><%- news.title %></title>
+
+    <!-- OG TAGS -->
+    <meta property="og:url" content="https://www.pointwise.com/news/<%- news.slug %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<%- news.title %>" />
+    <meta property="og:description" content="<%- news.abstract %>" />
+
+    <!-- META DATA -->
+    <meta name="description" content="<%- news.abstract %>">
+    <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+    <!-- CSS FILES -->
+    <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../partials/navbar %>
+
+<!-- POST CONTENT -->
+<div class="container">
+
+    <% if (news.imgMain) { %>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="image-caption">
+                <img class="img-fluid" data-src="<%= news.imgMain %>" alt="<%= news.imgAltText %>"/>
+                <% if (news.imgCaption) { %>
+                <p><span class="news-caption">
+                    <%= news.imgCaption %>
+                </span></p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb news-crumb">
+                    <li class="breadcrumb-item"><a href="../../news">News</a></li>
+                    <li class="breadcrumb-item"><a href="../?year=<%- news.year %>"><%- news.year %></a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><%- news.title %></li>
+                </ol>
+            </nav>
+
+            <h1 class="news-title"><%- news.title %></h1>
+
+            <%- news.newsRelease %>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<% include ../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../partials/js-includes %>
+<script src="../js/tab-fragment.js" defer></script>
+
+</body>
+</html>
