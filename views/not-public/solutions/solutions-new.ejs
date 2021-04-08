@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Add a New Solution Listing</title>
+
+    <!-- CSS FILES -->
+    <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+    <h1>Create New Solution Entry</h1>
+
+    <form action="./" method="POST">
+
+        <div class="form-group">
+            <label for="title" class="control-label">Title</label>
+            <input name="solutions[title]" type="text" class="form-control" id="title" placeholder="Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="abstract" class="control-label">Abstract</label>
+            <textarea name="solutions[abstract]" type="text" class="form-control" rows="5" placeholder="Abstract from page" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="postUrl" class="control-label">Post URL</label>
+            <input name="solutions[postUrl]" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="postDate" class="control-label">Post Date</label>
+            <input name="solutions[postDate]" type="date" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="imgUrl" class="control-label">Image URL</label>
+            <input name="solutions[imgUrl]" type="text" class="form-control" placeholder="images/NAME.ext" required>
+        </div>
+
+        <div class="form-group">
+            <label for="imgAltText" class="control-label">Image Alt Text</label>
+            <input name="solutions[imgAltText]" type="text" class="form-control" placeholder="Description of the main image" required>
+        </div>
+
+        <h5 class="solutions-h5">Type</h5>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="article" id="article" class="form-check-input" />
+            <label for="article" class="form-check-label">
+                Things to Read
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="webinar" id="webinar" class="form-check-input"/>
+            <label for="webinar" class="form-check-label">
+                Things to Watch
+            </label>
+        </div>
+
+
+        <h5 class="solutions-h5">Industry</h5>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="aerospace" id="aerospace" class="form-check-input"/>
+            <label for="aerospace" class="form-check-label">
+                Aerospace
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="automotive" id="automotive" class="form-check-input"/>
+            <label for="automotive" class="form-check-label">
+                Automotive
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="biomedical" id="biomedical" class="form-check-input"/>
+            <label for="biomedical" class="form-check-label">
+                Biomedical
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="chemical" id="chemical" class="form-check-input"/>
+            <label for="chemical" class="form-check-label">
+                Chemical Processing
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="heavy-ind" id="heavy-ind" class="form-check-input"/>
+            <label for="heavy-ind" class="form-check-label">
+                Heavy Industry
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="marine" id="marine" class="form-check-input"/>
+            <label for="marine" class="form-check-label">
+                Marine
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="turbo" id="turbo" class="form-check-input"/>
+            <label for="turbo" class="form-check-label">
+                Turbomachinery
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="wind-energy" id="wind-energy" class="form-check-input"/>
+            <label for="wind-energy" class="form-check-label">
+                Wind Energy
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="other" id="other" class="form-check-input"/>
+            <label for="other" class="form-check-label">
+                Other
+            </label>
+        </div>
+
+        <h5 class="solutions-h5">Technology</h5>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="adaptation" id="adaptation" class="form-check-input"/>
+            <label for="adaptation" class="form-check-label">
+                Adaptive
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="geometry" id="geometry" class="form-check-input"/>
+            <label for="geometry" class="form-check-label">
+                Geometry Modeling
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="glyph" id="glyph" class="form-check-input"/>
+            <label for="glyph" class="form-check-label">
+                Glyph/Scripting
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="high-order" id="high-order" class="form-check-input"/>
+            <label for="high-order" class="form-check-label">
+                High-Order
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="overset" id="overset" class="form-check-input"/>
+            <label for="overset" class="form-check-label">
+                Overset
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="structured" id="structured" class="form-check-input"/>
+            <label for="structured" class="form-check-label">
+                Structured
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="t-rex" id="t-rex" class="form-check-input"/>
+            <label for="t-rex" class="form-check-label">
+                T-Rex/Hybrid
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="unstructured" id="unstructured" class="form-check-input"/>
+            <label for="unstructured" class="form-check-label">
+                Unstructured
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="voxel" id="voxel" class="form-check-input" />
+            <label for="voxel" class="form-check-label">
+                Voxel
+            </label>
+        </div>
+
+        <h5 class="solutions-h5">Not Displayed</h5>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="2-D" id="2-D" class="form-check-input" />
+            <label for="2-D" class="form-check-label">
+                2D
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="3-D" id="3-D" class="form-check-input" />
+            <label for="3-D" class="form-check-label">
+                3D
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="star-ccm" id="star-ccm" class="form-check-input" />
+            <label for="star-ccm" class="form-check-label">
+                STAR-CCM+
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="fluent" id="fluent" class="form-check-input" />
+            <label for="fluent" class="form-check-label">
+                Fluent
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="cfdplus" id="cfdplus" class="form-check-input" />
+            <label for="cfdplus" class="form-check-label">
+                CFD++
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="cfx" id="cfx" class="form-check-input" />
+            <label for="cfx" class="form-check-label">
+                CFX
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="shipir" id="shipir" class="form-check-input" />
+            <label for="shipir" class="form-check-label">
+                ShipIR
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="tenasi" id="tenasi" class="form-check-input" />
+            <label for="tenasi" class="form-check-label">
+                TENASI
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="gasp" id="gasp" class="form-check-input" />
+            <label for="gasp" class="form-check-label">
+                GASP
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="caelus" id="caelus" class="form-check-input" />
+            <label for="caelus" class="form-check-label">
+                Caelus
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="crunch-cfd" id="crunch-cfd" class="form-check-input" />
+            <label for="crunch-cfd" class="form-check-label">
+                CRUNCH CFD
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="cobalt" id="cobalt" class="form-check-input" />
+            <label for="cobalt" class="form-check-label">
+                Cobalt
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="code-leo" id="code-leo" class="form-check-input" />
+            <label for="code-leo" class="form-check-label">
+                Code Leo
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="su2" id="su2" class="form-check-input" />
+            <label for="su2" class="form-check-label">
+                SU2
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="kestrel" id="kestrel" class="form-check-input" />
+            <label for="kestrel" class="form-check-label">
+                Kestrel
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="fun3d" id="fun3d" class="form-check-input" />
+            <label for="fun3d" class="form-check-label">
+                FUN3D
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="ezair" id="ezair" class="form-check-input" />
+            <label for="ezair" class="form-check-label">
+                EZAir
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="acusolve" id="acusolve" class="form-check-input" />
+            <label for="acusolve" class="form-check-label">
+                AcuSolve
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="flamenco" id="flamenco" class="form-check-input" />
+            <label for="flamenco" class="form-check-label">
+                Flamenco
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="openfoam" id="openfoam" class="form-check-input" />
+            <label for="openfoam" class="form-check-label">
+                OpenFOAM
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="cfd" id="cfd" class="form-check-input" />
+            <label for="cfd" class="form-check-label">
+                Sim Type - CFD
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="thermal" id="thermal" class="form-check-input" />
+            <label for="thermal" class="form-check-label">
+                Sim Type - Thermal
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="aeroacoustics" id="aeroacoustics" class="form-check-input" />
+            <label for="aeroacoustics" class="form-check-label">
+                Sim Type - Aeroacoustics
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" name="solutions[tags]" value="solid" id="solid" class="form-check-input" />
+            <label for="solid" class="form-check-label">
+                Sim Type - Solid Mechanics
+            </label>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<% include ../../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../../partials/js-includes %>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Solutions for editing</title>
+
+    <!-- CSS FILES -->
+    <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+    <h1>Select a Post to Edit or Delete</h1>
+
+            <% if(error && error.length > 0){ %>
+                <div class="alert dark-red" role="alert">
+                    <strong>
+                        <%= error %>
+                    </strong>
+                </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+                <div class="alert green" role="alert">
+                    <strong>
+                        <%= success %>
+                    </strong>
+                </div>
+            <% } %>
+
+            <div class="solutions-container">
+
+                <% Solutions.forEach(function(allSolutions){ %>
+                    <div class="row solution spacer">
+                        <div class="col-lg-3 col-md-5 col-sm-6">
+                            <div class="media-left media-middle">
+                                    <img data-src="<%= allSolutions.imgUrl %>" class="img-fluid" alt="<%= allSolutions.imgAltText %>">
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-7 col-sm-6">
+                            <div class="media-body">
+                                    <h3><%= allSolutions.title %></h3>
+                                <p>
+                                    <%= allSolutions.abstract %>
+                                </p>
+                                <p>
+                                    <a href="./edit/<%= allSolutions._id %>" class="btn btn-primary" role="button">Edit</a>
+                                </p>
+                                <form id="delete" action="../solutions/<%= allSolutions._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+
+        </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<% include ../../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../../partials/js-includes %>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Edit a Wallpaper Page</title>
+
+    <!-- CSS FILES -->
+    <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+            <h1>Select a Post to Edit or Delete</h1>
+
+            <% if(error && error.length > 0){ %>
+                <div class="alert dark-red" role="alert">
+                    <strong>
+                        <%= error %>
+                    </strong>
+                </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+                <div class="alert green" role="alert">
+                    <strong>
+                        <%= success %>
+                    </strong>
+                </div>
+            <% } %>
+
+            <% wallpaper.forEach(function(allWallpaper){ %>
+                <div class="row solution spacer">
+                    <div class="col-lg-9 col-md-7 col-sm-6">
+                        <div class="media-body">
+                            <h3><%- allWallpaper.title %></h3>
+                            <p>
+                                <%- allWallpaper.description %>
+                            </p>
+                            <p>
+                                <a href="../<%= allWallpaper.slug %>" class="btn btn-success" role="button">View Page</a>
+                            </p>
+                            <p>
+                                <a href="<%= allWallpaper._id %>" class="btn btn-primary" role="button">Edit</a>
+                            </p>
+                            <form id="delete" action="../../wallpaper/page/<%= allWallpaper._id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+    </div>
+</div>
+<!-- FOOTER -->
+<% include ../../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../../partials/js-includes %>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Edit a White Paper</title>
+
+    <!-- CSS FILES -->
+    <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+            <h1>Edit a White Paper</h1>
+
+            <form action="../../white-papers/<%= whitePaper._id %>?_method=PUT" method="POST">
+
+                <div class="form-group">
+                    <label for="title" class="control-label">Title</label>
+                    <input name="whitePaper[title]" type="text" class="form-control" id="title" value="<%= whitePaper.title %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="slug" class="control-label">Slug</label>
+                    <input name="whitePaper[slug]" type="text" class="form-control" id="slug" value="<%= whitePaper.slug %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="control-label">Description</label>
+                    <textarea name="whitePaper[description]" type="text" class="form-control" rows="5" required><%= whitePaper.description %></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="copy" class="control-label">Page Contents</label>
+                    <textarea name="whitePaper[copy]" type="text" class="form-control" rows="20" required><%= whitePaper.copy %></textarea>
+                </div>
+
+                <!-- You May Also Like -->
+                <div class="form-group">
+                    <label for="ymal1Title" class="control-label">YMAL1 Title</label>
+                    <input name="whitePaper[ymal1Title]" type="text" class="form-control" id="ymal1Title" value="<%= whitePaper.ymal1Title %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal1Img" class="control-label">YMAL1 Image</label>
+                    <input name="whitePaper[ymal1Img]" type="text" class="form-control" id="ymal1Img" value="<%= whitePaper.ymal1Img %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal1Alt" class="control-label">YMAL1 Alt Text</label>
+                    <input name="whitePaper[ymal1Alt]" type="text" class="form-control" id="ymal1Alt" value="<%= whitePaper.ymal1Alt %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal1Url" class="control-label">YMAL1 URL</label>
+                    <input name="whitePaper[ymal1Url]" type="text" class="form-control" id="ymal1Url" value="<%= whitePaper.ymal1Url %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal2Title" class="control-label">YMAL2 Title</label>
+                    <input name="whitePaper[ymal2Title]" type="text" class="form-control" id="ymal2Title" value="<%= whitePaper.ymal2Title %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal2Img" class="control-label">YMAL2 Image</label>
+                    <input name="whitePaper[ymal2Img]" type="text" class="form-control" id="ymal2Img" value="<%= whitePaper.ymal2Img %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal2Alt" class="control-label">YMAL2 Alt Text</label>
+                    <input name="whitePaper[ymal2Alt]" type="text" class="form-control" id="ymal2Alt" value="<%= whitePaper.ymal2Alt %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal2Url" class="control-label">YMAL2 URL</label>
+                    <input name="whitePaper[ymal2Url]" type="text" class="form-control" id="ymal2Url" value="<%= whitePaper.ymal2Url %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal3Title" class="control-label">YMAL3 Title</label>
+                    <input name="whitePaper[ymal3Title]" type="text" class="form-control" id="ymal3Title" value="<%= whitePaper.ymal3Title %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal3Img" class="control-label">YMAL3 Image</label>
+                    <input name="whitePaper[ymal3Img]" type="text" class="form-control" id="ymal3Img" placeholder="IMAGENAME.ext" value="<%= whitePaper.ymal3Img %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal3Alt" class="control-label">YMAL3 Alt Text</label>
+                    <input name="whitePaper[ymal3Alt]" type="text" class="form-control" id="ymal3Alt" value="<%= whitePaper.ymal3Alt %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="ymal3Url" class="control-label">YMAL3 URL</label>
+                    <input name="whitePaper[ymal3Url]" type="text" class="form-control" id="ymal3Url" value="<%= whitePaper.ymal3Url %>">
+                </div>
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+
+            </form>
+        </div>
+
+        <div class="col-lg-1">
+        </div>
+
+        <div class="col-lg-3">
+            <a href="../edit" class="btn btn-primary" role="button">Return to Edit Page</a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<% include ../../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../../partials/js-includes %>
+
+</body>
+</html>

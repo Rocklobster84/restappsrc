@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- PAGE TITLE -->
+    <title>Add a New Services Page</title>
+
+    <!-- CSS FILES -->
+    <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+    <h1>Add a New Services Page/Topic</h1>
+
+    <form action="./" method="POST">
+
+        <div class="form-group">
+            <label for="title" class="control-label">Title</label>
+            <input name="services[title]" type="text" class="form-control" id="title" placeholder="Page Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="subHeading" class="control-label">Subheading</label>
+            <input name="services[subHeading]" type="text" class="form-control" id="subHeading" required>
+        </div>
+
+        <div class="form-group">
+            <label for="imgBack" class="control-label">Background Image Name</label>
+            <input name="services[imgBack]" type="text" class="form-control" id="imgBack" placeholder="" required>
+        </div>
+
+        <div class="form-group">
+            <label for="slug" class="control-label">Slug</label>
+            <input name="services[slug]" type="text" class="form-control" id="slug" placeholder="URL slug">
+        </div>
+
+        <div class="form-group">
+            <label for="description" class="control-label">Description</label>
+            <textarea name="services[description]" type="text" class="form-control" rows="5" required>150 Character Description</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="copy" class="control-label">Page Copy</label>
+            <textarea name="services[copy]" type="text" class="form-control" placeholder="Full body with HTML markup here" required></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<% include ../../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../../partials/js-includes %>
+
+</body>
+</html>

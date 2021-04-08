@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Website Administrative Links</title>
+
+    <!-- CSS FILES -->
+    <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+            <h1>Website Administrative Links</h1>
+            <p>Select the action you would like under each directory name. To add a new listing to this page, click the button below.</p>
+            <p><a href="../new" class="btn btn-primary" role="button">Add new entry</a></p>
+
+            <% if(error && error.length > 0){ %>
+                <div class="alert dark-red" role="alert">
+                    <strong>
+                        <%= error %>
+                    </strong>
+                </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+                <div class="alert green" role="alert">
+                    <strong>
+                        <%= success %>
+                    </strong>
+                </div>
+            <% } %>
+
+            <% admin.forEach(function(allAdmin){ %>
+                <div class="row solution spacer">
+                    <div class="col-lg-9 col-md-7 col-sm-6">
+                        <div class="media-body">
+                            <h3><%- allAdmin.sectionName %></h3>
+                            <div class="inline-buttons">
+                                <a href="../<%- allAdmin.sectionNew %>" class="btn btn-dark" role="button">New Post Form</a>
+
+                                <a href="../<%- allAdmin.sectionEdit %>" class="btn btn-secondary" role="button">Edit Page</a>
+
+                                <a href="<%= allAdmin._id %>" class="btn btn-primary" role="button">Edit This Entry</a>
+                            <div class="cta-space">
+                            <form id="delete" action="../../confirmation/page/<%= allAdmin._id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger">Delete Entry</button>
+                            </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+    </div>
+</div>
+<!-- FOOTER -->
+<% include ../../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../../partials/js-includes %>
+
+</body>
+</html>

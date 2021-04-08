@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Add a Webinar</title>
+
+    <!-- CSS FILES -->
+    <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-12">
+
+    <h1>Create a New Webinar</h1>
+
+    <form action="./" method="POST">
+
+        <div class="form-group">
+            <label for="title" class="control-label">Title</label>
+            <input name="webinar[title]" type="text" class="form-control" id="title" placeholder="Webinar Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="abstract" class="control-label">Abstract</label>
+            <textarea name="webinar[abstract]" type="text" class="form-control" rows="5" placeholder="Short preview of webinar" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="postDate" class="control-label">Post Date</label>
+            <input name="webinar[postDate]" type="date" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="videoUrl" class="control-label">Video URL</label>
+            <input name="webinar[videoUrl]" type="text" class="form-control" id="videoUrl" placeholder="https://www.youtube.com/embed/UNIQUEID" required>
+        </div>
+
+        <h5>Downloadables</h5>
+        <div id="newlink">
+            <div class="form-row">
+            <div class="col">
+                <label for="title" class="control-label">Description</label>
+                <input name="webinar[downloads.description]" type="text" class="form-control" id="description" placeholder="WEBINAR VIDEO FILE or POINTWISE PROJECT FILE etc.">
+            </div>
+            <div class="col">
+                <label for="title" class="control-label">Format</label>
+                <input name="webinar[downloads.format]" type="text" class="form-control" id="format" placeholder="MP4 or PW or PDF etc">
+            </div>
+            <div class="col">
+                <label for="title" class="control-label">File Name</label>
+                <input name="webinar[downloads.fileName]" type="text" class="form-control" id="title">
+            </div>
+            <div class="col">
+                <label for="title" class="control-label">File Size</label>
+                <input name="webinar[downloads.fileSize]" type="text" class="form-control" id="fileSize">
+            </div>
+        </div>
+        </div>
+
+        <!--
+        <div id="newlinktpl" style="display:none">
+        <div class="form-row">
+            <div class="col">
+                <label for="title" class="control-label">Description</label>
+                <input name="webinar[downloads.description]" type="text" class="form-control" id="description" placeholder="WEBINAR VIDEO FILE or POINTWISE PROJECT FILE etc.">
+            </div>
+            <div class="col">
+                <label for="title" class="control-label">Format</label>
+                <input name="webinar[downloads.format]" type="text" class="form-control" id="format" placeholder="MP4 or PW or PDF etc">
+            </div>
+            <div class="col">
+                <label for="title" class="control-label">File Name</label>
+                <input name="webinar[downloads.fileName]" type="text" class="form-control" id="title">
+            </div>
+            <div class="col">
+                <label for="title" class="control-label">File Size</label>
+                <input name="webinar[downloads.fileSize]" type="text" class="form-control" id="fileSize">
+            </div>
+        </div>
+        </div>
+
+        <p id="addnew">
+            <a href="javascript:new_link()">Add New </a>
+        </p>
+-->
+        <!-- You May Also Like -->
+        <div class="form-group">
+            <label for="ymal1Title" class="control-label">YMAL1 Title</label>
+            <input name="webinar[ymal1Title]" type="text" class="form-control" id="ymal1Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal1Img" class="control-label">YMAL1 Image</label>
+            <input name="webinar[ymal1Img]" type="text" class="form-control" id="ymal1Img" placeholder="IMAGENAME.ext" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal1Alt" class="control-label">YMAL1 Alt Text</label>
+            <input name="webinar[ymal1Alt]" type="text" class="form-control" id="ymal1Alt" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal1Url" class="control-label">YMAL1 URL</label>
+            <input name="webinar[ymal1Url]" type="text" class="form-control" id="ymal1Url" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal2Title" class="control-label">YMAL2 Title</label>
+            <input name="webinar[ymal2Title]" type="text" class="form-control" id="ymal2Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal2Img" class="control-label">YMAL2 Image</label>
+            <input name="webinar[ymal2Img]" type="text" class="form-control" id="ymal2Img" placeholder="IMAGENAME.ext" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal2Alt" class="control-label">YMAL2 Alt Text</label>
+            <input name="webinar[ymal2Alt]" type="text" class="form-control" id="ymal2Alt" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal2Url" class="control-label">YMAL2 URL</label>
+            <input name="webinar[ymal2Url]" type="text" class="form-control" id="ymal2Url" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal3Title" class="control-label">YMAL3 Title</label>
+            <input name="webinar[ymal3Title]" type="text" class="form-control" id="ymal3Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal3Img" class="control-label">YMAL3 Image</label>
+            <input name="webinar[ymal3Img]" type="text" class="form-control" id="ymal3Img" placeholder="IMAGENAME.ext" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal3Alt" class="control-label">YMAL3 Alt Text</label>
+            <input name="webinar[ymal3Alt]" type="text" class="form-control" id="ymal3Alt" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ymal3Url" class="control-label">YMAL3 URL</label>
+            <input name="webinar[ymal3Url]" type="text" class="form-control" id="ymal3Url" required>
+        </div>
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="webinar[gated]" value="true">Gated
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="webinar[gated]" value="false">Not Gated
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="webinarCopy" class="control-label">Webinar Body</label>
+            <textarea name="webinar[webinarCopy]" type="text" id="webinarCopy" class="form-control" placeholder="Full body with HTML markup here" rows="15" required></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<% include ../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../partials/js-includes %>
+<script src="../js/add-field.js"></script>
+</body>
+</html>

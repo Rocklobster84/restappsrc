@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Add a News Release</title>
+
+    <!-- CSS FILES -->
+    <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+            <h1>Create News Release</h1>
+
+            <form action="./" method="POST">
+
+                <div class="form-group">
+                    <label for="title" class="control-label">Title</label>
+                    <input name="news[title]" type="text" class="form-control" id="title" placeholder="News Release Title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="abstract" class="control-label">Abstract</label>
+                    <textarea name="news[abstract]" type="text" class="form-control" rows="5" placeholder="Short preview of news release" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="postDate" class="control-label">Post Date</label>
+                    <input name="news[postDate]" type="date" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="displayDate" class="control-label">Display Date</label>
+                    <input name="news[displayDate]" type="text" class="form-control" placeholder="DD MONTH YYYY" required>
+                </div>
+                <div class="form-group">
+                    <label for="Year" class="control-label">Year</label>
+                    <input name="news[year]" type="text" class="form-control" placeholder="Year entered separately for sorting." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="imgUrl" class="control-label">Badge Image URL</label>
+                    <input name="news[imgUrl]" type="text" class="form-control" placeholder="2020/images/IMAGENAME.ext">
+                </div>
+
+                <div class="form-group">
+                    <label for="imgMain" class="control-label">Post Image URL</label>
+                    <input name="news[imgMain]" type="text" class="form-control" placeholder="images/IMAGENAME.ext">
+                </div>
+
+                <div class="form-group">
+                    <label for="imgCaption" class="control-label">Post Image Caption</label>
+                    <input name="news[imgCaption]" type="text" class="form-control" placeholder="Caption to be show on image overlay in post.">
+                </div>
+
+                <div class="form-group">
+                    <label for="imgAltText" class="control-label">Image Alt Text</label>
+                    <input name="news[imgAltText]" type="text" class="form-control" placeholder="Description of the main image">
+                </div>
+
+                <div class="form-group">
+                    <label for="newsRelease" class="control-label">News Release Body</label>
+                    <textarea name="news[newsRelease]" type="text" class="form-control" placeholder="Full body with HTML markup here" required></textarea>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<% include ../../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../../partials/js-includes %>
+
+</body>
+</html>

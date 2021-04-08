@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- PAGE TITLE -->
+    <title>Add a New White Paper</title>
+
+    <!-- CSS FILES -->
+    <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+    <h1>Add a New White Paper</h1>
+
+    <form action="./" method="POST">
+
+        <div class="form-group">
+            <label for="title" class="control-label">Title</label>
+            <input name="whitePaper[title]" type="text" class="form-control" id="title" placeholder="Page Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="slug" class="control-label">Slug</label>
+            <input name="whitePaper[slug]" type="text" class="form-control" id="slug" placeholder="URL slug">
+        </div>
+
+        <div class="form-group">
+            <label for="description" class="control-label">Description</label>
+            <textarea name="whitePaper[description]" type="text" class="form-control" rows="5" required>150 Character Description</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="copy" class="control-label">Page Copy</label>
+            <textarea name="whitePaper[copy]" type="text" class="form-control" placeholder="Full body with HTML markup here" required></textarea>
+        </div>
+
+        <!-- You May Also Like -->
+        <div class="form-group">
+            <label for="ymal1Title" class="control-label">YMAL1 Title</label>
+            <input name="whitePaper[ymal1Title]" type="text" class="form-control" id="ymal1Title">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal1Img" class="control-label">YMAL1 Image</label>
+            <input name="whitePaper[ymal1Img]" type="text" class="form-control" id="ymal1Img" placeholder="IMAGENAME.ext">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal1Alt" class="control-label">YMAL1 Alt Text</label>
+            <input name="whitePaper[ymal1Alt]" type="text" class="form-control" id="ymal1Alt">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal1Url" class="control-label">YMAL1 URL</label>
+            <input name="whitePaper[ymal1Url]" type="text" class="form-control" id="ymal1Url">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal2Title" class="control-label">YMAL2 Title</label>
+            <input name="whitePaper[ymal2Title]" type="text" class="form-control" id="ymal2Title">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal2Img" class="control-label">YMAL2 Image</label>
+            <input name="whitePaper[ymal2Img]" type="text" class="form-control" id="ymal2Img" placeholder="IMAGENAME.ext">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal2Alt" class="control-label">YMAL2 Alt Text</label>
+            <input name="whitePaper[ymal2Alt]" type="text" class="form-control" id="ymal2Alt">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal2Url" class="control-label">YMAL2 URL</label>
+            <input name="whitePaper[ymal2Url]" type="text" class="form-control" id="ymal2Url">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal3Title" class="control-label">YMAL3 Title</label>
+            <input name="whitePaper[ymal3Title]" type="text" class="form-control" id="ymal3Title">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal3Img" class="control-label">YMAL3 Image</label>
+            <input name="whitePaper[ymal3Img]" type="text" class="form-control" id="ymal3Img" placeholder="IMAGENAME.ext">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal3Alt" class="control-label">YMAL3 Alt Text</label>
+            <input name="whitePaper[ymal3Alt]" type="text" class="form-control" id="ymal3Alt">
+        </div>
+
+        <div class="form-group">
+            <label for="ymal3Url" class="control-label">YMAL3 URL</label>
+            <input name="whitePaper[ymal3Url]" type="text" class="form-control" id="ymal3Url" >
+        </div>
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="whitePaper[gated]" value="true">Gated
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="whitePaper[gated]" value="false">Not Gated
+            </label>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<% include ../../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../../partials/js-includes %>
+
+</body>
+</html>

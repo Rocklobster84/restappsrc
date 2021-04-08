@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Edit an Event Page</title>
+
+    <!-- CSS FILES -->
+    <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../../partials/navbar %>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+            <h1>Edit an Event Page</h1>
+
+            <form action="../../events/page/<%= events._id %>?_method=PUT" method="POST">
+
+                <div class="form-group">
+                    <label for="title" class="control-label">Title</label>
+                    <input name="events[title]" type="text" class="form-control" id="title" value="<%= events.title %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subHeading" class="control-label">Sub Heading</label>
+                    <input name="events[subHeading]" type="text" class="form-control" id="subHeading" value="<%= events.subHeading %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="headerImg" class="control-label">Header Image Location</label>
+                    <input name="events[headerImg]" type="text" class="form-control" id="headerImg" value="<%= events.headerImg %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="control-label">Description</label>
+                    <textarea name="events[description]" type="text" class="form-control" rows="5" required><%= events.description %></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="slug" class="control-label">Slug</label>
+                    <input name="events[slug]" type="text" class="form-control" id="slug" value="<%= events.slug %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="copy" class="control-label">Page Copy</label>
+                    <textarea name="events[copy]" type="text" class="form-control" rows="20" required><%= events.copy %></textarea>
+                </div>
+
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+
+            </form>
+        </div>
+
+        <div class="col-lg-1">
+        </div>
+
+        <div class="col-lg-3">
+            <a href="../page/edit" class="btn btn-primary" role="button">Return to Edit Page</a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<% include ../../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../../partials/js-includes %>
+
+</body>
+</html>
