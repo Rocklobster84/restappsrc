@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title>Meshing Strategies for Propulsion Aerodynamics</title>
+
+  <meta name="robots" content="noindex">
+
+  <!-- CSS FILES -->
+  <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+  <noscript>
+    <p>
+      In order to view this page JavaScript must be enabled in your browser.
+    </p>
+  </noscript>	
+
+  <!-- TOP NAVIGATION -->
+  <% include ../../partials/navbar %>
+
+<section id="title">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="image-case">
+        <img data-src="images/PAWS-Main-3840x1200.png" alt="Mixed-element hybrid unstructured mesh" class="img-fluid"/>
+        <h1><span class="case-caption">Meshing Strategies for Propulsion Aerodynamics</span></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="article">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+
+        <p>
+          The <a href="https://paw.larc.nasa.gov/" target="_blank" rel="noreferrer noopener">4th AIAA Propulsion Aerodynamics Workshop (PAW04)</a> was held during the weekend of 7-8 July 2018 and preceded the <a href="https://propulsionenergy.aiaa.org/" target="_blank" rel="noreferrer noopener">54th AIAA/SAE/ASEE Joint Propulsion Conference</a> at the <a href="https://www.cincyusa.com/duke-energy-center/" target="_blank" rel="noreferrer noopener">Duke Energy Convention Center</a> in Cincinnati, Ohio. The two-day workshop provided participants an impartial forum to present numerical results for three separate challenging validation benchmark cases for simulating unsteady and steady-state aerodynamics of complex inlet and nozzle exhaust flows that are of interest to the propulsion community. There were 35 participants in attendance with several others who submitted data. During workshops, participants are encouraged to exchange ideas and evaluate the effectiveness of existing computational fluid dynamics (CFD) codes and modeling techniques.
+        </p>
+
+        <p>
+          A set of workshop-supplied grids are published by the workshop’s organizing technical committee for each test case, and participants are encouraged to use these meshes in order to help reduce scatter in results that are contributed as well as to help encourage participation. For this latest workshop, as well as the <a href="../../theconnector/2016-Q3/Meshing-Overview-and-S-Duct-Results-from-Propulsion-Aerodynamics-Workshop.html">previous one</a>, the workshop-supplied meshes for two of the three test cases were created using Pointwise.
+        </p>
+
+        <h2>S-Duct Test Case</h2>
+
+        <p>
+          The <a href="https://ntrs.nasa.gov/search.jsp?R=20120002597&hterms=IFCPT&qs=N%3D0%26Ntk%3DAll%26Ntt%3DIFCPT%26Ntx%3Dmode%2520matchallpartial" target="_blank" rel="noreferrer noopener">Inlet Flow Control and Prediction Technologies for Embedded Propulsion Systems (IFCPT) serpentine inlet</a> is a holdover test case from the previous workshop, and the entire first day of PAW04 was spent covering participant contributions for this case.
+        </p>
+
+        <p>
+          In the 3rd Propulsion Aerodynamics Workshop (PAW03), participant contributions resulted in a lot of scatter despite using a common set of workshop-supplied grids. One primary reason for this was related to how the empirical data reported mass flow rate through the inlet. Using 40 total pressure and eight static pressure readings at the Aerodynamic Interface Plane (AIP) during wind tunnel testing, the massflow rate at the AIP was recorded by using Eq. (1).
+        </p>
+
+        <img data-src="images/equations-800x387.png"
+        alt="Equations" class="img-fluid center-block" />
+        <figcaption>
+        </figcaption>
+
+        <p>
+          However, most CFD codes do not compute mass flow rate in this way. Instead, users apply a mass flow out boundary condition at the exit of the control volume, and the back pressure is adjusted until this target mass flow rate value is achieved. Assuming that the solution is converged, then mass flow through the entire control volume is a conserved quantity, and the integrated mass flow value over the entire exit plane should be the same value at the AIP. Although, many will survey the integrated mass flow rate at the AIP plane itself as well.
+        </p>
+
+        <p>
+          Participants in this latest workshop were asked to iteratively adjust the mass flow out boundary condition value in their CFD simulations until the mass flow rate at the AIP as calculated via Eq. (1) was achieved when making comparisons to empirical data. As this can be a tedious process, one clever participant in this latest workshop developed a special back pressure driver for their <a href="https://fun3d.larc.nasa.gov/" target="_blank" rel="noreferrer noopener">solver</a> to adjust the back pressure based on Eq. (1) using the prescribed 40-probe total pressure and eight rake static pressure locations at the AIP.
+        </p>
+
+        <p>
+          The instrumentation rake assembly geometry modeled in PAW04 was different than the one used for the previous workshop. Two separate rake assemblies were used over the course of wind tunnel testing. In PAW03, it was noted that for the flow condition participants were given to simulate, a different rake was used during the test other than the one modeled by participants. An updated rake geometry was released and integrated into the baseline S-Duct geometry by using the solid modeling features within Pointwise.
+        </p>
+
+        <img data-src="images/Fig1-s-duct-meshes-800x258.png"
+        alt="S-Duct Meshes" class="img-fluid center-block" />
+        <figcaption>
+          Figure 1: Sets of multi-block structured and mixed-element unstructured meshes were provided to workshop participants. Grids were created by using a variety of meshing features in Pointwise including normal extrusions, elliptical smoothing, quad-dominant surface meshing, 2-D and 3-D T-Rex, and sources.
+        </figcaption>
+
+        <p>
+          Overall, three sets of meshes—a total of 15 grids—were provided to participants for the S-Duct test case. Sets of both multi-block structured and mixed-element unstructured meshes were created in Pointwise as shown in Figure 1 and listed in Table 1. The structured grids were provided as PLOT3D formatted files, while the unstructured grids were given in CGNS format. Several participants requested grids formatted specifically for their CFD solver, which were provided using the CAE export options available in Pointwise.
+        </p>
+
+        <figcaption class="case-table">
+          Table 1: Workshop-supplied meshes for the S-Duct test case include three sets of grids consisting of both multi-block structured and mixed-element unstructured meshes for two test case configurations.
+        </figcaption>
+        <img data-src="images/Table1-800x495.png"
+        alt="Table 1" class="img-fluid center-block" />
+
+        <p>
+          Five grid-refinement meshes were provided for each set of grids, so that participants could independently perform grid sensitivity studies. The normal wall spacing for each of these grids was held constant at a y<sup>+</sup> value of 1. As the surface grids were refined for the mixed-element meshes, holding the initial normal wall spacing and growth rate constant causes the anisotropic layers of hexahedra advanced from wall boundaries to terminate earlier due to reaching isotropy sooner. It is important that the extent of the boundary layer resolved mesh is maintained as the grid is refined so that both the boundary layer and any secondary flows can be captured accurately as the mesh is refined. This can be accomplished by utilizing a custom growth profile in Pointwise to advance anisotropic layers beyond isotropy using a growth rate of 1.0. Sources were used in Pointwise to control the size of isotropic tetrahedra within the duct as shown in Figure 2.
+        </p>
+
+        <img data-src="images/Fig2-sources-800x450.png"
+        alt="Sources in Pointwise" class="img-fluid center-block" />
+        <figcaption>
+          Figure 2: Sources (shown in green) in Pointwise are used to limit the target edge lengths of isotropic tetrahedra from growing too large in sensitive regions of the flowfield.
+        </figcaption>
+
+        <p>
+          Some results from a grid sensitivity study are shown in Figure 3. Assuming second-order accuracy for a 3-D problem, the characteristic grid spacing can be estimated by <em>N<sup>-2/3</sup></em> where <em>N</em> is the complexity within a given mesh (i.e., the number of grid nodes for a node-centered flow solver). For a grid family, as the number of degrees of freedom is uniformly increased (<em>N<sup>-2/3</sup></em> decreases), one should expect a linear trend if a solution is second-order accurate. Extrapolating to <em>N<sup>-2/3</sup></em> = 0 should yield the exact value for the metric plotted along the ordinate axis for an infinitesimally fine mesh.
+        </p>
+
+        <p>
+          For the results shown in Figure 3, mass flow rate was not iteratively varied at the exit boundary in order to target a value derived from 48 discrete total and static pressure points via Eq. (1). Instead, the mass flow rate at the prescribed flow condition was applied at the exit boundary. This results in a mass flow rate at the AIP that is approximately seven percent higher than the empirical value reported, which was derived from 40 total pressure and eight static pressure values. This explains why the total pressure recovery is lower than the empirical value reported at the prescribed flow condition. Results provided were run using the coarse, medium, and fine grid-refinement meshes for the baseline configuration and coarse, medium, fine, and fine-1.5 refinement grids for the S-Duct with Rake Assembly configuration.
+        </p>
+
+        <p>
+          Linear trends were observed by workshop participants, and the fine-1.5 grid refinement level was identified as the one providing mesh independent results.
+        </p>
+
+        <img data-src="images/Fig3-mesh-sensitivity-800x487.png"
+        alt="Grid sensitivity to total pressure recovery" class="img-fluid center-block" />
+        <figcaption>
+          Figure 3: Grid sensitivity to total pressure recovery shows some linear trends as meshes are refined suggesting second-order accuracy.
+        </figcaption>
+
+        <p>
+          Inlet distortion was computed in accordance with <a href="https://www.sae.org/standards/content/arp1420b/" target="_blank" rel="noreferrer noopener">SAE ARP-1420</a> guidelines. These results are far more sensitive to modeling errors depending on how accurately the secondary flows are resolved and their proximity to the 40 total pressure probes at the AIP. Small variations in total pressure due to proximity of a pressure transducer to a low-pressure region can yield large discrepancies in tip distortion between empirical and numerical results for this case. Participants seemed to settle on using turbulence models with rotation/curvature (RC) and quadratic constitutive relation (QCR) corrections to help more accurately resolve the secondary flows that setup in this case. Overall, participant contributions were much less scattered than those from PAW03, but this test case continues to be a challenge to predict accurately using CFD.
+        </p>
+
+        <h2>Nozzle Test Case</h2>
+
+        <p>
+          The second day of the workshop was spent covering the other two test cases which include a nozzle and an external compression supersonic inlet. A new high-aspect-ratio convergent rectangular nozzle configuration was introduced for PAW04. This particular configuration was based on the experimental work of <a href="https://arc.aiaa.org/doi/10.2514/1.J053376" target="_blank" rel="noreferrer noopener">Behrouzi and McGuirk</a>.
+        </p>
+
+        <p>
+          Interest in development of these types of nozzles has been driven by observations that rectangular-nozzle jet/ambient mixing, velocity, and temperature decay rates are faster than for an axisymmetric nozzle. Plume mixing affects jet noise production in civil aircraft propulsion, while reduced infrared signature is a focus of interest in military applications.
+        </p>
+
+        <p>
+          It was invaluable to have one of the authors of the experimental work for the nozzle test case, Professor James McGuirk from Loughborough University, present during the workshop given his familiarity with the case study. The nozzle test case consisted of two separate configurations—the baseline nozzle and baseline nozzle with an aft-deck as shown in Figure 4.
+        </p>
+
+        <img data-src="images/Fig4-nozzle-800x274.png"
+        alt="nozzle test case" class="img-fluid center-block" />
+        <figcaption>
+          Figure 4: The nozzle test case consisted of two nozzle configurations for participants to model: a baseline high-aspect-ratio converging rectangular nozzle and this baseline nozzle with an aft deck.
+        </figcaption>
+
+        <p>
+          For this case, the nozzle expands to ambient conditions and participants simulated a number of nozzle pressure ratio (NPR) conditions between 1.5 and 6.0 for each configuration. Participant results surveyed the mean axial velocity, Reynolds stress fluctuating velocity, and non-dimensional Reynolds shear stress from the nozzle exit to 15 characteristic lengths (i.e., the nozzle exit hydraulic diameter, <em>D<sub>h</sub></em> = 22.46 mm) downstream of the exit. Static pressure along the aft deck surface was also computed.
+        </p>
+
+        <p>
+          Both multi-block structured and mixed-element grids were created in Pointwise and provided to participants to use. Details of the workshop-supplied meshes for the nozzle test case are listed in Table 2.
+        </p>
+
+        <figcaption class="case-table">
+          Table 2: Sets of multi-block structured and mixed-element unstructured meshes were provided to workshop participants for both nozzle test case configurations. Each set of grids includes three grid refinement levels for participants to use in grid sensitivity studies.
+        </figcaption>
+        <img data-src="images/Table2-800x417.png"
+        alt="table 2" class="img-fluid center-block" />
+
+        <p>
+          For these meshes, a constant <em>y+</em> = 1 normal wall spacing value was computed for the NPR = 6 condition and applied to all grid refinement levels. The wall spacing is roughly driven by where the quantity, <em>&#961;u</em> (the product of density and axial velocity) is a maximum. Flow expands to choked conditions, and an assumption was made that <em>u</em> increases faster than <em>&#961;</em> decreases to reach a maximum value at the maximum Mach number. At high NPR, the choked exit conditions may be higher than ambient, so in order to estimate the initial normal wall spacing, stagnation conditions were expanded using isentropic relations to Mach = 1.
+        </p>
+
+        <p>
+          In the case of the mixed-element unstructured meshes, sources were used to add isotropic refinement in the region of the plume immediately downstream of the nozzle exit in this sensitive region of the flowfield as shown in Figure 5.
+        </p>
+
+        <img data-src="images/Fig5-plume-source-800x450.png"
+        alt="quad-dominant surface mesh" class="img-fluid center-block" />
+        <figcaption>
+          Figure 5: A quad-dominant surface mesh was used in creating the mixed-element grids to recover layers of flow-aligned hexahedra in the boundary-layer resolved portion of each mesh. Sources (shown in green) were used to add grid refinement in the critical plume region of the flowfield.
+        </figcaption>
+
+        <p>
+          The multi-block structured grids were created by first using a normal extrusion off the inner-mold line (IML) surface of the nozzle, then creating an H-grid between the extents of the normal extrusion. The domains at the inlet and nozzle exit were smoothed using the elliptical solver in Pointwise, and then the same was done for the volume grid. The H-grid topology was extended to the farfield boundary, and an O-grid was wrapped around this H-grid topology and the nozzle’s outer-mold line (OML). Figure 6 shows a centerline cut through one of the multi-block structured baseline nozzle meshes.
+        </p>
+
+        <img data-src="images/Fig6-structured-fine-symmetry-800x456.png"
+        alt="centerline cut through the baseline multi-block structured nozzle mesh." class="img-fluid center-block" />
+        <figcaption>
+          Figure 6: A centerline cut through the baseline multi-block structured nozzle mesh.
+        </figcaption>
+
+        <p>
+          Participants’ CFD results (velocity, pressure, etc.) showed pretty favorable agreement with experimental results up to about <em>x/D<sub>h</sub></em> = 5.5. However, they appeared to show an additional oblique shock forming in the plume which was not captured during the wind tunnel test. This influenced much of the flowfield downstream, and properties of the plume generally appeared to decay faster in participants’ numerical results than what was observed in the experiment.
+        </p>
+
+        <p>
+          Interestingly, out of the seven participants in attendance who submitted results for the nozzle test case, only one used the multi-block structured set of meshes. Given the inherent dissipative nature of tetrahedra elements with finite volume solvers and the relatively simple nozzle geometry, it seems multi-block structured meshes would have been more suitable for this case. At least qualitatively, the shock train for solutions run on the multi-block structured meshes appeared far more defined than in other participants’ results.
+        </p>
+
+        <p>
+          One other interesting tidbit with this test case was observed. As NPR increases, the angle of the plume measured from the nozzle exit plane increases; thereby, rotating the plume counterclockwise (i.e., there is some natural thrust-vectoring accomplished by increasing NPR). Because the shear layer that develops immediately downstream of the nozzle exit is integral to flow properties that develop in the plume further downstream, resolving this region of the mesh is pretty important. This suggests that a single mesh is likely not suitable for simulating a large range of NPR conditions, or that the mesh used needs to refine a larger expansion region aft of the nozzle exit to capture the plume as it shifts, which may not be as efficient with regards to cell count. Determining the correct plume angle to use downstream of the nozzle exit for a given NPR in order to resolve it accurately also is not straightforward and doing so is probably best accomplished by adopting an adaptive mesh refinement (AMR) strategy.
+        </p>
+
+        <h2>Special Topics Test Case</h2>
+
+        <p>
+          Increased interest in this workshop was a catalyst for adding a new, third case study to PAW04. For the special topics test case participants were asked to predict the flow characteristics through a supersonic external compression inlet. The inlet model was designed by Techland Research, Inc. and tested on an F-15B propulsion flight test aircraft at Armstrong Research Facility as shown in Figure 7.
+        </p>
+
+        <p>
+          The design includes a translating channeled centerbody to facilitate engine airflow at off-design flight conditions, and its design was commissioned to satisfy NASA interest for its application to future Mach 2.5 cruise civil aircraft.
+        </p>
+
+        <img data-src="images/Fig7-external-compression-inlet-567x379.png"
+        alt="compression inlet" class="img-fluid center-block" />
+        <figcaption>
+          Figure 7: The Techland Research external compression inlet installed on an F-15B propulsion flight test aircraft.
+        </figcaption>
+
+        <p>
+          Three attendees submitted results for this particular case study, and a couple of hours were spent Sunday afternoon covering participant results. Total pressure recovery and inlet distortion metrics were compared to available empirical data, and the CFD results generally agreed with one another, but given this test case is somewhat new additional time is needed to look more closely at contributors’ data.
+        </p>
+
+        <h2>In Closing</h2>
+
+        <p>
+          Meshing still remains somewhat of an art. Qualified engineers tend to spend an inordinate amount of time generating grids, while mathematicians focus on developing more advanced algorithms that may end up being tested on unsuitable meshes. Creating proper meshes for a given problem requires a lot of iteration and a wealth of experience. AIAA sponsored workshops provide an avenue whereby meshing expertise and ideas for solving domain-specific problems with CFD can be exchanged. There are several complex flow phenomena that are unique to propulsion aerodynamic internal flows that are important to consider when creating meshes for these types of complex problems.
+        </p>
+
+        <p>
+          Given the expertise of those involved in these workshops, they are well-suited for helping to educate the next generation of CFD engineers using relevant, real-world examples and provide a wealth of opportunity for mentoring.
+        </p>
+
+        <p>
+          At the end of the workshop, there was quite a bit of open and lively discussion surrounding CFD education at the undergraduate level, and what level of exposure to CFD would attract students’ interest while being accessible with available resources. Strangely, there were a few strong opinions shared that suggested perhaps grid generation shouldn’t be the starting-off point, but given the unique challenges posed by resolving complex flow phenomena with proper meshing techniques, there’s probably no better place to start.
+        </p>
+
+        <p>
+          If you are interested in running any of these test cases yourself, feel free to head over to the <a href="https://paw.larc.nasa.gov/" target="_blank" rel="noreferrer noopener">Propulsion Aerodynamics Workshop website</a> where you can download the test case grids and participant guideline documents.
+        </p>
+
+        </div>
+
+        <!--Spacing between article and side-->
+        <div class="col-lg-1">
+        </div>
+
+        <div class="col-lg-3 col-md-3 case-study-nav">
+          <h4>Company Profile</h4>
+          <p>
+            4th AIAA Propulsion Aerodynamics Workshop
+          </p>
+
+          <h4>Participating Since</h4>
+          <p>
+            2016
+          </p>
+
+          <h4>About the Workshop</h4>
+          <p>
+            The focus of the workshop will be on assessing the accuracy of CFD in obtaining air breathing system performance and flow structure to include nozzle forces, plume surveys, subsonic inlet recovery and distortion, and high-speed inlet performance.
+          </p>
+
+          <hr />
+
+          <h3>Solution at a Glance</h3>
+
+          <h4>CHALLENGE</h4>
+          <p>
+            Meshing remains somewhat of an art. Qualified engineers tend to spend an inordinate amount of time generating grids, while mathematicians focus on developing more advanced algorithms that may end up being tested on unsuitable meshes. Propulsion aerodynamics cases present a number of unique meshing challenges for CFD practitioners from capturing secondary flows in internal inlet passages to appropriately resolving shear layers and mixing phenomena in nozzle exhaust plumes.
+          </p>
+
+          <h4>SOLUTION</h4>
+          <p>
+            Several meshing techniques and meshing best-practices have been developed while creating workshop-supplied meshes for the 3rd and 4th AIAA Propulsion Aerodynamics Workshops. These meshing strategies and lessons learned have been collected to help CFD practitioners gather experience meshing these types of challenging internal flow problems.
+          </p>
+
+          <h4>BENEFIT</h4>
+          <p>
+            Discover meshing best-practices that can be applied across a wide variety of propulsion aerodynamics cases.
+          </p>
+
+        </div>
+      </section>
+      
+        <section id="ymal">
+            <div class="container lets-talk-content">
+              <div class="row">
+                <div class="col-lg-12"
+                <hr />
+                <h2 class="text-center">You May Also Like</h2>
+              </div>
+            </div>
+
+          <div class="row">
+
+              <div class="col-lg-4 col-md-4">
+                <div class="card">
+                  <a href="http://info.pointwise.com/webinar-multi-block-structured-meshing-diffusing-s-duct"><img data-src="images/ymal1.png" class="card-img-top img-fluid" alt="Multi-block Structured Meshing of a Diffusing S–Duct" class="img-fluid"></a>
+                  <div class="card-body">
+                    <a href="http://info.pointwise.com/webinar-multi-block-structured-meshing-diffusing-s-duct"><h3>Multi-block Structured Meshing of a Diffusing S–Duct</h3></a>
+                    <p class="card-text">
+                      In this webcast, we use a diffusing serpentine inlet to demonstrate some of the more advanced structured meshing techniques available in Pointwise to quickly create a multi-block structured mesh.
+                    </p>
+                   
+                    <a href="http://info.pointwise.com/webinar-multi-block-structured-meshing-diffusing-s-duct"><button type="button" class="btn btn-primary">More</button></a></a>
+                   
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4">
+                <div class="card">
+                  <a href="../../theconnector/2016-Q3/Meshing-Overview-and-S-Duct-Results-from-Propulsion-Aerodynamics-Workshop.html"><img data-src="images/ymal2.png" class="card-img-top img-fluid" alt="Meshing Overview & S-Duct Results from the 3rd Propulsion Aerodynamics Workshop" class="img-fluid"></a>
+                  <div class="card-body">
+                    <a href="../../theconnector/2016-Q3/Meshing-Overview-and-S-Duct-Results-from-Propulsion-Aerodynamics-Workshop.html"><h3>Meshing Overview & S-Duct Results from the 3rd Propulsion Aerodynamics Workshop</h3></a>
+                    <p class="card-text">
+                      Pointwise, Inc. has been involved in various AIAA sponsored workshops in the past including High Lift, Drag Prediction, and more recently Sonic Boom Prediction workshops in order to further develop a set of best meshing practices for each respective application area.
+                    </p>
+                    
+                    <a href="../../theconnector/2016-Q3/Meshing-Overview-and-S-Duct-Results-from-Propulsion-Aerodynamics-Workshop.html"><button type="button" class="btn btn-primary">More</button></a></a>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4">
+                <div class="card">
+                  <a href="../../theconnector/2014-January/Computational-Optimization-Rocket-Engine-Nozzles.html"><img data-src="images/ymal3.png" class="card-img-top img-fluid" alt="Computational Optimization of Rocket Engine Nozzles" class="img-fluid"></a>
+                  <div class="card-body">
+                    <a href="../../theconnector/2014-January/Computational-Optimization-Rocket-Engine-Nozzles.html"><h3>Computational Optimization of Rocket Engine Nozzles</h3></a>
+                    <p class="card-text">
+                      The primary aim of this project was to investigate the capability of using modern commercial computational fluid dynamics (CFD) packages (Pointwise and ANSYS Fluent®) as tools for analysis and design of rocket engine nozzles.
+                    </p>
+
+                    <a href="../../theconnector/2014-January/Computational-Optimization-Rocket-Engine-Nozzles.html"><button type="button" class="btn btn-primary">More</button></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+        </section>
+<br>
+
+    <!-- FOOTER -->
+    <% include ../../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../../partials/js-includes %>
+  </body>
+  </html>

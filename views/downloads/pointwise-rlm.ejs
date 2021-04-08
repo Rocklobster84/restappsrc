@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title>Installing Pointwise & the RLM License Manager</title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/downloads/pointwise-rlm.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Installing Pointwise & the RLM License Manager" />
+  <meta property="og:description" content="Download the latest production release of the Pointwise mesh generation software for all supported platforms including installation instructions." />
+
+  <!-- META DATA -->
+  <meta name="description" content="Download the latest production release of the Pointwise mesh generation software for all supported platforms including installation instructions.">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../partials/css-includes %>
+
+  <!-- RECAPTCHA -->
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+
+<body id="page-top">
+
+  <!-- TOP NAVIGATION -->
+  <% include ../partials/navbar %>
+
+  <!-- ARTICLE -->
+  <div class="container support-body">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1>Installing Pointwise &amp; License Manager</h1>
+
+        <p>
+          Customers who do not have RLM will need to obtain a <a href="../licenses/index.html">license</a> and perform a complete download and install. For more information, or to see answers to the most common installation questions, please see our <a href="../gethelp/index.html">Get Help</a> page.
+        </p>
+  
+        <br>
+        <p>
+          <strong>Note that a valid license is required to run the software. <span class="red">Current customers will need to update to a V18.4 license.</span></strong>
+        </p>
+
+        <h2>1. Request an Activation Key.</h2>
+
+        <p>
+          An activation key is a 16-digit numeric string used during the Reprise License Manager (RLM) installation process to contact Pointwise for information on the number of processes licensed and their expiration date. For best results, we recommend that you have your activation key prior to beginning installation. If you do not already have an activation key, you can request one at <a href="../licenses/">www.pointwise.com/licenses</a>.
+        </p>
+
+        <h2>2. Download Reprise License Manager (RLM).</h2>
+
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+
+            <tr>
+              <th colspan="3">Complete Installation Files for License Manager</th>
+            </tr>
+
+            <tr>
+              <th>Platform</th>
+              <th>(Right-click, Save Link As&hellip;)</th>
+              <th>Size (MB)</th>
+            </tr>
+
+            <tr>
+              <td> Windows 64-bit </td>
+              <td><a href="../downloads/pwrlm-V12.3-win64-jre.exe" download>pwrlm-V12.3-win64-jre.exe</a></td>
+              <td>42</td>
+            </tr>
+
+            <tr>
+              <td> Linux 64-bit</td>
+              <td><a href="../downloads/pwrlm-V12.3-linux_x86_64-jre.sh" download>pwrlm-V12.3-linux_x86_64-jre.sh</a></td>
+              <td>42</td>
+            </tr>
+
+            <tr>
+              <td> macOS 64-bit</td>
+              <td><a href="../downloads/pwrlm-V12.3-macosx.dmg" download>pwrlm-V12.3-macosx.dmg</a></td>
+              <td>38</td>
+            </tr>
+          </table>
+        </div>
+
+        <h2>3. Install the RLM license manager.</h2>
+
+        <ol>
+          <li>
+            Run RLM installer.
+          </li>
+          <ol type="a">
+            <li>
+              <strong>IMPORTANT:</strong> Install Pointwise as Administrator/root on Windows machines.
+            </li>
+          </ol>
+          <li>
+            Accept the Right-to-Use license and use all defaults for the installation.
+          </li>
+          <li>
+            If you have an Activation Key, copy and paste it into the <em>Activation Key</em> field when you reach the <em>Configure Pointwise RLM License Server</em> screen.
+          </li>
+          <li>
+            If your Activation Key does not work or you need an Activation Key, please contact <a href="mailto:support@pointwise.com">support@pointwise.com.</a>
+          </li>
+        </ol>
+
+        <h2>4. Review the status of your RLM license manager.</h2>
+
+        <ol>
+          <li>
+            Start your web browser and open <code>http://localhost:5054/</code> where <code>localhost</code> is your computer's name. This is the Reprise License Manager (RLM) user interface page.
+          </li>
+          <li>
+            On the left side of the web page, click on the <em>Status</em> button.
+          </li>
+          <li>
+            You should now see an ISV (Independent Software Vendor) program name <em>PWID</em> listed as running.
+          </li>
+          <li>
+            If you do not, please contact <a href="mailto:support@pointwise.com">support@pointwise.com</a>.
+          </li>
+        </ol>
+
+        <h2>5. Download Pointwise.</h2>
+
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+
+            <tr>
+              <th colspan="3">The current production release is Pointwise V18.4 R3.</th>
+            </tr>
+
+            <tr>
+              <th>Platform</th>
+              <th>(Right click, Save Link As&hellip;)</th>
+              <th>Size (MB)</th>
+            </tr>
+
+            <tr>
+              <td> Windows 64-bit </td>
+              <td><a href="../downloads/pw-V18.4R3-win64-jre.exe" download>pw-V18.4R3-win64-jre.exe</a></td>
+              <td>230</td>
+            </tr>
+
+            <tr>
+              <td> Linux 64-bit</td>
+              <td><a href="../downloads/pw-V18.4R3-linux_x86_64-jre.sh" download>pw-V18.4R3-linux_x86_64-jre.sh</a></td>
+              <td>289</td>
+            </tr>
+
+            <tr>
+              <td> macOS 64-bit</td>
+              <td><a href="../downloads/pw-V18.4R3-macosx.dmg" download>pw-V18.4R3-macosx.dmg </a></td>
+              <td>327</td>
+            </tr>
+
+          </table>
+        </div>
+
+        <h2>6. Install Pointwise.</h2>
+
+        <ol>
+          <li>
+            Run the Pointwise installer.
+          </li>
+          <ol type="a">
+            <li>
+              <strong>IMPORTANT:</strong> Install Pointwise as Administrator/root on Windows machines.
+            </li>
+          </ol>
+          <li>
+            Accept the Right-to-Use license and use all defaults for the installation.
+          </li>
+          <li>
+            Pointwise should launch after you click <em>Finish</em>.
+          </li>
+          <ol type="a">
+            <li>
+              If Pointwise cannot find an RLM license server, the <em>Pointwise License Wizard</em> will appear.
+            </li>
+            <li>
+              If you have an Activation Key, select <em>Specify an Activation Key</em> and enter your Key.
+            </li>
+            <li>
+              If you would like to use an existing license server, select <em>Specify a License Server</em> and enter the name of your server.
+            </li>
+          </ol>
+        </ol>
+
+        <h2>7. Have Questions?</h2>
+
+        <ul>
+          <li>
+            Check our <a href="../gethelp/index.html">Get Help</a> webpage for answers to common questions, troubleshooting tips, and installation help.
+          </li>
+          <li>
+            Verify that your platform is <a href="../pointwise/index.html#platforms">supported by Pointwise</a>.
+          </li>
+          <li>
+            Contact Pointwise's technical support team at <a href="mailto:support@pointwise.com">support@pointwise.com</a> and 800-4PT-WISE.
+          </li>
+        </ul>
+
+        <p>
+          The terms of the agreement under which you may acquire the right to use the software include the &quot;Right To Use License&quot; attached hereto or accompanying the software. Your purchase, license, receipt, or use of the software constitutes your acceptance of all the &quot;Right To Use License&quot;. <strong>Please read</strong> the <a href="../licenses/rtu.html">Right To Use License</a>.
+        </p>
+
+      </div>
+
+      <!-- THIS STARTS THE RIGHT HAND COLUMN -->
+
+      <!-- Space between columns -->
+      <div class="col-lg-1">
+      </div>
+
+      <!-- Get Help Form -->
+      <div class="col-lg-3">
+        <h2>Ask a Question</h2>
+
+        <form data-toggle="validator"
+        role="form"
+        method="post"
+        action="/downloads">
+
+        <div class="form-group">
+          <label for="customerID" class="control-label">Customer ID <span class="red">*</span><a
+            data-tooltip="Your Customer ID is printed in the Messages window when Pointwise starts." data-tooltip-location="top"> <i class="fa fa-question-circle help-icon"></i></a></label>
+          <input type="text" class="form-control" id="customerID" name="customerID" data-error="Please fill out this field." required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="name" class="control-label">Given Name <span class="red">*</span></label>
+          <input type="text" class="form-control" id="name" name="name" data-error="Please fill out this field." placeholder="First Name" required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="surname" class="control-label">Surname <span class="red">*</span></label>
+          <input type="text" class="form-control" id="surname" name="surname" data-error="Please fill out this field." placeholder="Last Name" required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="emailaddress" class="control-label">E-Mail <span class="red">*</span></label>
+          <input type="email" class="form-control" id="emailaddress" name="emailaddress" data-error="Please provide a valid email address." required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <input type="text" id="email" name="email"/>
+
+        <div class="form-group">
+          <label class="control-label" for="comments">Use the following space to send us any questions you may have about Pointwise.</label>
+          <textarea class="form-control" rows="5" id="comments" name="comments"></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="g-recaptcha" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback" data-sitekey="6Lc5PjMUAAAAAPYyLp5pAMZgdwIgFzlww8iLyVWs"></div>
+          <input type="hidden" class="form-control" data-recaptcha="true" required>
+          <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+      <br />
+
+      <div class="support-nav">
+        <h4>More Support</h4>
+        <svg class="nav-lines">
+          <line class="nav-blue-social" x1="0" y1="1" x2="140" y2="1"/>
+          <line class="nav-grey-social" x1="140" y1="1" x2="275" y2="1"/>
+        </svg>
+        <div class="side-nav">
+          <p><a href="mailto:support@pointwise.com"><span class="glyphicon glyphicon-envelope support-icons" aria-hidden="true"></span> Email Support</a></p>
+
+          <p><a href="../gethelp/index.html">Get Help</a></p>
+
+          <p><a href="../downloads/index.html">Downloads</a></p>
+
+          <p><a href="../licenses/index.html">Request a License</a></p>
+
+          <p><a href="../training/index.html">Register for Training</a></p>
+
+          <p><a href="../support/release-notes.html">Release Notes</a></p>
+
+          <p><a href="../glyph/index.html">Glyph Scripting</a></p>
+
+          <p><a href="../plugins/index.html">Plugin SDK</a></p>
+
+          <p><a href="../sales/index.html">International Tech Support</a></p>
+
+          <p><a href="../doc/user-manual/index.html">User Manual</a></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<% include ../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../partials/js-includes %>
+
+</body>
+</html>

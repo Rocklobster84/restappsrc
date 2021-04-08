@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title>Automatic Generation of High-Quality Meshes Using Pointwise and Glyph</title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/case-studies/Automatic-Generation-Meshes-Using-Pointwise-Glyph/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Automatic Generation of High-Quality Meshes Using Pointwise and Glyph" />
+  <meta property="og:description" content="Integrating custom Glyph scripts enables Pointwise to automatically generate high-quality meshes for any Engineering Sketch Pad (ESP) created geometry." />
+
+  <!-- META DATA -->
+  <meta name="description" content="Integrating custom Glyph scripts enables Pointwise to automatically generate high-quality meshes for any Engineering Sketch Pad (ESP) created geometry.">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+  <noscript>
+    <p>
+      In order to view this page JavaScript must be enabled in your browser.
+    </p>
+  </noscript>	
+
+  <!-- TOP NAVIGATION -->
+  <% include ../../partials/navbar %>
+  <section id="title-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="image-case">
+          <img data-src="images/ESP-PW-Case-Study-3840x1200.png" alt="Dragon space capsule, from the ESP example case gallery." class="img-fluid"/>
+          <h1><span class="case-caption">Automatic Generation of High-Quality Meshes using Pointwise and Glyph</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="article">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8">
+
+          <h2>
+            Scripts executed in Pointwise using Engineering Sketch Pad geometry automatically generate high-quality meshes for any configuration
+          </h2>
+
+          <h3>
+            Meshing time can be reduced by up to 90 percent, user input requires minutes not hours, on a typical aircraft geometry
+          </h3>
+
+          <br />
+
+          <p>
+            Meshing is a tedious, time-consuming, and sometimes mind-numbing process. It also is an essential and necessary component in the production of accurate computational fluid dynamics (CFD) solutions. Automating this process has been a decades-long goal with significant challenges: General automated meshers must sacrifice the quality of the mesh and, while they can produce high-quality meshes, specialized automatic meshers can only be used on a very narrow class of problems. 
+          </p>
+
+          <p>
+            Now, the latest version of Pointwise software and a collection of Glyph scripts is making it possible for users to automatically generate high-quality meshes for any geometry. The solution substantially reduces both the meshing time and the time required for manual input. 
+          </p>
+
+          <blockquote class="blockquote-reverse pw-blue">
+            Watching a three-toed sloth doing the back stroke through a lake of molasses is kind of like meshing . . . It seems to take forever.
+          </blockquote>
+
+          <p>
+            &ldquo;For a typical aircraft geometry, meshing times can be reduced from 10 to 15 hours to one or two, while time spent on manual input drops from 11 to 12 hours to a few minutes,” says Dr. Rick Matus, Pointwise executive vice president. “This frees users up from repetitive and tedious tasks, allowing them to focus more on mission-critical work.&rdquo;
+          </p>
+
+          <p>
+            Several Pointwise users have been generating meshes automatically with Pointwise and a Glyph script package named <a href="https://github.com/pointwise/GeomToMesh" target="_blank" rel="noreferrer noopener">GeomToMesh</a>. The geometry is created using Engineering Sketch Pad (ESP), developed by Bob Haimes at MIT and Dr. John Dannenhoffer at Syracuse University. Working with ESP on a sub-contract for the U.S. Air Force, Pointwise created the Glyph scripts to enabled automatic unstructured mesh generation from water-tight geometry. 
+          </p>
+
+          <p>
+            &ldquo;Basically, ESP provided the geometry and information about the desired mesh properties for different parts of the geometry via attribution,&rdquo; says Dr. Steve Karman, Pointwise staff specialist, who worked on the project. &ldquo;The Pointwise software then used that information to generate the mesh.&rdquo;
+          </p>
+
+          <p>
+            The scripts can automatically create a volume mesh for geometry input in one of four formats: IGES (Initial Graphics Exchange Specification), STEP (Standard for the Exchange of Product Data), EGADS (Electronic Geometry Aircraft Design System), or NMB (Non-Manifold Boundary Representation). 
+          </p>
+
+          <p>
+            If the geometry is fully closed and water-tight, then a volume mesh is constructed. If the geometry is not closed, then just the surfaces are meshed, but that also saves the user a great deal of time according to Dr. Karman. If the geometry is in EGADS or NMB formats, then the meshing process in Pointwise is guided by the attributed information to construct a mesh more aligned with the user’s intent.
+          </p>
+
+          <p>
+            &ldquo;The meshes generated by U.S. Air Force personnel are proprietary,&rdquo; says Karman. &ldquo;But we did create some hypothetical cases that were shared at a workshop before the AIAA Science and Technology Forum and Exposition 2019.&rdquo;
+          </p>
+
+          <img data-src="images/Fig-2-Parametric-Study.png"
+          alt="mesh parametric study of a notional commercial transport aircraft" class="img-fluid" />
+          <figcaption>
+            One workshop scenario was a mesh parametric study of a notional commercial transport aircraft using files generated by ESP. Above are the results with meshing times and data sizes. The geometry files were attributed with boundary names and a specified wall spacing of 1.0e-04.
+          </figcaption>
+
+          <p>
+            Another advantage that automation has over manual input, according to Dr. Karman, is that best practices can be applied consistently throughout the meshing process, which helps ensure a high-quality mesh. 
+          </p>
+
+          <p>
+            &ldquo;Good geometry is the key here&rdquo; he says. &ldquo;If you start at the beginning and get it all set up in terms of attributes on the geometry for meshing, downstream flow solver, adaptation and design then that information can be available every step of the way. If the whole CFD process is geometry-centric, it will work like magic.&rdquo;
+          </p>
+
+          <p>
+            Dr. Karman adds that this is just the beginning for automated meshing. Work in the near future will include more testing and documentation, and his team expects the capability to evolve as necessary to support things such as high order mesh curving, solution-based adaptation and design.
+          </p>
+
+          <p>
+            Take a deeper dive into the technical aspects of automatically generating high-quality meshes by accessing the video of the presentation that Steve Karman gave on this subject: 
+          </p>
+
+          <div class="cta-space text-center">
+            <!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-ea9103b9-84cc-4d75-84e6-df531e0797e9"><span class="hs-cta-node hs-cta-ea9103b9-84cc-4d75-84e6-df531e0797e9" id="hs-cta-ea9103b9-84cc-4d75-84e6-df531e0797e9"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/3788790/ea9103b9-84cc-4d75-84e6-df531e0797e9" ><img class="hs-cta-img" id="hs-cta-img-ea9103b9-84cc-4d75-84e6-df531e0797e9" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/3788790/ea9103b9-84cc-4d75-84e6-df531e0797e9.png"  alt="Watch Automatic Unstructured Mesh Generation with Geometry Attribution"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(3788790, 'ea9103b9-84cc-4d75-84e6-df531e0797e9', {}); </script></span><!-- end HubSpot Call-to-Action Code -->
+          </div>
+
+        </div>
+
+        <!-- Space between columns -->
+        <div class="col-lg-1">
+        </div>
+ 
+        <div class="col-lg-3 col-md-3 case-study-nav">
+          <h4>Company Profile</h4>
+            <p>
+              <img data-src="images/esp-logo-200.png" alt="esp logo" class="img-fluid" />
+            </p>
+
+          <h4>About the Project</h4>
+            <p>
+              This project was commissioned by the U.S. Air Force under a subcontract from Bob Haimes, the principal investigator of the AFRL CAPS program, in order to allow Pointwise to automatically generate meshes for geometries created in ESP.
+            </p>
+
+            <hr />
+
+          <h3>Solution at a Glance</h3>
+
+          <h4>CHALLENGE</h4>
+            <p>
+              Meshing is a tedious, time-consuming, and sometimes mind-numbing process. However, it is a critical, necessary component of accurate CFD solutions. Automating this process has long been a goal with significant challenges: general automated meshers sacrifice quality, and while they can produce high-quality meshes, specialized automatic meshers can only be used on a very narrow class of problems.
+            </p>
+
+          <h4>SOLUTION</h4>
+            <p>
+              Integrating custom Glyph scripts enables Pointwise to automatically generate high-quality meshes for any Engineering Sketch Pad (ESP) created geometry.
+            </p>
+
+          <h4>BENEFIT</h4>
+            <p>
+              For a typical aircraft geometry, Glyph scripts integrated with the latest version of Pointwise can reduce meshing time from up to 15 hours to one or two, and time spent on manual input from 12 hours to a few minutes. Automation also ensures a more consistent application of best practices for higher quality results. 
+            </p>
+
+        </div>
+
+      </div>
+    </div>
+	</section>
+
+  <section id="ymal">
+    <div class="container lets-talk-content">
+      <div class="row">
+      <div class="col-lg-12"
+      <hr />
+      <h2 class="text-center">You May Also Like</h2>
+      </div>
+    </div>
+
+<div class="row">
+      <div class="col-lg-4 col-md-4">
+        <div class="card">
+          <a href="https://info.pointwise.com/case-study-reducing-discretization-error-mesh-adaptation"><img data-src="images/ymal1.png" class="card-img-top img-fluid" alt="Reducing Discretization Error with Mesh Adaptation" /></a>
+            <div class="card-body">
+              <a href="https://info.pointwise.com/case-study-reducing-discretization-error-mesh-adaptation"><h3 class="card-title">Reducing Discretization Error with Mesh Adaptation</h3></a>
+            <p class="card-text">
+              Mesh adaptation can automatically add finer mesh resolution in areas where it is needed by examining an error metric or flow gradients to determine where the existing mesh is not adequately resolving the flow.
+            </p>
+        
+            <a href="https://info.pointwise.com/case-study-reducing-discretization-error-mesh-adaptation" title="Reducing Discretization Error with Mesh Adaptation"><button type="button" class="btn btn-primary">More</button></a>
+          
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="card">
+          <a href="https://info.pointwise.com/webinar-glyph-scripting-python-pointwise"><img data-src="images/ymal2.png" class="card-img-top img-fluid" alt="Glyph Scripting with Python in Pointwise" /></a>
+            <div class="card-body">
+              <a href="https://info.pointwise.com/webinar-glyph-scripting-python-pointwise"><h3 class="card-title">Glyph Scripting with Python in Pointwise</h3></a>
+            <p class="card-text">
+              In this video, we demonstrate how to configure the new Glyph Server in Pointwise and add support for new scripting languages including Python. We will also introduce some example Python scripts that highlight the utility and value of these new Glyph features.
+            </p>
+ 
+            <a href="https://info.pointwise.com/webinar-glyph-scripting-python-pointwise" title="Glyph Scripting with Python in Pointwise"><button type="button" class="btn btn-primary">More</button></a>
+   
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="card">
+          <a href="https://info.pointwise.com/webinar-unstructured-quad-hex-meshing"><img data-src="images/ymal3.png" class="card-img-top img-fluid" alt="Unstructured Quad & Hex Meshing Using Pointwise" /></a>
+            <div class="card-body">
+              <a href="https://info.pointwise.com/webinar-unstructured-quad-hex-meshing"><h3>Unstructured Quad & Hex Meshing Using Pointwise</h3></a>
+            <p class="card-text">
+              In this webinar, we highlight four new major features available in Pointwise V18: quad-dominant surface meshing, farfield shape creation, unstructured hex-dominant boundary layer meshing, and volumetric sources.
+            </p>
+
+            <a href="https://info.pointwise.com/webinar-unstructured-quad-hex-meshing" title="Unstructured Quad & Hex Meshing Using Pointwise"><button type="button" class="btn btn-primary">More</button></a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+
+  </section>
+
+  <!-- FOOTER -->
+  <% include ../../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../../partials/js-includes %>
+</body>
+</html>

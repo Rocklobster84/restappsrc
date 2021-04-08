@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+	<!-- PAGE TITLE -->
+	<title>Researchers use CFD to Help Quantify the Benefits of Truck Platooning Technologies</title>
+	
+  <meta name="robots" content="noindex">
+
+	<!-- CSS FILES -->
+	<% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+	<noscript>
+		<p>
+			In order to view this page JavaScript must be enabled in your browser.
+		</p>
+	</noscript>	
+
+	<!-- TOP NAVIGATION -->
+	<% include ../../partials/navbar %>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="image-case">
+				<img data-src="images/truck-platoon-main-3840x1200.png" alt="Depiction of the Pointwise Source feature (in yellow) around the vehicle" class="img-fluid"/>
+				<h1><span class="case-caption">Researchers use CFD to Help Quantify the Benefits of Truck Platooning Technologies</span></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-8">
+
+				<p>
+					The concept of drafting – where moving objects are grouped tightly together to conserve energy by exploiting the lead object’s slipstream – has been around for years. From motorcycle racing to auto racing, cycling, speedskating, and more, sports enthusiasts and engineers are quite familiar with this aerodynamic technique for reducing drag and conserving energy while maintaining speed. 
+				</p>
+
+				<blockquote class="blockquote text-center pw-blue">
+					<p class="mb-0">&ldquo;The connectors were fantastic . . .  I don’t think I would have had as fine a control as I had if I hadn’t been able to use the connectors in Pointwise.&rdquo;</p>
+					<footer class="blockquote-footer"><cite title="Source Title">Michael Siemon</cite></footer>
+				</blockquote>
+
+				<p>
+					This method would seem to make sense for commercial vehicles such as semi-trucks, which average a measly six miles per gallon of diesel.<a href="#ref1" class="page-scroll"><sup>1</sup></a>  With fuel making up about 38 percent of the cost of operating a truck fleet,<a href="#ref2" class="page-scroll"><sup>2</sup></a> any increase in fuel efficiency stands to significantly reduce costs. There is one problem, though: it is an extremely dangerous practice on the open road. To gain any real fuel efficiency, drivers would have to follow each other so closely they would not be able to brake or respond quickly enough in an emergency.
+				</p>
+
+				<p>
+					Recent advances in automated vehicle technology are on the verge of changing that. Commonly referred to as platooning, this emerging technology can link heavy vehicles together using wireless communications, adaptive cruise control, crash avoidance systems, and automatic coupling /decoupling features that respond when other vehicles cut between two trucks. By being able to react to dangerous situations more quickly than a human driver can, platooning technology reduces the safe following distances enough for the drafting efficiencies to kick-in.
+				</p>
+
+				<h2>Environmental Benefits</h2>
+
+				<p>
+					In addition to increased fuel efficiency and safety, platooning technology has the potential for reducing the trucking industry’s carbon footprint. The Department of Energy estimates that 65 percent of today’s long-haul truck miles could be platooned with an overall four percent reduction in fuel consumption.<a href="#ref3" class="page-scroll"><sup>3</sup></a> Apply those numbers to the more than 30 billion gallons of fuel consumed by commercial trucks annually,<a href="#ref4" class="page-scroll"><sup>4</sup></a> and there’s the potential to removing carbon emissions from 1.2 billion gallons of fuel from our environment every year. 
+				</p>
+
+				<h2>Using CFD to Quantify Benefits of Truck Platooning</h2>
+
+				<p>
+					Computational fluid dynamics (CFD) studies play an integral role in quantifying the drag reduction and fuel efficiency that can be achieved from various platooning scenarios. As a graduate student at Auburn University, Michael Siemon recently contributed his CFD skills to a major, ongoing research project for the U.S. Army’s Tank and Automotive Research, Development and Engineering Center (TARDEC). While investigating the potential safety and fuel benefits of platooning is the goal of this study, TARDEC’s larger, long-term objective is to develop fleets of fully autonomous trucks that can venture over extremely rough terrains in combination with armored manned vehicles.<a href="#ref5" class="page-scroll"><sup>5</sup></a> 
+				</p>
+
+				<p>
+					During the initial phase of the project, researchers used homogenous /identical vehicle meshes with very few details as a starting point, or &ldquo;baseline,&rdquo; to run simulations. The next step for Siemon was to develop a series of heterogeneous meshes with which to run CFD simulations — for example, positioning a truck with an empty load behind one with a full load to generate more realistic, real-world results. He began with computer-aided design (CAD) models of the trucks to create the meshes, a rather complex and detailed process.
+				</p>
+
+				<p>
+					&ldquo;CAD models are not necessarially indicative of a final mesh. They may provide a basic skeleton, but you have to do a lot of fixing and some artistry even,&rdquo; says Siemon. &ldquo;Plus, ground vehicles have a lot more complexity than, say, a missile or plane. Things like wheels within wheel wells can be really tricky because you have two different surfaces working off of each other with a very small volume.&rdquo;
+				</p>
+
+				<h2>Creating Complex Automotive Meshes with Pointwise</h2>
+
+				<p>
+					By using Pointwise to build the grids from the imported CAD models, Siemon was able to refine the meshes to handle the complexities of automotive cases and generate more accurate CFD solutions. One of the biggest challenges was dealing with random volumes that were skewed and not located near walls or other features. The Pointwise connectors feature helped Siemon tackle that problem by giving him precise control over local grid spacing and ensuring that sharp edges in the geometry were accurately captured in the analysis mesh. 
+				</p>
+
+				<p>
+					&ldquo;The connectors were fantastic,&rdquo; says Siemon. &ldquo;It made it so much easier to import the CAD models and resolve the areas that weren’t CFD ready. I don’t think I would have had as fine a control as I had if I hadn’t been able to use the connectors in Pointwise.&rdquo; 
+				</p>
+
+				<p>
+					Another advantage with Pointwise, according to Siemon, has been its ability to generate meshes that work with most solver codes. For this project, Siemon used Tenasi: an unstructured CFD solver developed at the Chattanooga campus of the University of Tennessee. 
+				</p>
+
+				<p>
+					&ldquo;Tetrahedra are probably the biggest challenge. They can be really thin or smushed,&rdquo; he says. &ldquo;The solver can’t track the gradients across them, so you can get numerically unstable solutions.&rdquo;
+				</p>
+
+				<img data-src="images/Fig1-Volume-Grid-800x474.png"
+				alt="Slice of the volume grid around a single box trailer vehicle" class="img-fluid center-block" class="img-fluid"/>
+				<figcaption>
+					Slice of the volume grid around a single box trailer vehicle. Tetrahedral elements in red are smaller in the area of the Pointwise Source feature than the outside.
+				</figcaption>
+
+				<p>
+					A couple of features in Pointwise helped Siemon make the solutions more numerically stable: the Source feature enabled him to control the tetrahedra more tightly; while the ability to build quads provided greater resolution near the walls. 
+				</p>
+
+				<p>
+					&ldquo;The nice thing about Pointwise is that it allows for more user input when building the grids and meshes,&rdquo; says Siemon. &ldquo;It gives me a much more active hand in building the block. I could refine the areas more tightly where I wanted more precise info.&rdquo;
+				</p>
+
+				<img data-src="images/Fig2-XVelocity-800x398.png"
+				alt="This image shows an X-Velocity profile for a homogeneous, two-box trailer platoon with a 10 ft. separation distance and 25 percent lateral offset" class="img-fluid center-block" class="img-fluid"/>
+				<figcaption>
+					Researchers are using CFD to help quantify the benefits of truck platooning technologies. This image shows an X-Velocity profile for a homogeneous, two-box trailer platoon with a 10 ft. separation distance and 25 percent lateral offset.
+				</figcaption>
+
+				<p>
+					For more information about how engineers and designers in the automotive industry use Pointwise to build faster, more efficient, and safer vehicles, visit: 
+				</p>
+
+				<ul>
+					<li>
+						<a href="https://info.pointwise.com/pointwise-delivers-fast-accurate-results-garry-rogers-motorsport">Pointwise delivers fast, accurate results for Garry Rogers Motorsport</a>
+					</li>
+					<li>
+						<a href="../Using-CFD-Increase-Safety-Driverless-Cars/index.html">Using CFD to Help Increase the Safety of Driverless Cars</a>
+					</li>
+				</ul>
+
+				<p>
+					If you want to read Siemon’s thesis visit: <a href="http://hdl.handle.net/10415/6405" target="_blank" rel="noreferrer noopener">http://hdl.handle.net/10415/6405</a>
+				</p>
+
+				<h3>References</h3>
+				<ol>
+					<li>
+						<a id="ref1" class="anchor"></a>
+						<a href="https://www.fhwa.dot.gov/policyinformation/statistics/2017/vm1.cfm" target="_blank" rel="noreferrer noopener">Federal Highway Administration, Highway Statistics 2017</a>, Table VM-1, average miles traveled per gallon of fuel consumed 2017, combination trucks
+					</li>
+					<li>
+						<a id="ref2" class="anchor"></a>
+						<a href="https://trid.trb.org/view/1324567" target="_blank" rel="noreferrer noopener">An Analysis of the Operational Costs of Trucking: 2014 Update</a>, Table VM-1, average miles traveled per gallon of fuel consumed 2017, combination trucks
+					</li>
+					<li>
+						<a id="ref3" class="anchor"></a>
+						<a href="https://www.energy.gov/eere/articles/platooning-trucks-cut-cost-and-improve-efficiency" target="_blank" rel="noreferrer noopener">Platooning Trucks to Cut Cost and Improve Efficiency</a>, Office of Energy Efficiency & Renewable Energy
+					</li>
+					<li>
+						<a id="ref4" class="anchor"></a>
+						<a href="https://www.fhwa.dot.gov/policyinformation/statistics/2017/vm1.cfm" target="_blank" rel="noreferrer noopener">Federal Highway Administration, Highway Statistics 2017</a>, Table VM-1, fuel consumed (thousand gallons) 2017, combination trucks
+					</li>
+					<li>
+						<a id="ref5" class="anchor"></a>
+						For more about the TARDEC projects see: <a href="https://mitechnews.com/autonomous-vehicles/5467/" target="_blank" rel="noreferrer noopener">Army TARDEC Tests Autonomous Trucks In Convoy Along I-69 In Lapeer County</a> and <a href="https://www.army.mil/article/195049/us_army_brings_autonomous_technology_across_blue_water_bridge" target="_blank" rel="noreferrer noopener">U.S. Army Brings Autonomous Technology Across Blue Water Bridge</a> 
+					</li>
+				</ol>
+
+				</div>
+
+				<div class="col-lg-1">
+				</div>
+
+				<div class="col-lg-3 col-md-3 case-study-nav">
+					<h4>Company Profile</h4>
+					<p>
+						<img data-src="images/auburn-logo-horizontal-400.png"
+						alt="Auburn University Logo" class="img-fluid" />
+					</p>
+
+					<h4>Client Since</h4>
+					<p>
+						2005
+					</p>
+
+					<h4>About the Client</h4>
+					<p>
+						Auburn University is a nationally ranked land grant institution recognized for its commitment to world-class scholarship, interdisciplinary research with an elite, top-tier Carnegie R1 classification, and an undergraduate education experience second to none. Auburn is home to more than 30,000 students, and its faculty and research partners collaborate to develop and deliver meaningful scholarship, science and technology-based advancements that meet pressing regional, national and global needs. Auburn's commitment to active student engagement, professional success, and public/private partnership drives a growing reputation for outreach and extension that delivers broad economic, health and societal impact. Auburn's mission to educate, discover and collaborate drives its expanding impact on the world.
+					</p>
+
+					<hr />
+
+					<h3>Solution at a Glance</h3>
+
+					<h4>CHALLENGE</h4>
+					<p>
+						The practice of drafting – where moving objects are grouped tightly together to exploit the lead object’s slipstream – has been used in motorsports, cycling, and speedskating for years. It would make sense for commercial vehicles to use this method to increase fuel efficiencies. There’s one problem; however: it is an extremely dangerous practice on the road. 
+					</p>
+
+					<h4>SOLUTION</h4>
+					<p>
+						Truck platooning is the term for an emerging set of technologies that can link heavy vehicles together using wireless communications, adaptive cruise control, crash avoidance systems, and automatic coupling /decoupling features. CFD is helping the automotive industry develop platooning technologies for commercial truck fleets that can help create safer roads and increase fuel efficiencies.
+					</p>
+
+					<h4>BENEFIT</h4>
+					<p>
+						With fuel making up about 38 percent of the cost of operating a truck fleet, any increase in fuel efficiency stands to significantly reduce costs. The Department of Energy estimates that platooning could deliver a four percent reduction in fuel consumption. With commercial trucks consuming more than 30 billion gallons of fuel annually in the U.S. alone, the cost savings and reduction in carbon emissions would be significant.
+					</p>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container lets-talk-content">
+			<div class="row">
+				<div class="col-lg-12">
+				<hr />
+				<h2 class="text-center">You May Also Like</h2>
+			</div>
+		</div>
+
+		<div class="row">
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://www.pointwise.com/case-studies/Using-CFD-Increase-Safety-Driverless-Cars/index.html"><img data-src="images/ymal1.png" class="card-img-top img-fluid" alt="Driverless Car Case Study"></a>
+						<div class="card-body">
+							<a href="https://www.pointwise.com/case-studies/Using-CFD-Increase-Safety-Driverless-Cars/index.html"><h3>Using CFD to Help Increase the Safety of Driverless Cars</h3></a>
+							<p class="card-text">
+								Autonomous vehicles are expected to become a viable form of transportation sometime in the first half of this century. One of the major hurdles will be to provide these cars with the artificial intelligence they need to position themselves in a location where there is less drag for optimal fuel efficiency, travel time, and stability. Ultimately, it should lead to fewer serious accidents and safer roads. Find out how Pointwise is helping researchers in the automotive industry do that.
+							</p>
+							<p>
+								<a href="https://www.pointwise.com/case-studies/Using-CFD-Increase-Safety-Driverless-Cars/index.html" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/hybrid-conformal-meshing-wind-farm-cfd-applications"><img data-src="images/ymal2.png" class="card-img-top img-fluid" alt="wind farm mesh"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/hybrid-conformal-meshing-wind-farm-cfd-applications"><h3>Hybrid Conformal Meshing for Wind Farm CFD Applications</h3></a>
+							<p class="card-text">
+								Learn more about techniques that can be used to generate hybrid conformal meshes that span the entirety of a wind farm. In this webinar, we discuss how to efficiently move from the terrain scale of a wind farm to the wind turbine scale and how the process was automated to support the arbitrary placement of wind turbines for siting applications.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/hybrid-conformal-meshing-wind-farm-cfd-applications" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/pointwise-delivers-fast-accurate-results-garry-rogers-motorsport"><img data-src="images/ymal3.jpg" class="card-img-top img-fluid" alt="Pointwise delivers fast, accurate results for Garry Rogers Motorsport"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/pointwise-delivers-fast-accurate-results-garry-rogers-motorsport"><h3>Pointwise delivers fast, accurate results for Garry Rogers Motorsport</h3></a>
+							<p class="card-text">
+								Due to governing body rule changes, Garry Rogers Motorsport needed to design and build a completely new V8 Supercar without blowing their budget and schedule. By moving their CFD meshing to Pointwise, Garry Rogers Motorsport was able to significantly reduce their hours spent generating meshes while also having a great deal of confidence in the results.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/pointwise-delivers-fast-accurate-results-garry-rogers-motorsport" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	<br>
+
+    <!-- FOOTER -->
+    <% include ../../partials/footer %>
+
+	<!-- JAVASCRIPT -->
+	<% include ../../partials/js-includes %>
+ </body>
+ </html>

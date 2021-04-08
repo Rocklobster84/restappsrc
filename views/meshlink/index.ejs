@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+	<!-- PAGE TITLE -->
+	<title>MeshLink - Simplified Computational Geometry Access | Pointwise</title>
+
+	<!-- OG TAGS -->
+	<meta property="og:url" content="https://www.pointwise.com/meshlink" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="MeshLink, Simplified Computational Geometry Access" />
+	<meta property="og:description" content="The MeshLink library provides mesh-geometry associativity in an open framework that is neutral with respect to meshing software and geometry kernel." />
+
+	<!-- META DATA -->
+	<meta name="description" content="The MeshLink library provides mesh-geometry associativity in an open framework that is neutral with respect to meshing software and geometry kernel.">
+	<meta name="keywords" content="mesh adaptation, adaptive meshing, computational geometry, CFD, meshing software" />
+
+	<!-- CSS FILES -->
+	<% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+	
+	<!-- TOP NAVIGATION -->
+	<% include ../partials/navbar %>
+
+	<div class="meshlink-intro">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-message-pw">
+						<h1>MeshLink: Simplified Computational Geometry Access</h1>
+						<hr class="intro-divider">
+						<p>
+							The NASA CFD 2030 Study cited an &ldquo;inadequate linkage with CAD&rdquo; as an impediment to the advancement of CFD. An adequate linkage with CAD requires more than just geometry model interoperability. Such linkage requires knowing how the mesh is associated with the components of the geometry model. That's MeshLink.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-12">
+<br>
+				<h2>MeshLink for Adaptation</h2>
+
+				<p>
+					Adaptation offers the potential to remove human interaction from the meshing experience. Instead of relying on a CFD analyst's experience and manual intervention to craft up-front a static mesh, an adaptive mesh will evolve with the CFD solution to resolve all of the relevant flow physics. 
+				</p>
+
+				<p>
+					As the mesh adapts to the flow physics it will necessarily need to move,insert, remove or otherwise modify mesh points that adhere to the geometry model. In order to do so, the CFD solver requires access to the geometry model. In this context, access consists of two components.
+				</p>
+
+				<ol>
+					<li>
+						A geometry kernel for performing the required computations such as projecting a mesh point onto the model or evaluating the model (for example, curvature, tangency).
+					</li>
+					<li>
+				 		A description of how the mesh is associated with or mapped to the geometry model such as the list of geometry model components with which each mesh component is associated. 
+					</li>
+				</ol>
+
+				<p>
+					Pointwise provides its <a href="../geode/">Project Geode</a> kernel to address the first component. The second component is the subject of MeshLink.
+				</p>
+
+				<h2>The MeshLink Library and Schema</h2>
+
+				<p>
+					The MeshLink library provides mesh-geometry associativity in an open framework that is neutral with respect to meshing software and geometry kernel. The library is written using the C++ object-oriented programming model and bindings for C, FORTRAN, and Python 3 languages are available. The MeshLink library's API was designed with a mesh-centric focus as it provides a common, natural language for use by third-party CFD solvers. The API provides an interface for creating, modifying, and querying mesh-geometry associativity using mesh nomenclature.
+				</p>
+
+				<p>
+					MeshLink also includes a schema that defines the language used to describe the mesh-geometry associativity. The schema is the basis for implementation of the MeshLink XML file that is used to transfer associativity information between software systems (i.e. from the mesh generator to the flow solver). The MeshLink XML file can be considered the geometry equivalent of a flow solver's boundary condition data.
+				</p>
+
+				<h2>Download MeshLink</h2>
+
+				<p>
+					You can download the MeshLink library from GitHub: <a
+					href="https://github.com/pointwise/MeshLink">https://github.com/pointwise/MeshLink</a>.
+				</p>
+
+				<p>
+					You can read the MeshLink documentation on pointwise.com: <a href="doc/">https://www.pointwise.com/meshlink/doc</a>.
+				</p>
+
+				<p>
+					You should email your MeshLink questions and comments to <a href="mailto:meshlink@pointwise.com">meshlink@pointwise.com</a>.
+				</p>
+
+				<h2>Acknowlegements</h2>
+
+				<p>
+					The MeshLink Schema was developed as part of NASA Contract 80NSSC18C0109.
+					<br />
+					The MeshLink Library was developed as part of U.S. Air Force Contract FA9101-18-P-0042.
+				</p>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<% include ../partials/footer %>
+
+	<!-- JAVASCRIPT -->
+	<% include ../partials/js-includes %>
+</body>
+</html>

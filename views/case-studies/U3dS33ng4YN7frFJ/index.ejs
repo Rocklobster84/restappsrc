@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+  <meta name="robots" content="noindex">
+
+  <!-- PAGE TITLE -->
+  <title>Hybrid Meshing Key to Improving CFD Simulation Efficiency | Pointwise Case Study</title>
+
+  <!-- CSS FILES -->
+  <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+  <noscript>
+    <p>
+      In order to view this page JavaScript must be enabled in your browser.
+    </p>
+  </noscript>	
+
+  <!-- TOP NAVIGATION -->
+  <% include ../../partials/navbar %>
+
+<section id="title-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="image-case">
+        <img data-src="images/main-coverage-3840x1200.png" alt="Several different mesh topologies were compared to determine which offered the best accuracy and shortest overall solution time for the Potsdam Propeller test case." class="img-fluid"/>
+          <h1><span class="case-caption">Hybrid Meshing Key to Improving CFD Simulation Efficiency</span></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="article">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+
+        <p>
+          When most people think about efficiency in completing a task, they think about speed. But when CFD (computational fluid dynamics) engineers think about efficiency, they understand there is a vital second component – solution accuracy. A CFD simulation solution achieved quickly is not efficient if it is not accurate. It is the much-sought-after combination of speed and accuracy that results in true efficiency.
+        </p>
+
+        <p>
+          Determining how CFD engineers can best improve simulation efficiency is the focus of &ldquo;<em>A Study on the Influence of Meshing Strategies on CFD Simulation Efficiency</em>,&rdquo; a heavily-illustrated 39-page conference paper co-authored by Travis Carrigan, manager of technical sales at Fort Worth, Texas-based Pointwise, Inc. The paper was presented at the 2017 NAFEMS World Congress.
+        </p>
+
+        <p>
+          For the paper, Carrigan and co-author Faranggis Bagheri, managing director at neptech, generated CFD solutions for computing the torque and thrust coefficients of the benchmark Potsdam Propeller Test Case (PPTC) geometry -- a highly three-dimensional, variable pitch propeller consisting of five blades. Both hybrid and multi-block structured overset meshes were generated to achieve the CFD solutions. The result was that a hybrid mesh could be generated and a CFD solution achieved in little more than 2.5 hours, whereas a multi-block structured overset mesh and resulting solution took more than 33 hours. Furthermore, the hybrid solution was more accurate. 
+        </p>
+
+        <img data-src="images/Fig1-800x555.png"
+        alt="The Potsdam Propeller test case geometry is an extensively tested ship propeller model." class="img-fluid center-block" />
+        <figcaption>
+          Figure 1 - The Potsdam Propeller test case geometry is an extensively tested ship propeller model.
+        </figcaption>
+
+        <p>
+          The hybrid mesh resulted in a reduction of the overall number of cells, higher cell quality, and boundary-aligned hexahedra near wall boundaries, all of which contributed to a significantly shorter simulation time and improved solution accuracy when compared with the other meshing strategies.
+        </p>
+
+        <p>
+          While the hybrid hexahedra/tetrahedra meshing strategy was the most efficient, Carrigan cautioned that this result does not imply that hybrid meshing is the most appropriate for any simulation. Each mesh generated and each simulation performed may favor one strategy over another. In fact, the PPTC study demonstrated that efficiency can vary even for the same mesh and the same simulation depending on the engineering metric of interest. 
+        </p>
+
+        <img data-src="images/Fig2-800x600.png"
+        alt="A hybrid hexahedral/tetrahedral mesh proved to be the most efficient in terms of accuracy and time for this case." class="img-fluid center-block" />
+        <figcaption>
+          Figure 2 - A hybrid hexahedral/tetrahedral mesh proved to be the most efficient in terms of accuracy and time for this case.
+        </figcaption>
+
+        <p>
+          For engineers focused on CFD simulation efficiency in industries as varied as marine, aerospace, wind energy, automotive, and bio-medical, Pointwise, Inc. offers an effective software meshing solution. The company is a leader in mesh generation, covering all of preprocessing from geometry model import to flow solver export. 
+        </p>
+
+        <p>
+          As an all-in-one grid generation solution, Pointwise software features multi-block structured, overset and hybrid meshing techniques. &ldquo;Historically, multi-block structured meshing techniques are often used in the turbo-machinery and marine industries for rotating machinery geometries, but little work has been done to compare the performance of other meshing techniques for a marine propeller,&rdquo; Carrigan said when asked about the motivation behind his conference paper. &ldquo;Due to its versatility, Pointwise software allows CFD engineers to compare and contrast the effectiveness of other meshing strategies to determine which improves simulation efficiency to the greatest extent.&rdquo;
+        </p>
+
+        <p>
+          Of particular note are the hybrid meshing techniques available in Pointwise software, which offer several advantages when generating both surface and volume meshes. These advantages include native CAD import, anisotropic stretching, and mixing of both structured and unstructured block topologies.
+        </p>
+
+        <p>When studying marine propellers and other complex geometries, CFD engineers benefit from many Pointwise features, including: </p>
+
+        <ul>
+          <li>Native CAD import and solid modeling, which eases reliable interaction with the native CAD file and prepares it for surface meshing; </li>
+          <li>Anisotropic meshing, which reduces cell count by packing cells normal to areas of high curvature;</li>
+          <li>T-Rex, an advancing layer technique which automates hybrid viscous meshing for complex geometries;</li>
+          <li>Overset, which allows overlapping grids to be constructed to reduce the burden of conformal multi-block structured meshing; and</li>
+          <li>CAE solver export, which specifies both boundary and volume conditions for completed grids and export to any CFD solver format. </li>
+        </ul>
+
+        <p>
+          &ldquo;Perhaps the biggest benefit of using Pointwise software, however, is its ability to reliably generate hybrid viscous meshes for arbitrarily complex geometries,&rdquo; Carrigan said.
+        </p>
+
+        <p>
+          Based on the impressive PPTC results from this work, it is clear that hybrid meshing is a viable alternative to multi-block structured and overset meshing and, in many cases, may be the better solution. “Since Pointwise software seamlessly integrates with existing workflows and has demonstrated time and time again the ability to achieve accurate results using hybrid viscous meshing strategies in less time than traditional multi-block structured solutions, CFD engineers in many industries now have a way to greatly improve their simulation efficiency,” Carrigan concluded.
+        </p>
+
+        <p><strong>
+          For more information about the benefits of hybrid meshing relative to CFD simulation efficiency:
+        </strong></p>
+
+        <div class="cta-space text-center">
+          <!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-8c6fdf6c-49c4-44c3-9571-13a952370d4a"><span class="hs-cta-node hs-cta-8c6fdf6c-49c4-44c3-9571-13a952370d4a" id="hs-cta-8c6fdf6c-49c4-44c3-9571-13a952370d4a"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/3788790/8c6fdf6c-49c4-44c3-9571-13a952370d4a" ><img class="hs-cta-img" id="hs-cta-img-8c6fdf6c-49c4-44c3-9571-13a952370d4a" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/3788790/8c6fdf6c-49c4-44c3-9571-13a952370d4a.png"  alt="Watch Now"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(3788790, '8c6fdf6c-49c4-44c3-9571-13a952370d4a', {}); </script></span><!-- end HubSpot Call-to-Action Code -->
+        </div>
+
+        </div>
+
+        <div class="col-lg-1">
+        </div>
+
+        <div class="col-lg-3 col-md-3 case-study-nav">
+          <h4>Company Profile</h4>
+            <p>
+              NAFEMS World Congress 2017
+            </p>
+
+          <h4>Participating Since</h4>
+            <p>
+              2017
+            </p>
+
+          <h4>About the Event</h4>
+            <p>
+              The NAFEMS World Congress is the only event dedicated to showcasing the state-of-the-art and state-of-practice in the simulation world in an impartial forum, open to everyone with an interest in how to benefit most from their use of simulation.
+            </p>
+
+            <hr />
+
+          <h3>Solution at a Glance</h3>
+
+          <h4>CHALLENGE</h4>
+            <p>
+              Mesh topology can have significant effects on both CFD simulation time and accuracy. Several different mesh topologies were compared to determine which offered the best accuracy and shortest overall solution time for the Potsdam Propeller test case.
+            </p>
+
+          <h4>SOLUTION</h4>
+            <p>
+              For this propeller test case a hybrid grid with high-aspect ratio hexahedra in the boundary layer and isotropic tetrahedral cells in the far field produced the most accurate solution and did it in the least amount of time.
+            </p>
+
+          <h4>BENEFIT</h4>
+            <p>
+              T-Rex hybrid grid gained 7x efficiency predicting thrust and torque for a marine propeller.
+            </p>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="ymal">
+    <div class="container lets-talk-content">
+      <div class="row">
+        <div class="col-lg-12">
+          <hr />
+          <h2 class="text-center">You May Also Like</h2>
+        </div>
+      </div>
+
+      <div class="row">
+
+          <div class="col-lg-4 col-md-4">
+            <div class="card">
+              <a href="https://info.pointwise.com/webinar_best_mesh_strategy_ondemand"><img data-src="images/ymal1.png" class="card-img-top img-fluid" alt="The Influence of Meshing Strategies on Simulation Efficiency"></a>
+                <div class="card-body">
+                  <a href="https://info.pointwise.com/webinar_best_mesh_strategy_ondemand"><h3>The Influence of Meshing Strategies on Simulation Efficiency</h3></a>
+                    <p class="card-text">
+                      Watch this on-demand webinar that will help you determine the best type of mesh to use for the fastest and most accurate CFD simulations.
+                    </p>
+                    <p>
+                      <a href="https://info.pointwise.com/webinar_best_mesh_strategy_ondemand" class="btn btn-primary" role="button">More</a>
+                    </p>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4">
+            <div class="card">
+              <a href="https://info.pointwise.com/webinar-meshing-potsdam-propeller-test-case-pptc"><img data-src="images/ymal2.png" class="card-img-top img-fluid" alt="Meshing the Potsdam Propeller Test Case (PPTC) in Pointwise"></a>
+                <div class="card-body">
+                  <a href="https://info.pointwise.com/webinar-meshing-potsdam-propeller-test-case-pptc"><h3>Meshing the Potsdam Propeller Test Case (PPTC) in Pointwise</h3></a>
+                    <p class="card-text">
+                      The Potsdam Propeller Test Case (PPTC) is a benchmark case used for assessing the accuracy of existing computer codes and modeling strategies in simulating hydrodynamic propeller performance. The controllable pitch propeller design was tested at several different conditions and has a wealth of experimental data for CFD validation.
+                    </p>
+                    <p>
+                      <a href="https://info.pointwise.com/webinar-meshing-potsdam-propeller-test-case-pptc" class="btn btn-primary" role="button">More</a>
+                    </p>
+                  </div>
+              </div>
+            </div>
+
+          <div class="col-lg-4 col-md-4">
+            <div class="card">
+              <a href="https://info.pointwise.com/webinar-mesh-influence-aerodynamic-performance"><img data-src="images/ymal3.png" class="card-img-top img-fluid" alt="Mesh Topology Influence on Volute Aerodynamic Performance Computed Using Code Leo"></a>
+                <div class="card-body">
+                  <a href="https://info.pointwise.com/webinar-mesh-influence-aerodynamic-performance"><h3>Mesh Topology Influence on Volute Aerodynamic Performance Computed Using Code Leo</h3></a>
+                    <p class="card-text">
+                      Three meshes (multi-block structured and unstructured with hexahedral and prismatic boundary layers) were generated for a generic volute and simulations were performed in the Code Leo CFD solver. Meshing time, solution time, and solution accuracy are compared.
+                    </p>
+                    <p>
+                      <a href="https://info.pointwise.com/webinar-mesh-influence-aerodynamic-performance" class="btn btn-primary" role="button">More</a>
+                    </p>
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  <br>
+
+      <!-- FOOTER -->
+      <% include ../../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../../partials/js-includes %>
+    </body>
+    </html>

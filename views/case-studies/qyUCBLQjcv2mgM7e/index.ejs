@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Google Analytics -->
+	<% include ../../partials/ga-includes %>
+
+	<!-- META SETTINGS -->
+	<% include ../../partials/meta-settings.ejs %>
+
+	<!-- PAGE TITLE -->
+	<title>Case Study | Application of Pointwise T-Rex Meshing and CFD Modeling to the Analysis of Supercritical Carbon Dioxide (S-CO2) Power Cycles </title>
+	
+  <meta name="robots" content="noindex">
+
+	<!-- CSS FILES -->
+	<% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+	<noscript>
+		<p>
+			In order to view this page JavaScript must be enabled in your browser.
+		</p>
+	</noscript>	
+
+	<!-- TOP NAVIGATION -->
+	<% include ../../partials/navbar %>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="image-case">
+				<img data-src="images/Compressor-3840x1200.png" alt="CRAFT Tech developed T-Rex unstructured meshes to model the impeller and diffuser sections of a supercritical carbon dioxide compressor." class="img-fluid"/>
+				<h1><span class="case-caption">Application of Pointwise T-Rex Meshing and CFD Modeling to the Analysis of Supercritical Carbon Dioxide (S-CO2) Power Cycles</span></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-8">
+
+				<p>
+					In 2018, a team of engineers at Combustion Research and Flow Technology, Inc. (CRAFT Tech) set out to model an experimental supercritical carbon dioxide compressor configuration. The analysis, which would provide important insights into the design of high-efficiency components for power generation, required modeling of flow transitioning between liquid and gas phases and high-resolution meshing of geometries.
+				</p>
+
+				<p>
+					CRAFT Tech needed a solution that would resolve flow gradients with a minimum number of grid points and be flexible enough to provide the best grid for each region of the machine that they were modeling. They found both these solutions in Pointwise.
+				</p>
+
+				<h2>Background</h2>
+
+				<p>
+					Supercritical carbon dioxide (S-CO<sub>2</sub>) is a fluid state of carbon dioxide (CO<sub>2</sub>) in which it is heated and held at or above its critical temperature and pressure. In this supercritical phase, carbon dioxide exhibits properties and behaviors between that of a liquid and a gas. In particular, supercritical CO<sub>2</sub> possesses liquid-like densities with gas-like diffusivity, surface tension, and viscosity.
+				</p>
+
+				<p>
+					Because it has gas-like behavior but liquid-like density, systems using supercritical CO<sub>2</sub> as the working fluid can be extremely compact and are valuable to the design of high-efficiency components for uses including power generation. Sandia National Laboratories, for example, is researching a thermal-to-electric power conversion technology in a &ldquo;recompression closed Brayton cycle&rdquo; (RCBC) configuration that uses supercritical carbon dioxide, rather than steam, as the working fluid, thereby dramatically increasing conversion efficiency when compared to the steam Rankine cycle [<a href="#ref1" class="page-scroll">Ref 1</a>].
+				</p>
+
+				<p>
+					The S-CO<sub>2</sub> power cycle can be applied to many types of thermal sources. Advantages over conventional steam Rankine systems include very compact size and greater efficiency at moderate temperatures.
+				</p>
+
+				<img data-src="images/Fig1-Power-Cycle-800x628.png" alt="S-CO2 power cycle"
+					class="img-fluid center-block" />
+				<figcaption>
+					The S-CO<sub>2</sub> power cycle can be applied to many types of thermal sources. Advantages over conventional steam Rankine systems include very compact size and greater efficiency at moderate temperatures.
+				</figcaption>
+
+				<p>
+					The primary reason for improved power conversion efficiency is simply that the use of S-CO<sub>2</sub> as the working fluid in a Brayton cycle requires less work to convert a given thermal input to electricity. In general, increased efficiency represents increased output for the same thermal input, regardless of the thermal source (such as natural gas, nuclear, solar, or coal). Where fuel costs are a significant portion of overall costs (coal and natural gas-fired plants), the benefit is reduced fuel costs. Where capital investments are high (nuclear and concentrating solar power), the benefit is increased output for the initial investment.
+				</p>
+
+				<p>
+					Before the benefits of S-CO<sub>2</sub> Brayton can be realized, however, it must be shown to be ready and reliable. In concert with the Department of Energy, Sandia has been supporting research and development to deliver a technology that is ready for commercialization.
+				</p>
+
+				<h2>Goals of Research</h2>
+
+				<p>
+					In 2018, CRAFT Tech modeled an experimental S-CO<sub>2</sub> compressor configuration that was tested at Sandia. Their goal was to develop an advanced real-fluid numerical framework for modeling trans-critical CO2 spanning both supercritical and sub-critical regimes [<a href="#ref2" class="page-scroll">Ref 2</a>].  Highlights of this work were presented by CRAFT Tech’s Jeremy Shipman at the 2018 Pointwise User Group meeting.
+				</p>
+
+				<p>
+					The motivation for CRAFT Tech’s research was the need for analysis capability not just for supercritical carbon dioxide under design conditions, but also for off-design conditions that result in a subcritical regime. The research required modeling of flow transitioning between liquid and gas phases and high-resolution meshing of geometries.
+				</p>
+
+				<img data-src="images/Fig2-High-Res-Grid-800x800.png" alt="high resolution grid"
+					 class="img-fluid center-block" />
+				<figcaption>
+					High resolution areas of the grid include 1: blade leading edges, 2: fillet features at the hub, and 3: the tip gap clearance between the blade tip and the shroud.
+				</figcaption>
+
+				<p>
+					CRAFT Tech explored three areas that are subject to subcritical operations: Solar thermal applications (where temperature drops can result in fluid in the subcritical regime); start-up circumstances where temperature and pressure have not yet worked up to full design conditions; and situations where contaminants such as water impact the performance of the system.
+				</p>
+
+				<p>
+					Pointwise’s computational fluid dynamics (CFD) mesh generation software was crucial to CRAFT Tech’s work. The software allows the use of regular hexahedra instead of unstructured tetrahedra in regions away from the geometry model, and its T-Rex (anisotropic tetrahedral extrusion) technique generates layers of hexahedra or prisms near the geometry model for boundary layer resolution. Use of regular hexahedra elsewhere in the mesh can improve the CFD flow solver’s rate of convergence and accuracy of the resulting solution. An added benefit is a potential reduction in overall cell count.
+				</p>
+
+				<p>
+					For this project, CRAFT Tech used the software to develop T-Rex unstructured meshes to model the compressor impeller and diffuser sections. Pointwise’s high-quality meshing solutions helped them resolve flow gradients with a minimum number of grid points to speed the solution. Secondarily, using mixed grid types provided more efficiency by allowing them to match the best type of grid to each region of the machine to be modeled.
+				</p>
+
+				<p>
+					The numerical framework that CRAFT Tech’s team developed in the CRUNCH CFD unstructured solver allowed analysis in a broad range of subcritical operating conditions and fluid phase change compositions, including accounting for water, carbon dioxide, and other contaminants. Shipman cites the following as being highlights of the analysis:
+				</p>
+
+				<ol>
+					<li>Providing versatile thermodynamics:
+					<ul>
+						<li>Matrices retain thermodynamic derivatives in generalized form</li>
+						<li>Allows specification of generalized equation of state (EOS routines) without modifying the code numerical formulation</li>
+						<li>Preconditioning to robustly solve for large gradients in density and Mach number that appear near the critical point and phase change boundaries</li>
+					</ul>
+					</li>
+					<li>Ensuring the framework extends to multi-species & phases
+						<ul>
+							<li>To model finite rate-phase change, liquid or vapor species transport are solved separately </li>
+							<li>The model is extendable to additional contaminant species such as water and carbon dioxide</li>
+						</ul>
+					</li>
+					<li>Providing two different ways to do the specification: EOS and Thermodynamic Property Specification
+						<ul>
+							<li>Specified through analytic formulations (e.g. SRK) </li>
+							<li>Specified via NIST Table look-up </li>
+						</ul>
+					</li>
+				</ol>
+
+				<h2>The Process</h2>
+
+				<p>
+					The CRAFT Tech team applied the framework to a Sandia Lab S-CO<sub>2</sub> compressor with a motor-driven centrifugal impeller and diffuser housing. The component included a straight inflow with a radial diffuser with a volume and exit pipe. The impeller is extremely small – only 1.5 inch in diameter, with a tip clearance of .01 inch. In addition, under the design conditions, it operates at a tremendous rotational velocity of up to 75,000 RPM. The inlet condition under design is just above the critical point (slightly supercritical). For the CFD model, the team looked only at the impeller, inlet pipe, and diffuser.
+				</p>
+
+				<img data-src="images/Fig3-Sim-Results-800x361.png" alt="simulation results"
+					 class="img-fluid center-block" />
+				<figcaption>
+					Simulation results for off-design start-up conditions show two-phase flow surrounding the blade leading edge that condenses back to all liquid as the pressure rises through the compressor.
+				</figcaption>
+
+				<p>
+					Generating a T-Rex grid for the impeller involved complicated geometry because there is both a primary blade and a splitter blade with a vane diffuser. The team was able to generate an extremely high-quality T-Rex grid of 1.5 million or fewer cells with only one periodic blade passage.
+				</p>
+
+				<p>
+					The key steps to the meshing process were as follows:
+				</p>
+
+				<ol>
+					<li>Start with structured domains on the primary and splitter blades. </li>
+					<li>Apply unstructured domains to the shroud and hub surfaces.</li>
+					<li>Because the compressor included a false shroud, Shipman noted the structured, hexahedral grid at the tip gap created by cylindrically extruding the tip surface grid outward to the shroud. Modeling that that tip gap is crucial, he says.</li>
+					<li>Run the T-Rex solver to extrude unstructured hexahedra off the remainder of the blade surfaces.</li>
+					<li>Finally, structured blocks are added for the inlet and the diffuser sections.</li>
+				</ol>
+
+				<p>
+					Achieving good resolution at the leading edge of the blades was crucial, says Shipman, because &ldquo;in off-design conditions, that's where all of the action happens in terms of phase change.&rdquo;
+				</p>
+
+				<p>
+					The team validated the model with strong results under a range of phase change conditions, including supercritical inlet; subcritical 2-phase inlet; subcritical compressed liquid; and subcritical vapor inlet. The overall meshing process was greatly simplified by Pointwise’s meshing solutions, says Shipman. &ldquo;When we were doing cases like this long ago, the process was very painful. Lately it’s been much easier to make these grids with the various features that are in Pointwise.&rdquo;
+				</p>
+
+				<p>
+					For more information about how Pointwise provided the high-quality meshes needed for high-resolution analyses of supercritical CO2 cycle machines, watch the video of Jeremy Shipman’s presentation entitled, &ldquo;<a href="https://info.pointwise.com/simulation-real-fluid-thermodynamics-supercritical-co2-power-cycles">Simulation of Real-Fluid Thermodynamics for Application to Supercritical CO2 Power Cycles</a>.&rdquo;
+				</p>
+
+				<h3>References</h3>
+				<ol>
+					<li>
+						<a id="ref1" class="anchor"></a>
+						Wright, S. A., Radel, R. F., Conboy, T. M., and Rochau, G. E., “Modeling and Experimental Results for Condensing Supercritical CO2 Power Cycles”, SANDIA Report, SAND2010-8840, 2011.
+					</li>
+					<li>
+						<a id="ref2" class="anchor"></a>
+						Hosangadi, A., Liu, Z., Weathers, T.,  Ahuja, V., Busby, J., "Modeling Multiphase Effects in CO2 Compressors at Subcritical Inlet Conditions," Journal of Engineering for Gas Turbines and Power, Vol. 141, Aug 2019.
+					</li>
+				</ol>
+
+				</div>
+
+				<div class="col-lg-1">
+				</div>
+
+				<div class="col-lg-3 col-md-3 case-study-nav">
+					<h4>Company Profile</h4>
+					<p>
+						<img data-src="images/craft-tech-logo-400x177.png"
+						alt="CRAFT Tech Logo" class="img-fluid" />
+					</p>
+
+					<h4>Partner Since</h4>
+					<p>
+						Over 20 Years
+					</p>
+
+					<h4>About the Partner</h4>
+					<p>
+						Combustion Research and Flow Technology, Inc. (CRAFT Tech), based in Pipersville PA, specializes in high-fidelity computational fluid dynamics simulation of complex flow and combustion problems.
+					</p>
+
+					<hr />
+
+					<h3>Solution at a Glance</h3>
+
+					<h4>CHALLENGE</h4>
+					<p>
+						Interest has increased in the S-CO2 Brayton cycle for new efficient power systems, but the ability to analyze these systems at off-design conditions is lacking. The complex analysis requires modeling of flow transitioning between liquid and gas phases with high-resolution meshing.
+					</p>
+
+					<h4>SOLUTION</h4>
+					<p>
+						Pointwise provided the high-quality meshes needed for high-resolution analyses of supercritical CO2 cycle machines using multi-species/multi-phase flow solvers to resolve the complex physics.
+					</p>
+
+					<h4>BENEFIT</h4>
+					<p>
+						Pointwise’s T-Rex meshing resolved the flow gradients with a minimum number of grid points – in this case, 1.5 million or fewer cells – to speed up the solution.
+					</p>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container lets-talk-content">
+			<div class="row">
+				<div class="col-lg-12">
+					<hr />
+					<h2 class="text-center">You May Also Like</h2>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/webinar_best_mesh_strategy_ondemand"><img data-src="images/ymal1.png" class="card-img-top img-fluid" alt="A hybrid mesh for the PPTC geometry"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/webinar_best_mesh_strategy_ondemand"><h3>The Influence of Meshing Strategies on Simulation Efficiency</h3></a>
+							<p class="card-text">
+								Watch this on-demand webinar that will help you determine the best type of mesh to use for the fastest and most accurate CFD simulations.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/webinar_best_mesh_strategy_ondemand" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/webinar-mesh-influence-aerodynamic-performance"><img data-src="images/ymal2.png" class="card-img-top img-fluid" alt="(from back to front): fully structured (hexahedral), unstructured with extruded hexahedral boundary layer, and unstructured with extruded prismatic boundary layer"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/webinar-mesh-influence-aerodynamic-performance"><h3>Mesh Topology Influence on Volute Aerodynamic Performance Computed Using Code Leo</h3></a>
+							<p class="card-text">
+								Three meshes (multi-block structured and unstructured with hexahedral and prismatic boundary layers) were generated for a generic volute and simulations were performed in the Code Leo CFD solver. Meshing time, solution time, and solution accuracy are compared.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/webinar-mesh-influence-aerodynamic-performance" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/webinar-simulation-injection-pump-cavitation"><img data-src="images/ymal3.png" class="card-img-top img-fluid" alt="Hybrid meshing coupled with complex multi-phase cavitation models and interactive post-processing of a high energy water injection pump."></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/webinar-simulation-injection-pump-cavitation"><h3>CFD Analysis of Cavitation and Acoustics of a High Energy Water Injection Pump</h3></a>
+							<p class="card-text">
+								Pointwise can easily manage and organize complex assemblies so you can focus on meshing a single component at a time. This allows engineers to rapidly generate high quality hybrid grids while maintaining the connectivity between adjacent components.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/webinar-simulation-injection-pump-cavitation" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	<br>
+
+    <!-- FOOTER -->
+    <% include ../../partials/footer %>
+
+	<!-- JAVASCRIPT -->
+	<% include ../../partials/js-includes %>
+ </body>
+ </html>

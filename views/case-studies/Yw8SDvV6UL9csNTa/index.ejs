@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+  <meta name="robots" content="noindex">
+
+  <!-- PAGE TITLE -->
+  <title>Reducing Discretization Error with Mesh Adaptation</title>
+
+  <!-- CSS FILES -->
+  <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+  <noscript>
+    <p>
+      In order to view this page JavaScript must be enabled in your browser.
+    </p>
+  </noscript>	
+
+  <!-- TOP NAVIGATION -->
+  <% include ../../partials/navbar %>
+
+<section id="title-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="image-case">
+        <img data-src="images/main-background-3840x1200.png" alt="Reducing Discretization Error with Mesh Adaptation" class="img-fluid"/>
+        <h1><span class="case-caption">Reducing Discretization Error with Mesh Adaptation</span></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="article">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+
+        <h2>Mesh Adaptation: A Brief Overview</h2>
+
+        <p>
+          Despite the evolution of computer processing capability, reducing the complexity of numerical simulations remains an essential issue. Mesh adaptation is a common technique employed, among many of the methods available, to help reduce simulation complexity. In the field of computational fluid dynamics (CFD), unstructured mesh adaptation has been used to substantially reduce the mesh size, or the number of degrees of freedom of a simulation at hand to reach a given solution accuracy. Thus, this technique enables significant improvements in processing time, memory requirements, and storage needed. Furthermore, error estimates have the capability to detect physical phenomena and capture their behavior. Meshes are then automatically adapted in critical regions without any a priori knowledge of the problem.
+        </p>
+
+        <p>
+          The concept of mesh adaptation is not new, and a survey of the literature shows a rather large number of publications dealing with the subject. In most of these works, the adaptation is isotropic and accomplished by splitting elements in predefined patterns. The idea of anisotropic mesh adaption emerged in the late 1980s as a result of concerns surrounding error estimation and mesh generation.
+        </p>
+
+        <p>
+          In 1987, Peraire et al. proposed a first attempt in 2-D by providing error estimates involving directions<sup><a href="#1">1</a></sup>. They highlighted the directional property of interpolation error and presented the idea of generating elements with higher aspect ratios. They coupled this with an advancing front technique to generate slightly anisotropic meshes with an aspect ratio of five.
+        </p>
+
+        <p>
+          Similar approaches have been considered by Löhner<sup>2</sup> as well as Selmin and Formaggia<sup>3</sup>. The first attempts in 3-D were proposed in the early 1990s by Löhner<sup>4</sup> and Peraire et al.<sup>5</sup>, but numerical results were primarily isotropic and mesh anisotropy was not visible.
+        </p>
+
+        <p>
+          In 1994, Zienkiewicz and Wu<sup>6</sup> provided a qualified status on the topic but noted the challenges in creating suitable anisotropic meshes for practical use. Meanwhile, Mavriplis proposed generating stretched elements with a Delaunay approach in 2-D in order to obtain high-aspect ratio triangles in boundary layers and wake regions typically found in aerospace applications<sup>7</sup>. A year later George, Hecht, and Vallet<sup>8</sup> introduced the use of metrics in a Delaunay mesh generator. They demonstrated that the absolute value of the Hessian matrix is a metric, and they proposed a Delaunay-based mesh generator where edge lengths are computed in a Riemannian metric space. This generalized all of the work preceding it, and it was widely exploited for 2-D anisotropic mesh adaptation in the 1990s and for 3-D at the beginning of the 2000s.
+        </p>
+
+        <p>
+          A couple of examples demonstrating recent results generated using mesh adaptation and error estimates to capture relevant physical phenomena and provide additional grid resolution in those defined regions are provided next. These use cases help show how mesh adaptation can be used to automatically add grid resolution in areas of the flow field where it is needed and remove the requirement for often time-consuming, human-driven mesh generation while economizing computational resources.
+        </p>
+
+        <h2>Output-based Mesh Adaptation of an S-Duct</h2>
+
+        <p>
+          The <a href="https://paw.larc.nasa.gov/" target="_blank" rel="noreferrer noopener">3rd Propulsion Aerodynamics Workshop</a> (PAW03) preceded the 52nd AIAA/SAE/ASEE Joint Propulsion Conference hosted in Salt Lake City in July 2016. In the workshop, flow through a diffusing serpentine inlet, or S-Duct, was analyzed. Participants submitted datasets comprising three separate inlet configurations and a set of four flow conditions. Results from participants include 77 baseline S-Duct, 29 S-Duct with Aerodynamic Interface Plane (AIP) instrumentation hardware, and 43 S-Duct with flow control devices modeled.
+        </p>
+
+        <p>
+          Results were quantified in terms of total pressure recovery, <em>PT2/PT0</em>, as well as steady-state and dynamic distortion<sup>9</sup>. A summary of participants’ results given by Winkler and Davis<sup>10</sup> shows a non-trivial amount of scatter in reported values when compared to experimental data despite most participants using a common set of workshop-supplied grids. In other words, accurate numerical prediction of the flow field for these types of diffusing S-Duct applications continues to be a challenge for CFD. Many factors are necessary for a CFD calculation to reliably predict these types of flows including accurate geometry representation (i.e., including all influential geometry components), adequate grid resolution, and proper turbulence modeling.
+        </p>
+
+        <p>
+          Off-body, output-based mesh adaptation was performed on a set of <a href="../../index.html" target="_blank" rel="noreferrer noopener">Pointwise</a> grids using NASA’s <a href="https://fun3d.larc.nasa.gov/" target="_blank" rel="noreferrer noopener">FUN3D</a> software<sup>11</sup> in order to demonstrate improved prediction of the flow field using this technique.
+        </p>
+
+        <p>
+          Figure 1 shows the diffusing serpentine inlet modeled by workshop participants. Air is induced from ambient room conditions through a diffuser by creating low pressure downstream with a vacuum pump. Flow rate is controlled by running the pump at selected revolutions per minute (RPM) while measurements are calibrated with a Mass Flow Plug (MFP). The test case models the bellmouth contraction, upstream adapter section, Inlet Flow Control and Prediction Technologies for Embedded Propulsion Systems (IFCPT) S-Duct, AIP housing, and 5-diameter extension.
+        </p>
+
+        <img data-src="images/Fig1-800x611.png"
+        alt="Components of the IFCPT S-Duct" class="img-fluid center-block" />
+        <figcaption>
+          Figure 1: Components of the IFCPT S-Duct.
+        </figcaption>
+
+        <p>
+          The AIP diameter <em>(D)</em> measures 5 inches, is offset 1.09<em>(D)</em> in the vertical direction, and has a length-to-diameter ratio <em>(L/D)</em> of 3.106. The model has a 5<em>D</em> extension added in order to impose a downstream constant pressure or massflow out boundary condition. Figure 2 illustrates additional geometry components modeled in two separate configurations. The 40-probe AIP instrumentation hardware was modeled in one case to measure its influence on the flow field while a set of flow control devices was added to a third configuration to induce flow separation in the offset diffuser’s adverse pressure gradient turn.
+        </p>
+
+        <img data-src="images/Fig2-800x326.png"
+        alt="inlet performance metrics" class="img-fluid center-block" />
+        <figcaption>
+          Figure 2: AIP instrumentation and flow control vanes were modeled in separate configurations to determine their influence on inlet performance metrics.
+        </figcaption>
+
+        <p>
+          The set of flow conditions given to participants is shown in Table 1. The first two in the list correspond to conditions intended to be run for the baseline S-Duct and S-Duct with AIP cases. The remaining two were to be used for the case with flow control vanes. Flow Conditions 1 and 3 were used with their respective configurations in this output-based mesh adaptation study.
+        </p>
+
+        <figcaption class="case-table">
+          Table 1: Flow conditions for S-Duct test cases provided to PAW participants.
+        </figcaption>
+        <img data-src="images/Table1-800x226.png"
+        alt="Table 1" class="img-fluid center-block" />
+
+        <p>
+          Starting from coarse initial grids created in Pointwise for each of the three S-Duct cases, ten adaptation cycles were run on each separately using FUN3D. Both steady-state flow and adjoint solutions were computed, and an error estimate of total pressure surveyed at a constant <em>x</em>-plane corresponding to the AIP was evaluated.
+        </p>
+
+        <p>
+          The grid is then adapted in response to this error estimate by inserting and moving nodes, collapsing and swapping cells, and anisotropically stretching cell edges to iteratively improve the calculation of total pressure at the AIP. The initial grids created were between 600,000 and 1.5x10<sup>6</sup> nodes depending on the inlet configuration.  For each case, a constant-complexity-scaling factor was applied and linearly varied over the course of 10 adaptation cycles to drive adaptation on coarser grids initially and limit the optimal grid size to something that would fit within available computing resources (i.e., 20x10<sup>6</sup> nodes). A constant y-plane cut of the initial and final adapted grids for each case is shown in Figure 3.
+        </p>
+
+        <img data-src="images/Fig3-800x830.png"
+        alt="Initial and final adapted meshes computed by using the integrated value for total pressure at the AIP" class="img-fluid center-block" />
+        <figcaption>
+          Figure 3: Initial and final adapted meshes computed by using the integrated value for total pressure at the AIP. Flow condition 1 was used for (a) – (d) while Flow condition 3 was used for (e) – (f).
+        </figcaption>
+
+        <p>
+          The experimental total pressure recovery value reported<sup>12</sup> for Flow Condition 1 was <em>PT2/PT0</em> = 0.9784. Computed results for the baseline S-Duct were found to over-predict this value by 0.65% primarily due to the absence of the AIP instrumentation hardware in the simulation model. Similarly, a 1.57% difference was found between the reported test value and output-based mesh adapted result for the S-Duct with vanes case. These results emphasize the importance of including all influential geometry components in an analysis model when drawing comparisons with experimental data.
+        </p>
+
+        <p>
+          It was shown for these two cases that if one assumes second-order accuracy and extrapolates the output-based mesh adaptation results from the 10 adaptation cycles that were run to <em>N<sup>-2/3</sup></em> = 0 where <em>N</em> is the number of nodes in the mesh and <em>N<sup>-2/3</sup></em> represents a substitute for the characteristic grid spacing for a 3-D, second-order accurate problem (i.e., total pressure recovery computed on an infinite mesh), an order of magnitude improvement in solution accuracy was achieved over solutions computed on workshop-supplied grids using the same flow solver.
+        </p>
+
+        <p>
+          The S-Duct with AIP case allows for the most direct comparison between the reported test value and computed results in total pressure recovery given it models the AIP instrumentation hardware. The output-based mesh adaptation result was computed to be <em>PT2/PT0</em> = 0.9781, and under-predicts the experimental value by only 0.03% which is substantially better than the 7.5% difference between the experimental value and results computed on workshop-supplied grids. The <a href="https://paw.larc.nasa.gov/" target="_blank" rel="noreferrer noopener">Propulsion Aerodynamics Workshop website</a> includes additional resources from previous workshops.
+        </p>
+
+        <h2>Surface and Volume Grid Adaptation in Pointwise</h2>
+
+        <p>
+          In the S-duct cases, mesh adaptation was limited to modifying only the grid elements located an equivalent y<sup>+</sup> = 300 distance away from wall boundaries. This is due to some issues of robustness when modifying high aspect ratio cells near highly curved wall boundaries, which are typically used to resolve the viscous boundary layer. Additionally, most flow solvers do not couple the underlying CAD data to allow modification and re-projection of the surface grid elements, which is somewhat limiting.
+        </p>
+
+        <p>
+          Some work is ongoing which allows Pointwise to perform mesh adaptation on both surface and volume grids by importing a target grid spacing size field computed from both flow and adjoint solutions, which in turn are used to determine an error estimate for a specific engineering cost function. The updated target grid spacing size field is read-in as a point-source object in which the target grid spacing values are specified at unique <em>x-</em>, <em>y-</em>, and <em>z-</em>coordinates. Pointwise is then able to adapt the mesh, which includes modifying grid elements constrained to surfaces and their boundaries, due to the analytical geometry definition being available.
+        </p>
+
+        <p>
+          One recent study examined whether there was any computational savings or improvement in solution accuracy to be found by adopting this approach. The work looked at first running a computationally inexpensive, inviscid output-based mesh adaptation simulation, importing the resulting target size field into Pointwise, and then using this size field to create a more suitable mesh for further viscous output-based mesh adaptation simulations. An <a href="https://www.grc.nasa.gov/WWW/wind/valid/m6wing/m6wing.html" target="_blank" rel="noreferrer noopener">ONERA M6 wing geometry</a> was used for this pedagogic example with flow conditions shown in Table 2.
+        </p>
+
+        <figcaption class="case-table">
+          Table 2: Flow conditions from Test 2308 of Ref. 13.
+        </figcaption>
+        <img data-src="images/Table2-800x146.png"
+        alt="Table 2" class="img-fluid center-block" />
+
+        <p>
+          An initial coarse grid was created in Pointwise and viscous output-based mesh adaptation was performed using NASA’s FUN3D software in order to gather a set of baseline metrics. The initial grid consisted of about 600,000 nodes and used anisotropic triangles to resolve leading and trailing edge curvature. The grid was adapted in order to reduce the error in the wing’s lift-to-drag ratio (<em>L/D</em>). Similar to the previous S-duct case, a constant-complexity-scaling factor strategy was employed to linearly increase the grid complexity over 10 adaptation cycles to drive mesh adaptation on coarse grids initially and limit the size of the optimal grid to something that would fit within available computing resources. The final adapted grid consisted of about 6.1x10<sup>6</sup> nodes.
+        </p>
+
+        <p>
+          The same manifold surface mesh used in creating the initial coarse grid was used as input for running inviscid output-based mesh adaptation with <a href="" target="_blank">Aerion Technologies’ Cart3D software</a>. Cart3D uses a Cartesian octree-based meshing strategy along with an iterative refinement strategy to perform computationally inexpensive inviscid adaptive mesh refinement. Fifteen adaptation cycles were run in approximately an hour of wall clock time using a conventional multi-processor desktop workstation. Results from Cart3D are shown in Figure 4.
+        </p>
+
+        <img data-src="images/Fig4-800x379.png"
+        alt="Evolution of the Cart3D adaptive mesh refinement process on the ONERA M6 wing" class="img-fluid center-block" />
+        <figcaption>
+          Figure 4: Evolution of the Cart3D adaptive mesh refinement process on the ONERA M6 wing.
+        </figcaption>
+
+        <p>
+          Target length scales of the mesh are output as the AMR process iterates from coarser to finer meshes. Each cell’s length scale is defined as the minimum of the cell’s edge lengths over the three coordinate directions. The length scales are then filtered using an octree-based decimation algorithm that reduces the number of source points in the network and has a nominal impact on the overall Cart3D AMR process.  More details about how the size field is computed can be found in Davis, et al<sup>13</sup>. The size field was then imported into Pointwise and used to update the surface and volume grids for additional viscous output-based mesh adaptation in FUN3D. One drawback to this approach was that the octree meshing technique used by Cart3D has isotropic cells everywhere. As a result, the target size field inherits this property and excessive refinement appears along the leading and trailing edges; whereas, anisotropic triangles could more efficiently resolve this curvature in the baseline grid case. This leads to an initial volume grid that consists of five times as many nodes as were in the initial grid for the baseline case.
+        </p>
+
+        <p>
+          This ultimately took longer to run due to the increased complexity of initial grids, but we were able to obtain a more accurate solution after running only one adaptation cycle starting with this updated grid, than was achieved after ten adaptation cycles with the baseline case.  More details about this study can be found in the accompanying paper.
+        </p>
+
+        <p>
+          Recently we tried importing the target size field directly from FUN3D itself in order to perform mesh adaptation directly in Pointwise at each adaptation step. An example of the size field computed by FUN3D after one adaptation cycle and corresponding point source object in Pointwise are shown in Figure 5.
+        </p>
+
+        <img data-src="images/Fig5-800x350.png"
+        alt="Isotropic size field computed in FUN3D for an ONERA M6 wing and corresponding point source object in Pointwise" class="img-fluid center-block" />
+        <figcaption>
+          Figure 5: Isotropic size field computed in FUN3D for an ONERA M6 wing and corresponding point source object in Pointwise.
+        </figcaption>
+
+        <p>
+          A comparison of the initial isotropic surface grid and surface grid after adaptation is shown in Figure 6.
+        </p>
+
+        <img data-src="images/Fig6-800x377.png"
+        alt="A comparison of initial and adapted surface grids on an ONERA M6 wing" class="img-fluid center-block" />
+        <figcaption>
+          Figure 6: A comparison of initial and adapted surface grids on an ONERA M6 wing.
+        </figcaption>
+
+        <p>
+          However, the isotropic surface grid refinement as shown in Figure 6 can lead to very large volume grids. To resolve this, ongoing research is focused on computing an anisotropic metric as shown in Figure 7, which would provide both target edge lengths and principal directions which are uniquely defined by eigenvalue decomposition of the 3 x 3 symmetric, positive matrix.
+        </p>
+
+        <img data-src="images/Fig7-800x340.png"
+        alt="Anisotropic metric rendered as the equators of ellipsoids" class="img-fluid center-block" />
+        <figcaption>
+          Figure 7: Anisotropic metric rendered as the equators of ellipsoids. (Images courtesy of M. Park of NASA Langley).
+        </figcaption>
+
+        <h2>Additional Resources</h2>
+
+        <p>
+          For more in-depth details about the case study, &ldquo;Reducing Discretization Error with Mesh Adaptation&rdquo; complete the below form to download the following papers and presentation.
+        </p>
+
+        <p>
+          Davis, Z. S., Carrigan, T. J., Wyman, N., and McMullen, M., &ldquo;Reducing the Cost of Viscous Mesh Adaptation,&rdquo; 23rd AIAA Computational Fluid Dynamics Conference, AIAA-Paper 2017–3109, Denver, CO, June, 2017. (Paper and presentation.)
+        </p>
+
+        <p>
+          Davis, Z. S. and Park, M. A., &ldquo;IFCPT S-Duct Grid-Adapted FUN3D Computations for the Third Propulsion Aerodynamics Workshop,&rdquo; 53rd AIAA/SAE/ASEE Joint Propulsion Conference, AIAA-Paper 2017–4835, Atlanta, GA, July 2017. (Paper only.)
+        </p>
+
+        <div>
+          <!--[if lte IE 8]>
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+          <![endif]-->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+          	portalId: "3788790",
+          	formId: "1e4b72f8-81f2-4129-9519-7de01cd19cc5",
+          	css: ""
+          });
+          </script>
+        </div>
+
+        <h3>References</h3>
+
+        <ol>
+          <li>Peraire, J., Vahdati, M., Morgan, K., and Zienkiewicz, O. C., &ldquo;Adaptive Remeshing for Compressible flow computations,&rdquo; <em>Journal of Computational Physics</em>, 72:449—466, 1987.</li>
+
+          <li>L&ouml;hner, R., &ldquo;Adaptive Remeshing for Transient Problems,&rdquo; <em>Computational Methods in Applied Mechanical Engineering</em>, 75:195—214, 1989.</li>
+
+          <li>Selmin, V. and Formaggia, L., &ldquo;Simulation of Hypersonic Flows on Unstructured Grids,&rdquo; <em>International Journal of Numerical Methods in Engineering</em>, 34:569—606, 1992.</li>
+
+          <li>L&ouml;hner, R., &ldquo;Three-Dimensional Fluid-Structure Interaction Using a Finite Element Solver and Adaptive Remeshing,&rdquo; <em>Computing Systems in Engineering</em>, 1(2-4):257—272, 1990.</li>
+
+          <li>Peraire, J., Peiro, J., and Morgan, K., &ldquo;Adaptive Remeshing for Three-Dimensional Compressible Flow Computations,&rdquo; <em>Journal of Computational Physics</em>, 103:269—285, 1982.</li>
+
+          <li>Zienkiewicz, O. C., and Wu, J., &ldquo;Automatic Directional Refinement in Adaptive Analysis of Compressible Flows.&rdquo; <em>International Journal of Numerical Methods in Engineering</em>, 37:2189—2210, 1994.</li>
+
+          <li>Mavriplis, D. J., &ldquo;Adaptive Mesh Generation for Viscous Flows Using Delaunay Triangulation,&rdquo; <em>Journal of Computational Physics</em>, 90:271—291, 1990.</li>
+
+          <li>George, P. L., Hecht, F., and Vallet, M. G., &ldquo;Creation of Internal Points in Voronoi’s Type Method: Control and Adaptation,&rdquo; <em>Advanced Engineering Software</em>, 13(5-6): 303—312, 1991.</li>
+
+          <li>&ldquo;Gas Turbine Engine Inlet Flow Distortion Guidelines,&rdquo; SAE ARP 1420 Rev. C, Society of Automotive Engineers International, Warrendale, PA, April 2017.</li>
+
+          <li>Winkler, C. M. and Davis, Z. S., &ldquo;Summary of the 3rd Propulsion Aerodynamics Workshop: S-duct Results,&rdquo; <em>53rd AIAA/SAE/ASEE Joint Propulsion Conference</em>, AIAA Paper 2017—4912, Atlanta, GA, July 2017.</li>
+
+          <li>Anderson, W. K. and Bonhaus, D. L., &ldquo;An Implicit Upwind Algorithm for Computing Turbulent Flow on Unstructured Grids,&rdquo; <em>Comp. & Fluids</em>, 23(1):1—21, Jan. 1994.</li>
+
+          <li>McMillan, M. L., Mackie, S. A., Gissen, A., Vukasinovic, B., Lakebrink, M. T., Glezer, A., Mani, M., and Mace, J. L., &ldquo;Inlet Flow Control and Prediction Technologies for Embedded Propulsion Systems,&rdquo; NASA/CR—2011-217237, NASA, Dec. 2011.</li>
+
+          <li>Schmitt, V. and Charpin, F., &ldquo;Pressure Distributions on the ONERA-M6-Wing at Transonic Mach Numbers,&rdquo; <em>Experimental Database for Computer Program Assessment</em>. Report of the Fluid Dynamics Panel Working Group 04, AGARD AR 138, May 1979.</li>
+
+          <li>Davis, Z. D., Carrigan, T. J., Wyman, N. and McMullen, M., &ldquo;Reducing the Computational Cost of Viscous Mesh Adaptation,&rdquo; <em>23rd AIAA Computational Fluid Dynamics Conference</em>, AIAA Paper 2017—3109, Denver, CO, June 2017.</li>
+        </ol>
+
+      </div>
+
+      <div class="col-lg-1">
+      </div>
+
+      <div class="col-lg-3 col-md-3 case-study-nav">
+        <br>
+        <h4>Company Profile</h4>
+        <p>
+          4th AIAA Propulsion Aerodynamics Workshop
+        </p>
+
+        <h4>Participating Since</h4>
+        <p>
+          2016
+        </p>
+
+        <h4>About the Workshop</h4>
+        <p>
+          The focus of the workshop will be on assessing the accuracy of CFD in obtaining air breathing system performance and flow structure to include nozzle forces, plume surveys, subsonic inlet recovery and distortion, and high-speed inlet performance.
+        </p>
+
+        <hr />
+
+        <h3>Solution at a Glance</h3>
+
+        <h4>CHALLENGE</h4>
+        <p>
+          It is difficult, if not impossible, to know what grid resolution is needed in all parts of a flowfield until you know what the flowfield is, which of course you do not know until you have a flow solution.
+        </p>
+
+        <h4>SOLUTION</h4>
+        <p>
+          Mesh adaptation can automatically add finer mesh resolution in areas where it is needed by examining an error metric or flow gradients to determine where the existing mesh is not adequately resolving the flow.
+        </p>
+
+        <h4>BENEFIT</h4>
+        <p>
+          Solution accuracy for an inlet was improved by an order of magnitude.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="ymal">
+  <div class="container lets-talk-content">
+    <div class="row">
+      <div class="col-lg-12">
+        <hr />
+        <h2 class="text-center">You May Also Like</h2>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-4 col-md-4">
+        <div class="card">
+          <a href="../../webcasts/2015-02/Introduction-Scripting-in-Pointwise.html"><img data-src="images/ymal1.png" class="card-img-top img-fluid" alt="Intro to Scipting in Pointwise"></a>
+          <div class="card-body">
+            <a href="../../webcasts/2015-02/Introduction-Scripting-in-Pointwise.html"><h3>Introduction to Scripting in Pointwise</h3></a>
+            <p class="card-text">
+              In this webinar, we present a basic introduction to scripting in Pointwise and lay the framework for customization of the meshing process through scripts. Scripting in Pointwise is accomplished with Glyph, an extension of Tcl.
+            </p>
+            <p>
+              <a href="../../webcasts/2015-02/Introduction-Scripting-in-Pointwise.html" class="btn btn-primary" role="button">More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="card">
+          <a href="../../theconnector/2016-Q1/Revisiting-Output-Based-Mesh-Adaptation.html"><img data-src="images/ymal2.png" class="card-img-top img-fluid" alt="Revisiting Output-Based Mesh Adaptation"></a>
+          <div class="card-body">
+            <a href="../../theconnector/2016-Q1/Revisiting-Output-Based-Mesh-Adaptation.html"><h3>Revisiting Output-Based Mesh Adaptation</h3></a>
+            <p class="card-text">
+              In this article, some background on why you should be using mesh adaptation to make sure important flow features are resolved without an inordinately large overall cell count is presented along with an example using Pointwise and NASA's FUN3D solver.
+            </p>
+            <p>
+              <a href="../../theconnector/2016-Q1/Revisiting-Output-Based-Mesh-Adaptation.html" class="btn btn-primary" role="button">More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="card">
+          <a href="../../theconnector/2016-Q3/Meshing-Overview-and-S-Duct-Results-from-Propulsion-Aerodynamics-Workshop.html"><img data-src="images/ymal3.png" class="card-img-top img-fluid" alt="Meshing Overview & S-Duct Results from the 3rd Propulsion Aerodynamics Workshop"></a>
+          <div class="card-body">
+            <a href="../../theconnector/2016-Q3/Meshing-Overview-and-S-Duct-Results-from-Propulsion-Aerodynamics-Workshop.html"><h3>Meshing Overview from the 3rd Propulsion Aerodynamics Workshop</h3></a>
+            <p class="card-text">
+              Pointwise provided a set of standard grids for workshop participants to use at this year's 3rd Propulsion Aerodynamics Workshop in Salt Lake City, Utah. An overview of some of these features and the workshop grids is provided. Some initial steady-state results for the S-Duct using these grids and NASA's FUN3D solver are presented.
+            </p>
+            <p>
+              <a href="../../theconnector/2016-Q3/Meshing-Overview-and-S-Duct-Results-from-Propulsion-Aerodynamics-Workshop.html" class="btn btn-primary" role="button">More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <br>
+
+  <!-- FOOTER -->
+  <% include ../../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../../partials/js-includes %>
+</body>
+</html>

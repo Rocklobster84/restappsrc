@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+	<!-- PAGE TITLE -->
+	<title>High-Order Curved Meshes for More Accurate CFD Solutions</title>
+
+	<!-- CSS FILES -->
+	<% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+  <noscript>
+    <p>
+      In order to view this page JavaScript must be enabled in your browser.
+    </p>
+  </noscript>	
+
+  <!-- TOP NAVIGATION -->
+  <% include ../../partials/navbar %>
+
+<section id="title-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="image-case">
+				<img data-src="images/high-order-cs-3840x1200.png" alt="Example of curved mesh generated in Pointwise software" class="img-fluid"/>
+				<h1><span class="case-caption">High-Order Curved Meshes for More Accurate CFD Solutions</span></h1>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="article">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-8">
+
+				<p>
+					<strong>It is a relatively simple concept: The higher a mesh’s fidelity, the more accurate the solution, and the more accurate the solution, the lower the program uncertainty and expense. As with many such concepts, however, implementation is not so simple or easy.</strong>
+				</p>
+
+				<p>
+					The traditional approach to increasing the fidelity of linear meshes has been to use bigger, faster computers; techniques such as vectorization, parallelization, and GPU solvers; and unstructured or hybrid grids that help reduce grid points and file size. All this requires massive files that strain CPU time and memory, testing the limits of even the most advanced computer hardware. Today, there is not much more fidelity that can be squeezed out of linear meshes. 
+				</p>
+
+				<blockquote class="blockquote text-center pw-blue">
+					<p class="mb-0">&ldquo;Now we can generate meshes with true curves like the curves we see in nature, not a highly resolved facetted linear mesh, which will never be able to map true curves or circles.&rdquo;</p>
+					<footer class="blockquote-footer"><cite title="Source Title">Ryan Glasby, Ph.D., Joint Institute for Computational Sciences at the University of Tennessee</cite></footer>
+				</blockquote>
+
+				<p>
+					<strong>Put another way: you can only go so far with linear meshes, especially when it comes to using them with today’s high-order CFD solvers.</strong>
+				</p>
+
+				<p>
+					To address this, Pointwise has released the first commercial mesher for generating high-order curved meshes for high Reynolds number flows. It works with today’s new high-order CFD solvers to yield the most accurate solutions possible. Flow solvers that use high-order, curved meshes require less memory and CPU time than existing methods, scale well on parallel computing clusters, and offer increased flexibility for mesh adaption to decrease grid points and file size.
+				</p>
+
+				<p>
+					&ldquo;With linear meshes, the edges of the elements are straight. To resolve a round shape, the mesh has to have many small straight segments,&rdquo; says Dr. Steve Karman, Pointwise staff specialist, who helped pioneer the new high-order mesh software. &ldquo;But a high-order mesh defines the shape using different order polynomial lines and surfaces.&rdquo;
+				</p>
+
+				<p>
+					Pointwise can generate curved meshes with fourth order polynomials, according to Karman. If the actual shape of the geometry being analyzed can be represented with a polynomial up to fourth degree, he says, the shape becomes &ldquo;true&rdquo; to the geometry. 
+				</p>
+
+				<img data-src="images/Fig1-HO-Curved-Mesh-880x352.png"
+				alt="High-order curved mesh (L) compared to a highly resolved linear mesh (R) of an airplane wing" class="img-fluid center-block" />
+				<figcaption>
+				</figcaption>
+
+				<p>
+					&ldquo;This is more than making better use of time and resources, though. This is a paradigm shift,&rdquo; adds Dr. Ryan Glasby with the Joint Institute for Computational Sciences at the University of Tennessee. &ldquo;Now we can generate meshes with true curves like the curves we see in nature, not a highly resolved facetted linear mesh, which will never be able to map true curves or circles.&rdquo;
+				</p>
+
+				<p>
+					Glasby and his group are working to develop a finite element flow solver that can handle high-order meshes. He compares the difference between linear and curved meshing to the difference between cathode-ray and plasma televisions.  
+				</p>
+
+				<p>
+					&ldquo;Cathode-ray TVs paint lines on the screen to create a picture. To increase the fidelity of the picture you had to have more lines, which meant larger and larger cathode-ray tubes to the point that the TV was massive,&rdquo; Glasby says. &ldquo;Plasma TVs increase fidelity by enriching the pixels with polynomials and now TV screens are a quarter-of-an-inch thick.&rdquo;
+				</p>
+
+				<p>
+					Glasby adds that the higher accuracy offered by high-order curved meshes is especially useful for off design conditions such as landing in a crosswind, helicopters, ships, and similar applications. But the future promises uses that we haven’t even considered.
+				</p>
+
+				<p>
+					&ldquo;We don’t know what we have until we have it,&rdquo; he concludes.
+				</p>
+
+				<p>
+					For a closer look at the technical aspects of high-order meshing, watch the video of the presentation given by Ryan Glasby on this subject:
+				</p>
+
+				<p class="text-center cta-space">
+					<!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-3e79f2e7-29bf-48de-a746-94ce8f81a5b6"><span class="hs-cta-node hs-cta-3e79f2e7-29bf-48de-a746-94ce8f81a5b6" id="hs-cta-3e79f2e7-29bf-48de-a746-94ce8f81a5b6"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/3788790/3e79f2e7-29bf-48de-a746-94ce8f81a5b6" ><img class="hs-cta-img" id="hs-cta-img-3e79f2e7-29bf-48de-a746-94ce8f81a5b6" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/3788790/3e79f2e7-29bf-48de-a746-94ce8f81a5b6.png"  alt="Higher Order Results from DoD HPCMP CREATETM-AV Kestrel"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(3788790, '3e79f2e7-29bf-48de-a746-94ce8f81a5b6', {}); </script></span><!-- end HubSpot Call-to-Action Code -->
+				</p>
+
+				</div>
+
+				<!-- Spacing between sections -->
+				<div class="col-lg-1">
+				</div>
+
+				<div class="col-lg-3 col-md-3 case-study-nav">
+					<h4>Company Profile</h4>
+					<p>
+						<img data-src="images/UT-logo-200.png"
+						alt="UT logo" class="img-fluid" />
+					</p>
+
+					<h4>Client Since</h4>
+					<p>
+						2014
+					</p>
+
+					<h4>About the Client</h4>
+					<p>
+						Founded in 1794, the University of Tennessee (UT) was the first public university chartered west of the Appalachian Divide. UT Knoxville — which includes the UT Space Institute — serves the state by educating its citizens, enhancing its culture, and making a difference in people's lives through research and service.
+					</p>
+
+					<hr />
+
+					<h3>Solution at a Glance</h3>
+
+					<h4>CHALLENGE</h4>
+					<p>
+						The traditional approach to increasing the fidelity of linear meshes has been to use bigger, faster computers; techniques such as vectorization, parallelization, and GPU solvers; and unstructured or hybrid grids to reduce grid points. Unfortunately, this approach has reached its limits.
+					</p>
+
+					<h4>SOLUTION</h4>
+					<p>
+						Pointwise has released the first commercial CFD mesher to generate high-order curved meshes for high Reynolds number flows. Flow solvers that use high-order, curved meshes require less memory and CPU time than existing methods, scale well on parallel computing clusters, and offer increased flexibility for mesh adaption to decrease grid points and file size.
+					</p>
+
+					<h4>BENEFIT</h4>
+					<p>
+						Decrease memory and CPU needs, work on parallel computer clusters, and reduce file size. 
+					</p>
+
+				</div>
+
+			</div>
+		</div>
+	
+	</section>
+
+	<section id="ymal">
+		<div class="container lets-talk-content">
+			<div class="row">
+				<div class="col-lg-12">
+					<hr />
+					<h2 class="text-center">You May Also Like</h2>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/recent-developments-pointwise-applied-research"><img data-src="images/ymal1.jpg" class="card-img-top img-fluid" alt="Nick Wyman presenting Recent Developments in Pointwise Applied Research"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/recent-developments-pointwise-applied-research"><h3>Recent Developments in Pointwise Applied Research</h3></a>
+							<p class="card-text">
+								Watch a presentation given at the Pointwise User Group Meeting about user-independent automated meshing and the latest meshing technologies under development at Pointwise.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/recent-developments-pointwise-applied-research" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/webinar-high-order-mesh-generation-using-pointwise"><img data-src="images/ymal2.png" class="card-img-top img-fluid" alt="A Q2 high-order mesh was generated for the NASA Rotor 37 geometry"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/webinar-high-order-mesh-generation-using-pointwise"><h3>High-Order Mesh Generation Using Pointwise</h3></a>
+							<p class="card-text">
+								There are two primary challenges associated with the degree elevation of linear elements: boundary conformance and curving of high aspect ratio cells encountered within the boundary layer region. In this webinar, we address these challenges and show how to improve CFD solution accuracy by generating boundary conforming, high-order meshes.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/webinar-high-order-mesh-generation-using-pointwise" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/webinar-towards-mesh-adaptation-with-pointwise"><img data-src="images/ymal3.png" class="card-img-top img-fluid" alt="A point cloud source consisting of more than two-million points was imported into Pointwise using a Glyph script."></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/webinar-towards-mesh-adaptation-with-pointwise"><h3>Towards Mesh Adaptation with Pointwise</h3></a>
+							<p class="card-text">
+								This webinar introduces a feature currently in development for mesh adaptation. It accepts from the flow solver a point cloud on which target cell sizes are specified. This point cloud is used as a clustering source in Pointwise to adapt both the volume and surface meshes.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/webinar-towards-mesh-adaptation-with-pointwise" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+  <br>
+		
+    <!-- FOOTER -->
+    <% include ../../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../../partials/js-includes %>
+	</body>
+	</html>

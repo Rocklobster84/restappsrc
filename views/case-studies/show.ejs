@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Case Study | <%- study.title %></title>
+
+    <% if (study.gated === true) { %>
+        <meta name="robots" content="noindex">
+    <% } %>
+
+    <% if (study.gated === false) { %>
+        <!-- OG TAGS -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="<%- study.title %>" />
+        <meta property="og:description" content="<%- study.abstract %>" />
+
+        <!-- META DATA -->
+        <meta name="description" content="<%- study.title %>">
+        <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+    <% } %>
+
+    <!-- CSS FILES -->
+    <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../partials/navbar %>
+
+<!-- POST CONTENT -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="image-case">
+            <img data-src="images/<%= study.imgUrl %>" alt="<%= study.imgAltText %>" class="img-fluid"/>
+            <h1><span class="case-caption"><%- study.title %></span></h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 col-sm-12">
+
+            <% if (study.author) { %>
+                <p class="lead"><%- study.author %></p>
+                <hr>
+            <% } %>
+
+            <%- study.caseStudy %>
+
+        </div>
+
+        <div class="col-lg-1">
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-12 case-study-nav">
+            <% if(study.clientName) { %>
+            <h4>Company Profile</h4>
+            <p>
+                <% var ifImg = /^\*jpe?g|png|svg$/i %>
+                <% if (ifImg.test(study.clientLogo)) { %>
+                    <img data-src="images/<%= study.clientLogo %>"
+                 alt="<%= study.clientName %> Logo" class="img-fluid" />
+                <% } else { %>
+                    <%= study.clientName %>
+                <% } %>
+            </p>
+
+            <% if (study.clientSince) { %>
+            <h4><%= study.clientSinceHead %></h4>
+            <p><%= study.clientSince %></p>
+            <% } %>
+
+            <h4><%= study.clientAboutHead %></h4>
+            <p><%- study.clientAbout %></p>
+
+            <hr />
+            <% } %>
+
+            <h3>Solution at a Glance</h3>
+
+            <h4>CHALLENGE</h4>
+            <p><%- study.challenge %></p>
+
+            <h4>SOLUTION</h4>
+            <p><%- study.solution %></p>
+
+            <h4>BENEFIT</h4>
+            <p><%- study.benefit %></p>
+        </div>
+
+    </div>
+</div>
+
+<% if (study.ymal1Title) { %>
+<div class="container lets-talk-content">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <hr />
+            <h2 class="text-center">You May Also Like</h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card">
+                <a href="<%- study.ymal1Url %>"><img data-src="images/<%- study.ymal1Img %>" alt="<%- study.ymal1Alt %>" class="card-img-top img-fluid"></a>
+                <div class="card-body">
+                    <a href="<%- study.ymal1Url %>"><h3><%- study.ymal1Title %></h3></a>
+                    <p class="card-text">
+                        <%- study.ymal1Abstract %>
+                    </p>
+                    <p>
+                        <a href="<%- study.ymal1Url %>" class="btn btn-primary" role="button">More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card">
+                <a href="<%- study.ymal2Url %>"><img data-src="images/<%- study.ymal2Img %>" alt="<%- study.ymal2Alt %>" class="card-img-top img-fluid"></a>
+                <div class="card-body">
+                    <a href="<%- study.ymal2Url %>"><h3><%- study.ymal2Title %></h3></a>
+                    <p class="card-text">
+                        <%- study.ymal2Abstract %>
+                    </p>
+                    <p>
+                        <a href="<%- study.ymal2Url %>" class="btn btn-primary" role="button">More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card">
+                <a href="<%- study.ymal3Url %>"><img data-src="images/<%- study.ymal3Img %>" alt="<%- study.ymal3Alt %>" class="card-img-top img-fluid"></a>
+                <div class="card-body">
+                    <a href="<%- study.ymal3Url %>"><h3><%- study.ymal3Title %></h3></a>
+                    <p class="card-text">
+                        <%- study.ymal3Abstract %>
+                    </p>
+                    <p>
+                        <a href="<%- study.ymal3Url %>" class="btn btn-primary" role="button">More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>
+
+
+<% if (study.ctaBarTitleA && study.ctaBarTitleB) { %>
+<div id="cta-testA" class="is-hidden">
+    <div class="container-fluid cta-bar">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="container cta-body">
+                <h3 class="text-center white" id="cta-text"><%= study.ctaBarTitleA %></h3>
+
+                <p class="text-center" id="cta-button"><!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-<%= study.ctaButtonA %>>"><span class="hs-cta-node hs-cta-<%= study.ctaButtonA %>" id="hs-cta-<%= study.ctaButtonA %>"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/3788790/<%= study.ctaButtonA %>" ><img class="hs-cta-img" id="hs-cta-img-<%= study.ctaButtonA %>" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/3788790/<%= study.ctaButtonA %>.png"  alt="<%= study.ctaAltA %>"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(3788790, '<%= study.ctaButtonA %>', {}); </script></span><!-- end HubSpot Call-to-Action Code --></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cta-testB" class="is-hidden">
+    <div class="container-fluid cta-bar">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="container cta-body">
+                    <h3 class="text-center white" id="cta-text"><%= study.ctaBarTitleB %></h3>
+
+                    <p class="text-center" id="cta-button"><!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-<%= study.ctaButtonB %>>"><span class="hs-cta-node hs-cta-<%= study.ctaButtonB %>" id="hs-cta-<%= study.ctaButtonB %>"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/3788790/<%= study.ctaButtonB %>" ><img class="hs-cta-img" id="hs-cta-img-<%= study.ctaButtonB %>" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/3788790/<%= study.ctaButtonB %>.png"  alt="<%= study.ctaAltB %>"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(3788790, '<%= study.ctaButtonB %>', {}); </script></span><!-- end HubSpot Call-to-Action Code --></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>
+
+<% if (study.ctaBarTitleA) { %>
+        <div class="container-fluid cta-bar">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="container cta-body">
+                        <h3 class="text-center white" id="cta-text"><%= study.ctaBarTitleA %></h3>
+
+                        <p class="text-center" id="cta-button"><!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-<%= study.ctaButtonA %>>"><span class="hs-cta-node hs-cta-<%= study.ctaButtonA %>" id="hs-cta-<%= study.ctaButtonA %>"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/3788790/<%= study.ctaButtonA %>" ><img class="hs-cta-img" id="hs-cta-img-<%= study.ctaButtonA %>" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/3788790/<%= study.ctaButtonA %>.png"  alt="<%= study.ctaAltA %>"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(3788790, '<%= study.ctaButtonA %>', {}); </script></span><!-- end HubSpot Call-to-Action Code --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<% } %>
+
+<!-- FOOTER -->
+<% include ../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../partials/js-includes %>
+<script src="../js/ab.js"></script>
+<script type="text/javascript">
+
+	var myAbTest = ABTest({
+		name: "Case-Study-AB",
+		customVarSlot: 1,
+		variations: {
+			first_variation: function () {
+                document.getElementById('cta-testA').className = '';
+			},
+			another_variation: function () {
+                document.getElementById('cta-testB').className = '';
+			},
+			control: function () { /* Empty function. */
+			}
+		}
+	});
+
+</script>
+</body>
+</html>

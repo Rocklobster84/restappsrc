@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Google Analytics -->
+	<% include ../../partials/ga-includes %>
+
+	<!-- META SETTINGS -->
+	<% include ../../partials/meta-settings.ejs %>
+
+	<!-- PAGE TITLE -->
+	<title>Case Study | How to Mesh a Frozen Drone</title>
+	
+  <meta name="robots" content="noindex">
+
+	<!-- CSS FILES -->
+	<% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+	<noscript>
+		<p>
+			In order to view this page JavaScript must be enabled in your browser.
+		</p>
+	</noscript>	
+
+	<!-- TOP NAVIGATION -->
+	<% include ../../partials/navbar %>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="image-case">
+				<img data-src="images/FrozenDrone-Main-3840x1200.png" alt="Example of CFD results for a clean and iced airfoil" class="img-fluid"/>
+				<h1><span class="case-caption">How to Mesh a Frozen Drone</span></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-8">
+
+				<p class="lead">by Richard Hann<br />
+                    Department of Engineering Cybernetics<br />
+                    Norwegian University of Science and Technology<br />
+                </p>
+
+				<hr>
+
+				<p>
+					<strong>
+						Icing of drones is a severe hazard that significantly limits the usage of autonomous unmanned aerial vehicles (UAVs). Computational fluid dynamics (CFD) methods, originally developed for manned aircraft icing, are a vital tool for understanding the effects of icing on UAVs. One of the most challenging tasks for the simulation is the generation of high-quality meshes of complex ice shapes.
+					</strong>
+				</p>
+
+				<p>
+					Atmospheric icing, also called in-cloud icing, occurs when an aircraft encounters supercooled droplets in the atmosphere. Liquid droplets, with a temperature below freezing, turn into ice when they collide with the airframe. Small surfaces, like wings, elevators, and propellers are particularly sensitive to icing and can accumulate significant amounts of ice on the leading-edge. The resulting ice shapes disrupt the airflow and lead to a decrease in aerodynamic performance. The typical penalties are an increase in drag, a decrease in lift, and a reduction of the stall margin. Atmospheric icing is, therefore, a severe hazard to all aircraft and has catastrophic consequences.
+				</p>
+
+				<!-- 16:9 aspect ratio -->
+				<div class="lets-talk-video embed-responsive embed-responsive-16by9">
+					<iframe width="560" height="315" title="Towards Mesh Adaptation with Pointwise Video on YouTube" src="https://www.youtube.com/embed/jZfjtbI7mcs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+				<figcaption>
+					Wind tunnel experiments on UAV icing by NTNU and UBIQ Aerospace at the icing wind tunnel facilities at VTT.
+				</figcaption>
+
+				<p>
+					UAVs are an emerging technology with many potential applications. Some that are particularly relevant when it comes to icing are operations that occur beyond visual line of sight (BVLOS) because icing can occur without the ground pilot noticing. BVLOS missions are required for many drone applications, which are currently discussed, e.g. package deliveries, search & rescue, communications, or pipeline monitoring. Management of the icing risk is a key step in ensuring that these applications can be conducted safely and reliably in the future.
+				</p>
+
+				<p>
+					Until today, very little research has been conducted on the differences between icing on manned and unmanned aircraft. One of the things we are working on is to understand how icing affects the aerodynamic performance of a fixed-wing UAV. Numerical icing codes, mostly developed for manned aircraft applications (e.g. LEWICE, FENSAP-ICE), are a useful tool to investigate icing on drones. These icing codes typically rely on CFD methods to simulate the flow field and to calculate the impingement rates of droplets on the airframe. We use these codes to simulate ice shapes and to compare the clean and iced aerodynamic performance on 2D and 3D UAV geometries. To validate the numerical results, we have conducted several experimental campaigns in specialized icing wind tunnels that are able to generate icing conditions under laboratory conditions.
+				</p>
+
+				<img data-src="images/Fig1-Rim-Ice-800x533.png" alt="Experimental rim ice shape"
+					class="img-fluid center-block" />
+				<figcaption>
+					Experimental rim ice shape
+				</figcaption>
+
+				<p>
+					A key input for all CFD tools is a good mesh. The ice horns that form on the leading-edges of wings are particularly difficult to discretize. These ice shapes are characterized by irregular and complex geometries that need to be meshed well in order to capture the aerodynamic penalties accurately. We are using Pointwise to generate hybrid T-Rex meshes, with a structured grid in the boundary layer and an unstructured grid in the far-field. The T-Rex functionality is able to capture the complex ice structures reliably and requiring little manual adjustment. Since we are dealing with large numbers of ice shapes, we are also relying on Pointwise’s Glyph scripting language to automate our workflow which significantly decreases processing times. We use the resulting meshes in combination with ANSYS FENSAP-ICE on 2D and 3D UAV geometries to simulate the aerodynamic penalties at low Reynolds numbers (ca. 1,000,000).
+				</p>
+
+				<img data-src="images/Fig2-Hybrid-Mesh-800x494.png" alt="Hybrid T-Rex 2D mesh on a complex experimental glaze ice shape."
+					 class="img-fluid center-block" />
+				<figcaption>
+					Hybrid T-Rex 2D mesh on a complex experimental glaze ice shape.
+				</figcaption>
+
+				<img data-src="images/Fig3-Hybrid-3D-800x477.png" alt="Hybrid T-Rex 3D mesh on a full-scale UAV with artificial ice shapes attached to the wing."
+					 class="img-fluid center-block" />
+				<figcaption>
+					Hybrid T-Rex 3D mesh on a full-scale UAV with artificial ice shapes attached to the wing.
+				</figcaption>
+
+				<p>
+					The CFD results show that the degree of performance degradation is strongly related to the temperature. The reason for this is that the temperature governs the ice shape. At very low temperatures all incoming droplets freeze upon impact, forming relatively streamlined rime ice shapes. At temperatures close to freezing, only a fraction of the droplets freezes immediately. This can lead to complex glaze ice horns that are associated with large penalties.
+				</p>
+
+				<img data-src="images/Fig4-Clean-Iced-800x299.png" alt="Example of CFD results for a clean and iced airfoil"
+					 class="img-fluid center-block" />
+				<figcaption>
+					Example of CFD results for a clean and iced airfoil (source: Fajt et al, 2019)
+				</figcaption>
+
+				<img data-src="images/Fig-Sim-Results-800x533.png" alt="Simulation results for the aerodynamic performance degradation at Re=800,000"
+					 class="img-fluid center-block" />
+				<figcaption>
+					Simulation results for the aerodynamic performance degradation at Re=800,000 (source: Fajt et al, 2019)
+				</figcaption>
+
+				<p>
+					We are currently working on the validation of the numerical tools with experimental data and aim to publish more information next year. In the future, our objective will be the numeric simulation of iced UAV propellers and rotors, which will also be very challenging when it comes to meshing.
+				</p>
+
+				<h3>References</h3>
+				<ol>
+					<li>
+						<a id="ref1" class="anchor"></a>
+						Hann, R. (2019). UAV Icing: Ice Accretion Experiments and Validation. SAE Technical Paper. No. 2019-01-2037. DOI: 10.4271/2019-01-2037
+					</li>
+					<li>
+						<a id="ref2" class="anchor"></a>
+						Fajt, N., Hann, R. (2019) The Influence of Meteorological Conditions on the Icing Performance Penalties on a UAV Airfoil. 8th European Conference for Aeronautics and Aerospace Sciences (EUCASS). DOI: 10.13009/EUCASS2019-240
+					</li>
+				</ol>
+
+				</div>
+
+				<div class="col-lg-1">
+				</div>
+
+				<div class="col-lg-3 col-md-3 case-study-nav">
+					<h4>Company Profile</h4>
+					<p>
+						<img data-src="images/ntnu-logo-400.png"
+						alt="NTNU Logo" class="img-fluid" />
+					</p>
+
+					<h4>Partner Since</h4>
+					<p>
+						2018
+					</p>
+
+					<h4>About the Partner</h4>
+					<p>
+						The Department of Engineering Cybernetics at Norwegian University of Science and Technology is involved with the interdisciplinary study and automatic control of dynamic systems like robots, aircraft, marine craft, automotive systems, electrical circuits, biological systems, process plants, etc. and their behavior.
+					</p>
+
+					<hr />
+
+					<h3>Solution at a Glance</h3>
+
+					<h4>CHALLENGE</h4>
+					<p>
+						Icing is a severe hazard that significantly limits the usage of autonomous unmanned aerial vehicles. One of the most challenging tasks is creating high-quality meshes of multiple complex ice shapes in a timely manner.
+					</p>
+
+					<h4>SOLUTION</h4>
+					<p>
+						Pointwise’s T-Rex functionality, reliably and with little manual adjustments, meshes the complex ice structures, thus allowing us to accurately capture the aerodynamic penalties. The macro-function of Pointwise automated our workflow for the large number of ice shapes.
+					</p>
+
+					<h4>BENEFIT</h4>
+					<p>
+						The CFD results quickly attained using Pointwise meshes show that the degree of performance degradation is strongly related to the temperature. At low temperatures droplets freeze on impact forming streamlined shapes, while at warmer temperatures not all freeze immediately and can form complex ice horns that disrupt the flow.
+					</p>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container lets-talk-content">
+			<div class="row">
+				<div class="col-lg-12">
+					<hr />
+					<h2 class="text-center">You May Also Like</h2>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/video-rapid-viscous-mesh-generation-propellers"><img data-src="images/ymal1.png" alt="propeller mesh" class="card-img-top img-fluid"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/video-rapid-viscous-mesh-generation-propellers"><h3>Rapid Viscous CFD Mesh Generation for Propellers</h3></a>
+							<p class="card-text">
+								Learn strategies to quickly construct a high-quality viscous mesh for a model aircraft propeller. These strategies can be used to accurately capture relevant blade geometry as well as efficiently resolve the surface curvature and boundary layer.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/video-rapid-viscous-mesh-generation-propellers" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://www.pointwise.com/theconnector/2015-March/Unstructured-Mesh-Generation-Simulation-Airfoil-Ice-Accretion.html"><img data-src="images/ymal2.png" alt="Airfoil Ice Simulation" class="card-img-top img-fluid"></a>
+						<div class="card-body">
+							<a href="https://www.pointwise.com/theconnector/2015-March/Unstructured-Mesh-Generation-Simulation-Airfoil-Ice-Accretion.html"><h3>Unstructured Mesh Generation for Simulation of Airfoil Ice Accretion</h3></a>
+							<p class="card-text">
+								Researchers at Penn State University are using T-Rex anisotropic tetrahedral extrusion in Pointwise to make high-quality, boundary layer-resolved hybrid meshes for CFD analysis of a critical flight safety issue: ice build-up on aircraft structures.
+							</p>
+							<p>
+								<a href="https://www.pointwise.com/theconnector/2015-March/Unstructured-Mesh-Generation-Simulation-Airfoil-Ice-Accretion.html" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/case-study-application-pointwise-t-rex-meshing-cfd-modeling"><img data-src="images/ymal3.png" alt="carbon dioxide compressor" class="card-img-top img-fluid"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/case-study-application-pointwise-t-rex-meshing-cfd-modeling"><h3>Application of Pointwise T-Rex Meshing and CFD Modeling to the Analysis of Supercritical Carbon Dioxide (S-CO2) Power Cycles</h3></a>
+							<p class="card-text">
+								A team of engineers at CRAFT Tech set out to model an experimental supercritical carbon dioxide (S-CO2) compressor configuration. The engineers needed software that would resolve flow gradients with a minimum number of grid points and be flexible enough to provide the best grid for each region of the machine that they were modeling. They found both these solutions in Pointwise.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/case-study-application-pointwise-t-rex-meshing-cfd-modeling" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	<br>
+
+    <!-- FOOTER -->
+    <% include ../../partials/footer %>
+
+	<!-- JAVASCRIPT -->
+	<% include ../../partials/js-includes %>
+ </body>
+ </html>
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title>Pointwise and the Evolution of Faster, Easier, More Reliable Automated Meshing</title>
+
+    <!-- OG TAGS -->
+    <meta property="og:url" content="https://www.pointwise.com/case-studies/Pointwise-Evolution-Automated-Meshing/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pointwise and the Evolution of Faster, Easier, More Reliable Automated Meshing" />
+    <meta property="og:description" content="Learn more about user-independent automated meshing and take a look at the latest meshing technologies under development at Pointwise." />
+  
+    <!-- META DATA -->
+    <meta name="description" content="Learn more about user-independent automated meshing and take a look at the latest meshing technologies under development at Pointwise.">
+    <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+  <noscript>
+    <p>
+      In order to view this page JavaScript must be enabled in your browser.
+    </p>
+  </noscript>	
+
+  <!-- TOP NAVIGATION -->
+  <% include ../../partials/navbar %>
+
+<section id="title-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="image-case">
+        <img data-src="images/Solution-Complexity-3840x1200.png" alt="Automatically generated mesh after three user-independent iterations of mesh adaptation." class="img-fluid"/>
+          <h1><span class="case-caption">Pointwise and the Evolution of Faster, Easier, More Reliable Automated Meshing<br /><small class="case-sub">By Nick Wyman, Director of Applied Research at Pointwise</small></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="article">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+
+        <p>
+          It makes sense to think that our goal at Pointwise is to deliver meshing capabilities that are truly automatic, and we are indeed working on that. But our vision goes beyond automated meshing: we want to make it possible to run automatic <em>solutions</em> requiring no user input or interactions from start to finish. Imagine being able to generate accurate CFD solutions with little or no work. You can focus more on your core objectives instead of wasting time on the tedious, repetitive tasks involved in generating accurate CFD solutions – and you can generate them faster. The Pointwise research team, with significant contributions from others throughout the company and industry, is making great strides towards this goal. Here is a preview of some of our latest advances. 
+        </p>
+
+        <blockquote class="blockquote text-center pw-blue">
+          <p class="mb-0">&ldquo;Any sufficiently advanced technology is equivalent to magic.&rdquo;</p>
+          <footer class="blockquote-footer"><cite title="Source Title"> Arthur C. Clarke, Author</cite></footer>
+        </blockquote>
+
+        <h2>It is All About the Complexity</h2>
+
+        <p>
+          Users have been asking for automated meshing capabilities for more than 30 years now. One would think we could have accomplished this by now.  It is a gross understatement, however, to say that the combined complexities of the model, mesh, and solution make it extremely difficult. In fact, the new Pointwise features and technology we are using to address these challenges are built upon more than 30 years of research and development.
+        </p>
+      
+        <h2>Model Complexity</h2>
+
+        <p>
+          Let me start with the geometry models that meshes are built on. The complexity begins with things such as large configuration management and the need to deal with repetitive geometry and moving bodies. 
+        </p>
+
+        <p>
+          Pointwise has already gone to great lengths to address model complexity by supporting a variety of analytic and faceted models. We once thought that faceted models were going away, but we are actually seeing more and more hybrid models. This might be due to the user’s need to integrate or retrofit a legacy aircraft with a new design. There also may be cases where geometry models cannot be shared with other teams or organizations and, as a result, you end up dealing with legacy or scanned data. While Pointwise does work with this data, it can be problematic. This is especially true when the CFD drops below the faceted model resolution. You also have the problem of faceted normal discontinuities preventing us from doing nice things like curved meshing.
+        </p>
+
+        <h3>Solution: Faceted Geometry Fitting</h3>
+
+        <p>
+          A future release of Pointwise will feature a new optimization technique, developed by Professor John Dannenhoffer at Syracuse University, enabling Pointwise to convert faceted models to analytic geometry. 
+        </p>
+
+        <h2>Model Complexity and Configuration Management</h2>
+
+        <p>
+          Configuration management has created a significant cognitive load for end users. It is hard enough to make a mesh on a single part, but now users must bring component parts together to form large complex assemblies, many of which involve motion, making it tricky to get everything correct.
+        </p>
+
+        <h3>Solution: Pointwise Frameworks</h3>
+
+        <p> 
+          As part of a US Air Force project we recently completed, we have added a new feature to our 18.2 version called Pointwise Frameworks. The simplest way to explain it is that it is a sandbox for a component grid and geometry. We put the frameworks into a hierarchical structure, allowing users to naturally build complex component assemblies. We also designed it so that each framework can have its own local coordinate system, making things much easier on the user. Attachment points defined within the local coordinate system of each framework allow users to quickly build configurations with the confidence that they are building the configuration correctly. We also added lightweight component instancing to help with repetitive geometry.
+        </p>
+
+        <h2>Meshing Complexity</h2>
+
+        <p>
+          The mesh itself is subject to a number of quality constraints, such as smoothness, forcing us to perform repetitive and tedious work before we can pass it along for solution. Then, when we get to the solution, we have even more complexities because accuracy is a function of the mesh, and the local solution and the mesh must be able to resolve flowfield features that are not known at the time the mesh is created.  
+        </p>
+
+        <h3>Solution: Quilts</h3>
+
+        <p>
+          At Pointwise, we believe surface meshing can be automated using edge-based rules that drive mesh topology and density. However, structured meshes are over-constrained and CAD surface topologies can be problematic. We are developing a tool that uses quasi-structured meshing and a relatively new higher-level CAD topology entity called a &ldquo;quilt&rdquo; to enable edge-based rules. A quilt is defined as a collection of slope continuous surfaces within a model. The process involves a couple of steps. When we assemble a solid model, which is a collection of NURBS (non-uniform rational basis spline) surfaces, we can see how different patches fit together to form a water-tight solid. Although the model has edges, we do not apply automated edge-based rules to this collection of facets and their boundaries. The rules are actually applied to the quilt that is placed above the model in the topology chain and assume that all of the edges within each solid color on the quilt are smooth. 
+        </p>
+
+        <h2>Flow Complexity</h2>
+
+        <p>
+          As mentioned earlier, the flow solution is unknown when we start our meshing process. The challenge is that simulation accuracy is a function of the mesh and local solution gradients. To enable a user-independent simulation, therefore, we must go with mesh adaptation. Mesh adaptation must occur in the volume and at the surface, so access to CAD becomes a requirement. As a result, we have taken a multi-solution approach to these challenges.
+        </p>
+
+        <h3>Solution I: Geometry-mesh Associativity</h3>
+
+        <p>
+          Geometry-mesh associativity relates CAD topology to mesh topology. We are presently working with NASA and the US Air Force to define a geometry and mesh associativity data schema. We can then develop a library to work with that schema independently of Pointwise. This combination will give you the geometry and the mesh, as well as describe how they work together. 
+        </p>
+
+        <p>
+          What do I mean by geometry mesh associativity? Can you just send the geometry with it? Well, only in the crudest sense. What you really want to know is the mesh topology, or how the mesh curves map to the geometry. The connectors and domains in Pointwise map explicitly to the geometry model, giving you the robustness that you need for user-independent mesh adaptation. For instance, if your solution directs you to refine a connector on a wing tip, you have to make sure all the new points you insert lie on the string of geometry curves that define that location in space. By including information in the geometry model that describes the points and edges on the curves and faces in the surface, we are able to save the user quite a bit of time without sacrificing the accuracy of the solution. 
+        </p>
+
+        <h3>Solution II: <em>HP</em> Mesh Adaptation</h3>
+
+        <p>
+          Solution accuracy can be attained most efficiently utilizing <em>h-p</em> mesh adaptation. In other words, we use either <em>h-</em> or <em>p-</em>refinement, depending on the geometry and solution. With <em>h-</em>refinement, we re-mesh based on the solution information. This requires the mesh, geometry, and solution to identify locations where the mesh is coarse and the solution gradient is high. These are the areas we want to make the mesh finer. We use the size field technique for this because it only requires a cloud of points. With <em>p-</em>refinement, we elevate the solution order of accuracy. At the mesh level, this requires adding extra grid points on element edges and faces, which again have to be associated with the geometry to ensure an accurate representation. This technique is incorporated into Pointwise Staff Specialist, Dr. Steve Karman’s project, called <em>hp-</em>CurveMesh, which looks at the solution and wherever the solution and the geometry are smooth, does order elevation locally.
+        </p>
+
+        <p>
+          Another use of mesh link technology is a GeomToMesh developed as well by Karman. Karman is working to expand this into what we call HP-curve mesh, which looks at the solution and wherever the solution and the geometry are smooth, we do order elevation locally. Conversely, wherever the geometry and or solution is discontinuous we do h-refinement locally, both of which require the geometry. We have been asked what the computational times are for these features, but we do not have enough data yet. We do think that HP mesh adaptation will create huge gains in the performance of high order solutions because we are attacking the problem in the most efficient way: locally. 
+        </p>
+
+        <h3>Solution III: Multi-disciplinary Analysis Optimization</h3>
+
+        <p>
+          We have been working with Bob Haimes at MIT to bring EGADS (Engineering Geometry Aircraft Design System) geometry into Pointwise to automatically generate meshes based on attribution. Even more interesting, we are working on sending information back to EGADS. Basically, Haimes and his colleagues are trying to solve an optimization problem for the conservative fitting of the data when interpolating data from one mesh to another. In short, you want to make sure that the integrated conservative qualities are matching as closely as possible through optimization. They have done a lot of work to support a wide variety of discrimination schemes, both continuous and discontinuous and higher order. 
+        </p>
+
+        <h2>For More Information</h2>
+
+        <p>
+          As you can see, automated meshing is improving almost exponentially. It is so gratifying to see us all working together to deliver faster, easier, and more reliable automated meshing. For example, Karman comes up with a new case almost daily that works without the user present. That frequently happens because folks throughout the company regularly send geometries to Karman with a note to &ldquo;try this.&rdquo; I am constantly astonished by our crew’s dedication and teamwork that takes place here at Pointwise every day. As a result, we expect to make it possible for you to integrate meshing and linked geometry into your workflow process in the very near future. It an exciting time.
+        </p>
+
+        <p>
+          I invite you to take a closer look at our latest technical advances. Check out <a href="https://info.pointwise.com/recent-developments-pointwise-applied-research">this video from the Pointwise User Group Meeting</a> that goes into details about the above work Pointwise is doing.
+        </p>
+
+        <div class="cta-space text-center">
+            <!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-8cd7cc09-4de7-4520-b21e-41d8201eb1fd"><span class="hs-cta-node hs-cta-8cd7cc09-4de7-4520-b21e-41d8201eb1fd" id="hs-cta-8cd7cc09-4de7-4520-b21e-41d8201eb1fd"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/3788790/8cd7cc09-4de7-4520-b21e-41d8201eb1fd" ><img class="hs-cta-img" id="hs-cta-img-8cd7cc09-4de7-4520-b21e-41d8201eb1fd" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/3788790/8cd7cc09-4de7-4520-b21e-41d8201eb1fd.png"  alt="Watch Now"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(3788790, '8cd7cc09-4de7-4520-b21e-41d8201eb1fd', {}); </script></span><!-- end HubSpot Call-to-Action Code -->
+          </div>
+
+      </div>
+
+      <div class="col-lg-1">
+      </div>
+
+      <div class="col-lg-3 col-md-3 case-study-nav">
+
+        <h3>Solution at a Glance</h3>
+
+        <h4>CHALLENGE</h4>
+        <p>
+          Generating high-quality automated meshes for CFD analysis is difficult for three reasons: the geometry models upon which the mesh is built are complex, the mesh has numerous quality constraints, and it must resolve flowfield features that are unknown at the time the mesh is created.
+        </p>
+
+        <h4>SOLUTION</h4>
+        <p>
+          The ultimate goal at Pointwise is to deliver user-independent solutions freeing users from tedious and repetitive work so they can focus on their core objectives. It begins with developing new technologies for automatically generating high-quality meshes.
+        </p>
+
+        <h4>BENEFIT</h4>
+        <p>
+          Automated meshing is still under development, so it is difficult to attach concrete statistics. However, in-house testing on a variety of industrial geometries has demonstrated that our automated meshing approach consistently produces high-quality meshes with very little user input.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="ymal">
+  <div class="container lets-talk-content">
+    <div class="row">
+      <div class="col-lg-12">
+        <hr />
+        <h2 class="text-center">You May Also Like</h2>
+      </div>
+    </div>
+
+    <div class="row">
+
+    <div class="col-lg-4 col-md-4">
+      <div class="card">
+        <a href="https://info.pointwise.com/technical-paper-automatic-unstructured-mesh-generation-geometry-attribution"><img data-src="images/ymal1.jpg" class="card-img-top img-fluid" alt="Automatic Unstructured Mesh Generation with Geometry Attribution"></a>
+          <div class="card-body">
+            <a href="https://info.pointwise.com/technical-paper-automatic-unstructured-mesh-generation-geometry-attribution"><h3>Automatic Unstructured Mesh Generation with Geometry Attribution</h3></a>
+            <p class="card-text">
+              Download the technical paper presented at AIAA SciTech 2019 that describes a process that automatically creates unstructured meshes from water-tight geometry input using Glyph scripting. Utilizing this process, one can reduce meshing time by up to 90 percent and manual input from hours to minutes.
+            </p>
+            <p>
+              <a href="https://info.pointwise.com/technical-paper-automatic-unstructured-mesh-generation-geometry-attribution" class="btn btn-primary" role="button">More</a>
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4">
+      <div class="card">
+        <a href="https://info.pointwise.com/webinar-high-order-mesh-generation-using-pointwise"><img data-src="images/ymal2.png" class="card-img-top img-fluid" alt="High-Order Mesh Generation Using Pointwise"></a>
+          <div class="card-body">
+            <a href="https://info.pointwise.com/webinar-high-order-mesh-generation-using-pointwise"><h3>High-Order Mesh Generation Using Pointwise</h3></a>
+            <p class="card-text">
+              There are two primary challenges associated with the degree elevation of linear elements: boundary conformance and curving of high aspect ratio cells encountered within the boundary layer region. In this webinar, we address these challenges and show how to improve CFD solution accuracy by generating boundary conforming, high-order meshes.
+            </p>
+            <p>
+              <a href="https://info.pointwise.com/webinar-high-order-mesh-generation-using-pointwise" class="btn btn-primary" role="button">More</a>
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4">
+      <div class="card">
+        <a href="https://info.pointwise.com/case-study-reducing-discretization-error-mesh-adaptation"><img data-src="images/ymal3.png" class="card-img-top img-fluid" alt="Reducing Discretization Error with Mesh Adaptation"></a>
+          <div class="card-body">
+            <a href="https://info.pointwise.com/case-study-reducing-discretization-error-mesh-adaptation"><h3>Reducing Discretization Error with Mesh Adaptation</h3></a>
+            <p class="card-text">
+              Learn how mesh adaptation can improve CFD solution accuracy. Mesh adaptation can automatically add finer mesh resolution in areas where it is needed by examining an error metric or flow gradients to determine where the existing mesh is not adequately resolving the flow.
+            </p>
+            <p>
+              <a href="https://info.pointwise.com/case-study-reducing-discretization-error-mesh-adaptation" class="btn btn-primary" role="button">More</a>
+            </p>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+  <br>
+
+  <!-- FOOTER -->
+  <% include ../../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../../partials/js-includes %>
+
+
+</body>
+</html>

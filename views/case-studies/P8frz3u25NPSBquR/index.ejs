@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Google Analytics -->
+	<% include ../../partials/ga-includes %>
+
+	<!-- META SETTINGS -->
+	<% include ../../partials/meta-settings.ejs %>
+
+	<!-- PAGE TITLE -->
+	<title>Case Study | Pointwise Enables Accurate CFD for Nuclear Reactor Rod Bundles</title>
+	
+  <meta name="robots" content="noindex">
+
+	<!-- CSS FILES -->
+	<% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+	<!-- TOP NAVIGATION -->
+	<% include ../../partials/navbar %>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="image-case">
+				<img data-src="images/Rod-Bundle-Main-3840x1200.png" alt="Optimized Grid for 19-Rod Bundle" class="img-fluid"/>
+				<h1><span class="case-caption">Pointwise Enables Accurate CFD for Nuclear Reactor Rod Bundles</span></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-8">
+
+				<h2>Pointwise Meshing Techniques Meet the Challenge</h2>
+
+				<p>
+					Accurate fluid flow modeling of nuclear reactor rod bundles is essential and extremely challenging with exacting standards for the mesh to deal with the geometric complexity and near-wall physics. The tightly packed rods with wrapped wires, mainly used in liquid metal cooled systems, that contact the rods provide a challenging geometry into which well-defined boundary layers need to be inserted to capture the local physics accurately. Multiple Pointwise structured meshing techniques were used at the boundaries with hex-dominant unstructured meshing away from the boundaries to successfully meet the meshing challenge and produce accurate fluid flow modeling of a 19-rod bundle.
+				</p>
+
+				<blockquote class="blockquote text-center pw-blue">
+					<p class="mb-0">&ldquo;A high-quality computational fluid dynamics (CFD) model for a rod assembly was developed, which exhibited very good numerical performance at academic convergence levels.&rdquo;</p>
+					<footer class="blockquote-footer"><cite title="Michael B&ouml;ttcher, Karlsruhe Institute of Technology (KIT)">Michael B&ouml;ttcher, Karlsruhe Institute of Technology (KIT)</cite></footer>
+				</blockquote>
+
+				<h2>Sodium Cooled Generation IV Fast Reactor</h2>
+
+				<p>
+					The core design of the Advanced Sodium Technological Reactor for Industrial Demonstration (ASTRID) nuclear reactor was used as the basis of the 19-rod bundle model. The ASTRID reactor uses a primary sodium pool for heat transfer and cooling of the rod. The core consists of over fifty thousand rods, which are grouped in 217-rod bundle assemblies. The numerical model represents only a part of such an assembly but can be considered as sufficient to study effects like the influence of rod position and assembly corners on heat transfer.
+				</p>
+
+				<h2>Modeling a Single 19-Rod bundle</h2>
+
+				<p>
+					One 19-rod bundle was modeled to be able to predict accurately: 1. Local heat transfer qualities (in terms of rod specific Nusselt numbers), and 2. Hot spot temperatures at contact zones. The bundle consists of 19 rods with a diameter of 9.6 millimeters and a length of 0.18 meters representing a single coil of the wires. The rods are wrapped with 1 millimeter diameter wires in a spiral pattern at a 1.11 rod diameter pitch to maintain rod spacing.
+				</p>
+
+				<img data-src="images/Fig1-Rod-Bundle-800x497.png" alt="19-rod bundle with spacing wires"
+					 class="img-fluid center-block" />
+				<figcaption>
+					Figure 1: 19-rod bundle with spacing wires
+				</figcaption>
+
+				<p>
+					The wrapped wires are in contact with one rod and result in a 0.1 millimeter gap to adjacent rods. Obtaining accurate CFD results requires capturing the complex geometry of the interaction between the rods and the wrapped wires with a very controlled mesh near the boundary walls to capture the physics. ANSYS CFX solver and Pointwise meshing were used to generate accurate CFD results.
+				</p>
+
+				<blockquote class="blockquote text-center pw-blue">
+					<p class="mb-0">&ldquo;Because of sensitivity to heat transfer, the contact regions between wires and rods need to be modeled as accurately as possible.&rdquo;</p>
+					<footer class="blockquote-footer"><cite title="Michael B&ouml;ttcher, Karlsruhe Institute of Technology (KIT)">Michael B&ouml;ttcher, Karlsruhe Institute of Technology (KIT)</cite></footer>
+				</blockquote>
+
+				<h2>Meshing the 19-Rod Bundle</h2>
+
+				<p>
+					Accurate capture of the heat transfer quantities required precise boundary layer definitions with high-quality cells. The initial layer spacing from the wall was 0.001 millimeters at the contact areas between the rods and the wrapped wire and 0.005 millimeters on the non-contact areas of the rods and wires. Four boundary layers were created through simple extrusion from the first layer. Ten more boundary layers were created using the T-Rex meshing. The remainder of the volume was meshed with hex-dominant unstructured meshing.
+				</p>
+
+				<p>
+					The first challenge was handling the contact between the rods and the spirally wrapped wires. Two solution approaches to this challenge were used. The first approach used a small gap of 0.01 millimeters for a contact zone, which was modeled as wrapped wire material. The second approach was to have an unmodified contact line between the wrapped wires and the rods and to use a spiral type prismatic block extrusion using adjacent grids as boundaries. The second approach required non-default parameters to the extrusion meshing process. Both approaches resulted in locally poor angles that were acceptable to ANSYS CFX but might not be acceptable to other CFD solvers.
+				</p>
+
+				<img data-src="images/Fig2-Contact-Area-800x497.png" alt="Contact area modeled with spiral extrusion block"
+					 class="img-fluid center-block" />
+				<figcaption>
+					Figure 2: Contact area modeled with spiral extrusion block
+				</figcaption>
+
+				<p>
+					The second challenge was dealing with the 0.1 millimeter gap between the wrapped wires and the adjacent rods. Under standard operating conditions, this could be handled well with the general meshing approach. However, special consideration had to be given to high-temperature accident conditions that would result in the closure of this gap. A full structured mesh approach in the contact zones was used. The boundaries of the structured mesh region were determined by
+				</p>
+                    <ol>
+					<li>projecting the wire geometry past the rod</li>
+					<li>calculating the intersection of the projected wire geometry with the rod</li>
+					<li>projecting the intersection curves back past the wire</li>
+					<li>and calculating the intersection of the projected rod intersection geometry with the wire.</li>
+					</ol>
+
+				<img data-src="images/Fig3-Gap-Closure-800x480.png" alt="Structured block for gap closure"
+					 class="img-fluid center-block" />
+				<figcaption>
+					Figure 3: Structured block for gap closure
+				</figcaption>
+
+				<p>
+					The third challenge was related to addressing the importance of conjugate heat transfer in the rods. Two variants of the model were used to determine the impact of conjugate heat transfer. The first variant used hollow rods with a constant heat flux at the rod surface. The second variant used a solid extrusion mesh for the rods and included the conjugate heat transfer.
+				</p>
+
+				<p>
+					The meshing strategy used resulted in a high-quality mesh with 107 million cells.
+				</p>
+
+				<img data-src="images/Fig4-Quality-Mesh-800x480.png" alt="107 million cell high-quality mesh of the 19-rod bundle"
+					 class="img-fluid center-block" />
+				<figcaption>
+					Figure 4: 107 million cell high-quality mesh of the 19-rod bundle
+				</figcaption>
+
+				<h2>Preparing the CFD Solution</h2>
+
+				<p>
+					The appropriate CFD solutions attributes were defined for ANSYS CFX
+				</p>
+
+				<ul>
+					<li>Inlet Boundary Conditions
+						<ul>
+							<li>Three Cartesian velocity components (taken from unheated simulation)</li>
+							<li>1 percent turbulence intensity </li>
+							<li>Constant temperature (623 K)</li>
+						</ul>
+					</li>
+					<li>Outlet Boundary Conditions
+						<ul>
+							<li>Averaged relative pressure at 0 Pa</li>
+						</ul>
+					</li>
+					<li>Rod Material
+						<ul>
+							<li>Steel for full rod variant</li>
+							<li>Hollow rods heat flux of 106 W/m2 scaled by Reynolds Number</li>
+						</ul>
+					</li>
+					<li>Wire Material
+						<ul>
+							<li>Steel</li>
+						</ul>
+					</li>
+					<li>Assembly wall specification
+						<ul>
+							<li>Adiabatic walls</li>
+						</ul>
+					</li>
+					<li>Coolant
+						<ul>
+							<li>Sodium with temperature-dependent material properties</li>
+						</ul>
+					</li>
+					<li>Discretization
+						<ul>
+							<li>Higher-order method</li>
+						</ul>
+					</li>
+					<li>Physics models
+						<ul>
+							<li>ω RS turbulence model</li>
+							<li>Turbulent heat transfer adjusted to liquid metal conditions (non-default turbulent Prandtl number)</li>
+							<li>Steady-state</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h2>Reviewing the CFD Solution</h2>
+
+				<p>
+					The ANSYS CFX solution converged efficiently and produced accurate results for the heat transfer quantities of interest and the hot-spot local temperatures.
+				</p>
+
+				<p>
+					The resulting flow was a highly turbulent swirling flow with velocities in the off-axial directions at up to 40 percent of the velocities in the axial direction.
+				</p>
+
+				<p>
+					The average rod Nusselt Numbers from the ANSYS CFX solution were compared to two empirical approaches (Mikityuk, Subbotin) that can be found in the literature. The calculated results were in between the two empirical techniques at various Reynolds Numbers. The benefit of the simulation was the ability to determine rod specific Nusselt Numbers with the highest heat transfer found in the central position.
+				</p>
+
+				<p>
+					The rod bundle temperature distribution indicated that the hot spot temperature increase using hollow rods was up to 15 degrees Kelvin. The conjugate heat transfer is only of influence close to the touching regions and reduces the hot spot temperature increase to 13 degrees Kelvin.
+				</p>
+
+				<img data-src="images/Fig5-Temp-Distributions-800x480.png" alt="107 million cell high-quality mesh of the 19-rod bundle"
+					 class="img-fluid center-block" />
+				<figcaption>
+					Figure 5: 19-rod bundle temperature distributions
+				</figcaption>
+
+				<h2>Pointwise Meshing Techniques Meet the Challenge</h2>
+
+				<p>
+					Accurate fluid flow modeling of nuclear reactor bundles is essential and extremely challenging with exacting standards for the mesh to deal with the geometric complexity and near-wall physics. The tightly packed rods with wrapped wires that contact the rods provide a challenging geometry into which well-defined boundary layers need to be inserted to capture the local physics accurately. Multiple Pointwise structured meshing techniques were used at the boundaries with hex-dominant unstructured meshing away from the boundaries to successfully meet the meshing challenge and produce accurate fluid flow modeling of a 19-rod nuclear reactor bundle.
+				</p>
+
+				<p>
+					For more information about how KIT has leveraged Pointwise meshing to enable accurate CFD solutions of a 19-rod bundle, check out the recording of Michael B&ouml;ttcher's presentation entitled "<a href="https://info.pointwise.com/development-cfd-wrapped-wire-rod-bundle-sodium-flow">Development of a CFD Wrapped Wire Rod Bundle Model in Sodium Flow</a>."
+				</p>
+
+				<h3>Acknowledgement</h3>
+
+				<p>
+					This work is supported by the European Union within the SESAME project under Grant Agreement number 654935.
+				</p>
+
+			</div>
+
+				<div class="col-lg-1">
+				</div>
+
+				<div class="col-lg-3 col-md-3 case-study-nav">
+					<h4>Company Profile</h4>
+					<p>
+						<img data-src="images/Kit-Logo-400.png"
+						alt="KIT Logo" class="img-fluid" />
+					</p>
+
+					<h4>Client Since</h4>
+					<p>
+						2001
+					</p>
+
+					<h4>About the Client</h4>
+					<p>
+						The Karlsruhe Institute of Technology (KIT) was created to occupy a leading position worldwide in selected research areas. KIT is an institution for top-class research, excellent scientific training, lifelong learning, unlimited knowledge exchange, and a sustainable culture of innovation.
+					</p>
+
+					<hr />
+
+					<h3>Solution at a Glance</h3>
+
+					<h4>CHALLENGE</h4>
+					<p>
+						Accurate computational fluid dynamics (CFD) results are needed for the design of nuclear reactor rod bundle cooling, which requires a high-quality, detailed mesh of the complex bundle and wrapped wire geometry to capture the physics appropriately.
+					</p>
+
+					<h4>SOLUTION</h4>
+					<p>
+						Michael B&ouml;ttcher of KIT used multiple Pointwise structured and unstructured meshing techniques to model the complex geometry of the rods and the wrapped wires that resulted in a highly accurate computational fluid dynamics (CFD) solution with ANSYS CFX.
+					</p>
+
+					<h4>BENEFIT</h4>
+					<p>
+						Leveraging Pointwise meshing techniques enabled accurate computational fluid dynamics (CFD) results for nuclear reactor rod bundles at stringent convergence levels, which cannot be achieved with automatic &ldquo;free&rdquo; meshing alone.
+					</p>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container lets-talk-content">
+			<div class="row">
+				<div class="col-lg-12">
+					<hr />
+					<h2 class="text-center">You May Also Like</h2>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/case-study-application-pointwise-t-rex-meshing-cfd-modeling"><img data-src="images/ymal1.png" alt="Carbon dioxide compressor" class="card-img-top img-fluid"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/case-study-application-pointwise-t-rex-meshing-cfd-modeling"><h3>CFD Simulation of Supercritical CO2 Power Cycles</h3></a>
+							<p class="card-text">
+							</p>
+							<p>
+								A team of engineers at CRAFT Tech set out to model an experimental supercritical carbon dioxide (S-CO2) compressor configuration. The engineers needed software that would resolve flow gradients with a minimum number of grid points and be flexible enough to provide the best grid for each region of the machine that they were modeling. They found both these solutions in Pointwise.
+								<a href="https://info.pointwise.com/case-study-application-pointwise-t-rex-meshing-cfd-modeling" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/mesh-strategies-fda-benchmark-centrifugal-blood-pump"><img data-src="images/ymal2.png" alt="Slice through the hybrid-viscous mesh topology in the FDA centrifugal blood pump, including the element type and count." class="card-img-top img-fluid"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/mesh-strategies-fda-benchmark-centrifugal-blood-pump"><h3>Mesh Strategies for the FDA Benchmark Centrifugal Blood Pump</h3></a>
+							<p class="card-text">
+								Learn how a hybrid-viscous mesh can improve solution efficiency. For many applications, structured meshes are preferred. However, if more efficient meshing techniques are possible and provide accurate solutions, exploration of those alternatives is imperative. In this webinar, we compare solutions obtained using a hybrid-viscous mesh with a multi-block structured mesh.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/mesh-strategies-fda-benchmark-centrifugal-blood-pump" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="../../case-studies/U3dS33ng4YN7frFJ/"><img data-src="images/ymal3.png" alt="The Potsdam Propeller test case geometry" class="card-img-top img-fluid"></a>
+						<div class="card-body">
+							<a href="../../case-studies/U3dS33ng4YN7frFJ/"><h3>Hybrid Meshing Key to Improving CFD Simulation Efficiency</h3></a>
+							<p class="card-text">
+								Read the case study, &ldquo;Hybrid Meshing Key to Improving CFD Simulation Efficiency,&rdquo; which summarizes how a T-Rex hybrid grid showed up to a seven-fold improvement in solution efficiency compared to other approaches in predicting thrust and torque for a marine propeller.
+							</p>
+							<p>
+								<a href="../../case-studies/U3dS33ng4YN7frFJ/" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	<br>
+
+    <!-- FOOTER -->
+    <% include ../../partials/footer %>
+
+	<!-- JAVASCRIPT -->
+	<% include ../../partials/js-includes %>
+ </body>
+ </html>
+

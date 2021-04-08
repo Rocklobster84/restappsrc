@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google Analytics -->
+  <% include ../partials/ga-includes %>
+
+  <!-- META SETTINGS -->
+  <% include ../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title><%- downloads.title %></title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/downloads/<%- downloads.slug %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<%- downloads.title %>" />
+  <meta property="og:description" content="<%- downloads.description %>" />
+
+  <!-- META DATA -->
+  <meta name="description" content="<%- downloads.description %>">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../partials/css-includes %>
+
+  <!-- RECAPTCHA -->
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+
+<body id="page-top">
+
+  <!-- TOP NAVIGATION -->
+  <% include ../partials/navbar %>
+
+  <!-- PAGE COPY -->
+  <% if (downloads.slug === "index.html") { %>
+      <%- downloads.copy %>
+  <div class="content-section-a">
+      <div class="container">
+          <div class="row">
+
+              <div class="support-nav col-lg-8">
+                  <% include ../partials/form-support %>
+              </div>
+
+              <!-- Space between columns -->
+              <div class="col-lg-1">
+              </div>
+
+              <!-- Sidebar -->
+              <div class="support-nav col-lg-3">
+                  <% include ../partials/nav-support %>
+              </div>
+          </div>
+      </div>
+  </div>
+  <% } else { %>
+  <div class="container support-body">
+      <div class="row">
+          <div class="col-lg-8">
+            <%- downloads.copy %>
+          </div>
+              <!-- THIS STARTS THE RIGHT HAND COLUMN -->
+              <!-- Space between columns -->
+              <div class="col-lg-1">
+              </div>
+
+              <!-- Help Form -->
+              <div class="col-lg-3">
+                  <% include ../partials/form-support %>
+
+                  <br />
+
+                  <div class="support-nav">
+                      <% include ../partials/nav-support %>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+                  <% } %>
+
+<!-- FOOTER -->
+<% include ../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../partials/js-includes %>
+
+</body>
+</html>

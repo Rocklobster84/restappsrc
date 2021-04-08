@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../../partials/meta-settings.ejs %>
+
+	<!-- PAGE TITLE -->
+	<title>Using CFD to Help Increase the Safety of Driverless Cars</title>
+
+	<!-- OG TAGS -->
+	<meta property="og:url" content="https://www.pointwise.com/case-studies/Using-CFD-Increase-Safety-Driverless-Cars/index.html" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Using CFD to Help Increase the Safety of Driverless Cars" />
+	<meta property="og:description" content="Learn how Pointwise is being used to help the auto industry build driverless cars that can save lives." />
+
+	<!-- META DATA -->
+	<meta name="description" content="Learn how Pointwise is being used to help the auto industry build driverless cars that can save lives.">
+	<meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling, driveless car, case study" />
+
+	<!-- CSS FILES -->
+	<% include ../../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+  <noscript>
+    <p>
+      In order to view this page JavaScript must be enabled in your browser.
+    </p>
+  </noscript>	
+
+  <!-- TOP NAVIGATION -->
+  <% include ../../partials/navbar %>
+
+<section id="title-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="image-case">
+				<img data-src="images/driverless-car-3840x1200.png" alt="vehicle visualization" class="img-fluid"/>
+				<h1><span class="case-caption">Using CFD to Help Increase the Safety of Driverless Cars</span></h1>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="article">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-8">
+
+				<h2>First numerical study of its kind provides basis for future CFD studies and ongoing development of AI for autonomous vehicles</h2>
+
+				<p>
+					Autonomous vehicles – or driverless cars – are expected to become a viable form of transportation within the first half of this century. 
+				</p>
+
+				<p>
+					Proponents believe these vehicles can help create a safer driving environment. The National Highway Traffic Safety Administration (NHTSA) estimates that 94 percent of serious car accidents are caused by human error<sup><a href="#ref1" class="page-scroll">1</a></sup>. Considering that more than 35,000 people in the United States were killed in automobile accidents in 2015, the potential for saving lives is tremendous. Less important, but still significant, the NHTSA puts the economic cost of these accidents in the hundreds of billions of dollars each year. 
+				</p>
+
+				<p>
+					There are many issues to address and hurdles to clear; however, before safe driverless cars can be safely and widely used.
+				</p>
+
+				<blockquote class="blockquote text-center pw-blue">
+					<p class="mb-0">&ldquo;Self-driving cars are the natural extension of active safety and obviously something we should do.&rdquo;</p>
+					<footer class="blockquote-footer"><cite title="Source Title">Elon Musk, entrepreneur</cite></footer>
+				</blockquote>
+
+				<h2>Artificial Intelligence and Numerical Studies</h2>
+
+				<p>
+					One of the first challenges will be to provide the Artificial Intelligence (AI) needed to teach autonomous cars how to respond safely to aerodynamic conditions encountered on real-world roads, which is something human drivers have been responsible for up until now. To do this, engineers must thoroughly understand how road conditions and variables such as the number, type, and distance of other vehicles on the road affect the aerodynamics surrounding a driverless car.
+				</p>
+
+				<img data-src="images/Fig1-Right-Wind-1000x564.png"
+				alt="This CFD visualization illustrates how the subject vehicle is affected by wind on its right side." class="img-fluid center-block" />
+				<figcaption>
+						This CFD visualization illustrates how the subject vehicle is affected by wind on its right side. In the initial rear position, the vehicle experienced high drag and a destabilizing flow field. The intermediate location improves the fuel or charge consumption and downforce but does not improve vehicle handling. The front position provides the highest economy, safety, and ride comfort. This information, when provided to a driverless car, can help that car make decisions about where it should position itself.
+				</figcaption>
+
+				<br>
+				
+				<p>
+					&ldquo;The concept is to teach these vehicles to position themselves on the road in areas with less drag for optimal fuel efficiency, travel time, stability and ultimately for maximum safety,&rdquo; says Khalid Khalil<sup><a href="#ref2" class="page-scroll">2</a></sup>. Khalil recently completed the automotive industry’s first numerical study of aerodynamic conditions that surround a vehicle on the road. The study formed the basis of Khalil’s MSc thesis in Computational Fluid Dynamics (CFD) at Cranfield University in the United Kingdom (UK) and established a baseline for future numerical studies.
+				</p>
+
+				<img data-src="images/Fig2-Volume-Metric-1000x467.png"
+				alt="Volumetric grid generated for intermediate location." class="img-fluid center-block" />
+				<figcaption>
+						Volumetric grid generated for intermediate location. It has two refinement regions: one immediately around the subject vehicle, and a larger region covering the section of the M1 motorway used for the numerical study. Viscous layers around the sedan and rear end of the trailer can also be seen.
+				</figcaption>
+
+				<p>
+					&ldquo;The idea is to inject real-life conditions into the CFD simulation software in order to simulate the conditions on an actual motorway,&rdquo; says Khalil. &ldquo;Which makes it a complex simulation with many moving parts.&rdquo;
+				</p>
+
+				<img data-src="images/Fig3-Close-Up-1000x334.png"
+				alt="Close up visualization of front position." class="img-fluid center-block" />
+				<figcaption>
+					Close up visualization of front position.
+				</figcaption>
+
+				<p>
+					Working with his professors and advisors, Khalil began by gathering data about road conditions on the UK’s M1 roadway such as traffic patterns, accidents, winds, and speed. He then used Pointwise to create individual high-fidelity meshes for the subject car and a variety of vehicles. After inputting the road conditions and running simulations on the individual aerodynamics of the main vehicle, he joined all the meshes together using Pointwise’s multiple block feature for the final study of how the moving parts interacted together. 
+				</p>
+
+				<p>
+					&ldquo;We knew it would require a great deal of time and there was no room for error, so we ran an initial study using a coarse grid level,&rdquo; says Khalil. &ldquo;The test took about 19 hours to run on 64 high-performance cores, and everything worked quite well. The final study was run on a medium grid, took about 48 hours, and yielded some very accurate results. I don’t think we would have been able to do it that quickly without Pointwise.&rdquo;
+				</p>
+
+				<h2>Multiple Block Approach</h2>
+
+				<p>
+					Pointwise uses a multiple block approach simplifying complex CFD studies into modular grids that can easily be linked together. This approach gives users full control of the process, from the smallest element to the largest, and enables them to troubleshoot and improve grid quality early in the process. It also saves time and increases accuracy by allowing the reuse of grids in different configurations for additional CFD studies. 
+				</p>
+
+				<img data-src="images/Fig4-Top-View-1000x333.png"
+				alt="Overhead view of front position." class="img-fluid center-block" />
+				<figcaption>
+					Overhead view of front position.
+				</figcaption>
+
+				<p>
+					&ldquo;For the motorway study, I did not have to re-mesh the car. I did not have to re-extrude viscous layers or re-mesh the volume,&ldquo; says Khalil. &ldquo;It saves a remarkable amount of time and ensures that the results are exactly the same because we’re using the exact same data and mesh. Pointwise’s T-Rex feature was also critical to accurately capturing the boundary layer flow, which is especially important for turbulence studies.&rdquo;
+				</p>
+
+				<p>
+					This is just the beginning for researchers. The data and results from Khalil’s numerical study will be used by future researchers to refine the automotive industry’s understanding of how changing aerodynamic conditions affect vehicles on the road. 
+				</p>
+
+				<img data-src="images/Fig5-Surface-Mesh-1000x450.png"
+				alt="Fine surface mesh of subject vehicle." class="img-fluid center-block" />
+				<figcaption>
+					Fine surface mesh of subject vehicle.
+				</figcaption>
+
+				<p>
+					&ldquo;I am really excited about a safer future with driverless cars,&rdquo; says Khalil. &ldquo;There is still so much to do, but it is important that we have taken the first step.&rdquo;
+				</p>
+
+				<p>
+					For more information about how engineers and designers in the automotive industry use Pointwise to make faster, more efficient vehicles, visit <a href="https://info.pointwise.com/pointwise-delivers-fast-accurate-results-garry-rogers-motorsport">Pointwise Delivers Fast, Accurate Results for Garry Rogers Motorsport</a>. 
+				</p>
+
+				<p class="text-center cta-space">
+					<!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-1c6b33ca-b693-476c-8bd1-b593cc78473b"><span class="hs-cta-node hs-cta-1c6b33ca-b693-476c-8bd1-b593cc78473b" id="hs-cta-1c6b33ca-b693-476c-8bd1-b593cc78473b"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/3788790/1c6b33ca-b693-476c-8bd1-b593cc78473b" ><img class="hs-cta-img" id="hs-cta-img-1c6b33ca-b693-476c-8bd1-b593cc78473b" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/3788790/1c6b33ca-b693-476c-8bd1-b593cc78473b.png"  alt="Read More"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(3788790, '1c6b33ca-b693-476c-8bd1-b593cc78473b', {}); </script></span><!-- end HubSpot Call-to-Action Code -->
+				</p>
+
+				<h3>References</h3>
+
+				<p>
+					<a id="ref1">[1]</a> <a href="https://www.nhtsa.gov/technology-innovation/automated-vehicles-safety#issue-road-self-driving">Automated Vehicles for Safety</a>, NHTSA web site.
+				</p>
+				<p>
+					<a id="ref2">[2]</a> <a href="https://www.linkedin.com/in/k-khalil/">www.linkedin.com/in/k-khalil/</a>
+				</p>
+
+				</div>
+
+				<div class="col-lg-1">
+				</div>
+
+				<div class="col-lg-3 col-md-3 case-study-nav">
+					<h4>Company Profile</h4>
+					<p>
+
+						<img data-src="images/cranfield-logo-200.png"
+						alt="Cranfield University Logo" class="img-fluid" />
+					</p>
+
+					<h4>Client Since</h4>
+					<p>
+						Cranfield University has been a Pointwise customer for over twenty years and was Pointwise’s first customer in the United Kingdom
+					</p>
+
+					<h4>About the Client</h4>
+					<p>
+						As the UK’s only exclusively postgraduate university, with world-class expertise, large-scale facilities, and unrivalled industry partnerships Cranfield is helping to create leaders in technology and management globally. The university is located about 80 km (50 miles) northwest of London near the town of Milton Keynes.
+					</p>
+
+					<hr />
+
+					<h3>Solution at a Glance</h3>
+
+					<h4>CHALLENGE</h4>
+					<p>
+						There are many hurdles to clear before driverless cars can be used safely by the general public. One challenge is to provide the artificial intelligence needed to teach driverless cars how to respond safely to changing conditions on the road.
+					</p>
+
+					<h4>SOLUTION</h4>
+					<p>
+						To do this, engineers must thoroughly understand how road conditions and variables such as the number, type, and distance of other vehicles on the road affect the aerodynamics surrounding a driverless car.
+					</p>
+
+					<h4>BENEFIT</h4>
+					<p>
+						It is estimated that 94 percent of all serious car crashes in the United States are caused by driver error. Teaching these driverless cars to position themselves on the road in areas with less drag will help increase fuel efficiency, travel time, and stability. Ultimately, it should lead to fewer serious accidents.
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="ymal">
+		<div class="container lets-talk-content">
+			<div class="row">
+				<div class="col-lg-12">
+					<hr />
+					<h2 class="text-center">You May Also Like</h2>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/presentation-automatic-unstructured-mesh-generation-geometry-attribution"><img data-src="images/ymal1.jpg" class="card-img-top img-fluid" alt="Dr. Steve Karman at the 2018 Pointwise User Group Meeting"></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/presentation-automatic-unstructured-mesh-generation-geometry-attribution"><h3>Automatic Unstructured Mesh Generation with Geometry Attribution</h3></a>
+							<p class="card-text">
+								Watch and download the presentation given by Steve Karman, Pointwise, Inc. at the Pointwise User Group Meeting about how Pointwise used custom Glyph scripts to automatically generate high-quality unstructured meshes for Engineering Sketch Pad (ESP) geometries, saving time and freeing users from repetitive and tedious tasks.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/presentation-automatic-unstructured-mesh-generation-geometry-attribution" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/webinar-localized-remeshing-strategies-parametric-models"><img data-src="images/ymal2.png" class="card-img-top img-fluid" alt="Various meshed components of the DrivAer benchmark model."></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/webinar-localized-remeshing-strategies-parametric-models"><h3>Localized Remeshing Strategies for Parametric Models in Pointwise</h3></a>
+							<p class="card-text">
+								In this video, we demonstrate a couple of different strategies users can leverage in Pointwise to limit changes to only those localized regions in their computational domain that have been modified from one configuration to the next helping them spend more time focusing on the results of their parametric studies.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/webinar-localized-remeshing-strategies-parametric-models" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4">
+					<div class="card">
+						<a href="https://info.pointwise.com/webinar-students-race-aerodynamic-efficiency"><img data-src="images/ymal3.png" class="card-img-top img-fluid" alt="Hybrid volume mesh generated for the vehicle using Pointwise’s T-Rex algorithm."></a>
+						<div class="card-body">
+							<a href="https://info.pointwise.com/webinar-students-race-aerodynamic-efficiency"><h3>The Stanford Solar Car Project's Race for Aerodynamic Efficiency</h3></a>
+							<p class="card-text">
+								The Stanford Solar Car Project team developed a repeatable, simulation driven design framework consisting of Pointwise for rapid hybrid grid generation, SU2 to run the CFD simulations, and Tecplot 360 EX to post-process and interpret the results.
+							</p>
+							<p>
+								<a href="https://info.pointwise.com/webinar-students-race-aerodynamic-efficiency" class="btn btn-primary" role="button">More</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+		<!-- FOOTER -->
+		<% include ../../partials/footer %>
+
+  <!-- JAVASCRIPT -->
+  <% include ../../partials/js-includes %>
+	</body>
+	</html>

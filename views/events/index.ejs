@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title><%- events.title %></title>
+
+    <!-- OG TAGS -->
+    <meta property="og:url" content="https://www.pointwise.com/events/<%- events.slug %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<%- events.title %>" />
+    <meta property="og:description" content="<%- events.description %>" />
+
+    <!-- META DATA -->
+    <meta name="description" content="<%- events.description %>">
+    <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+    <!-- CSS FILES -->
+    <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../partials/navbar %>
+
+<section id="events-intro">
+    <div class="img-fluid top-level-intro" data-src="<%- events.headerImg %>">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 intro-message-back">
+                    <div class="intro-message">
+                        <h1><%- events.title %></h1>
+                        <hr class="intro-divider">
+                        <p>
+                            <%- events.subHeading %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="event-listings">
+    <div class="container events-content">
+        <div class="row">
+            <div class="col-lg-8">
+
+               <%- events.copy %>
+
+            </div>
+
+            <!-- Space between -->
+            <div class="col-lg-1">
+            </div>
+
+            <!--Right column-->
+            <div class="col-lg-3">
+                <% include ../partials/nav-about %>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<% include ../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../partials/js-includes %>
+</body>
+</html>
