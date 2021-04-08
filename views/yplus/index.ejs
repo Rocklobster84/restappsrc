@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title><%- yplus.title %></title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/yplus/<%- yplus.slug %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<%- yplus.title %>" />
+  <meta property="og:description" content="<%- yplus.description %>" />
+
+  <!-- META DATA -->
+  <meta name="description" content="<%- yplus.description %>">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+	<!-- TOP NAVIGATION -->
+	<% include ../partials/navbar %>
+
+  <div class="yplus-back img-fluid" data-src="images/yplus-back.png">
+      <%- yplus.copy %>
+  </div>
+
+
+  <!-- FOOTER -->
+  <% include ../partials/footer %>
+
+    <!-- JAVASCRIPT -->
+    <% include ../partials/js-includes %>
+  <script src="assets/yplus.js"></script>
+  <script>window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};</script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"></script>
+</body>
+</html>

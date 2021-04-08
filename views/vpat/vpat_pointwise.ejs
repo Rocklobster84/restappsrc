@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+	<!-- PAGE TITLE -->
+	<title>VPAT for Pointwise</title>
+
+	<!-- OG TAGS -->
+	<meta property="og:url" content="https://www.pointwise.com/vpat/vpat_pointwise.html" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="VPAT for Pointwise" />
+	<meta property="og:description" content="Voluntary Product Accessibility Templates (VPATs) for Pointwise." />
+
+	<!-- META DATA -->
+	<meta name="description" content="Voluntary Product Accessibility Templates (VPATs) for Pointwise.">
+	<meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+	<!-- CSS FILES -->
+	<% include ../partials/css-includes %>
+</head>
+
+<body id="page-top">
+
+	<noscript>
+		<p>
+			In order to view this page JavaScript must be enabled in your browser.
+		</p>
+	</noscript>
+
+	<!-- TOP NAVIGATION -->
+	<% include ../partials/navbar %>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+
+			<h1>Pointwise from Pointwise, Inc.</h1><br>
+			<h2>March 2017</h2>
+
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<tbody>
+
+						<tr>
+							<td colspan="3" class="text-center">
+								<strong><h2 class="black">
+									Section 1194.21 Software Applications and Operating Systems - Detail
+									<br />
+									Voluntary Product Accessibility Template&#8482;
+								</h2></strong>
+							</td>
+						</tr>
+
+						<tr>
+							<td><strong>Criteria</strong></td>
+							<td><strong>Supporting Features</strong></td>
+							<td><strong>Remarks and explanations</strong></td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(a) When software is designed to run on a system that has a keyboard,
+								product functions shall be executable from a keyboard where the
+								function itself or the result of performing a function can be
+								discerned textually.
+							</td>
+
+							<td>
+								Supported with exceptions.
+							</td>
+
+							<td>
+								Some functions only produce a graphical result (e.g. changing the
+								color of an entity).
+							</td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(b) Applications shall not disrupt or disable activated features of
+								other products that are identified as accessibility features, where
+								those features are developed and documented according to industry
+								standards. Applications also shall not disrupt or disable activated
+								features of any operating system that are identified as accessibility
+								features where the application programming interface for those
+								accessibility features has been documented by the manufacturer of the
+								operating system and is available to the product developer.
+							</td>
+
+							<td>
+								Supported
+							</td>
+
+							<td>
+								&nbsp;
+							</td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(c) A well-defined on-screen indication of the current focus shall be
+								provided that moves among interactive interface elements as the input
+								focus changes. The focus shall be programmatically exposed so that
+								Assistive Technology can track focus and focus changes.
+							</td>
+
+							<td>
+								Supported with exceptions
+							</td>
+
+							<td>
+								On-screen focus is indicated. Focus is not exposed programmatically.
+							</td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(d) Sufficient information about a user interface element including
+								the identity, operation and state of the element shall be available to
+								Assistive Technology. When an image represents a program element, the
+								information conveyed by the image must also be available in text.
+							</td>
+
+							<td>
+								Supported with exceptions
+							</td>
+
+							<td>
+								Text may optionally be displayed for some images that are program elements.
+							</td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(e) When bitmap images are used to identify controls, status
+								indicators, or other programmatic elements, the meaning assigned to
+								those images shall be consistent throughout an application's
+								performance.
+							</td>
+
+							<td>
+								Supported
+							</td>
+
+							<td>
+								&nbsp;
+							</td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(f) Textual information shall be provided through operating system
+								functions for displaying text. The minimum information that shall be
+								made available is text content, text input caret location, and text
+								attributes.
+							</td>
+
+							<td>
+								Not supported
+							</td>
+
+							<td>
+								Textual information is provided through the application's functions, not the operating system.
+							</td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(g) Applications shall not override user selected contrast and color
+								selections and other individual display attributes.
+							</td>
+
+							<td>
+								Supported with exceptions
+							</td>
+
+							<td>
+								The application uses and maintains its own color scheme which the
+								user may customize.
+							</td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(h) When animation is displayed, the information shall be displayable
+								in at least one non-animated presentation mode at the option of the
+								user.
+							</td>
+
+							<td>
+								Not applicable
+							</td>
+
+							<td>
+								&nbsp;
+							</td>
+
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(i) Color coding shall not be used as the only means of conveying
+								information, indicating an action, prompting a response, or
+								distinguishing a visual element.
+							</td>
+
+							<td>
+								Supported with exceptions.
+							</td>
+
+							<td>
+								Some information (e.g. computational coordinates) is only identified
+								by color in the graphics but by color and text in the user interafce.
+							</td>
+
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(j) When a product permits a user to adjust color and contrast
+								settings, a variety of color selections capable of producing a range
+								of contrast levels shall be provided.
+							</td>
+
+							<td>
+								Supported
+							</td>
+
+							<td>
+								&nbsp;
+							</td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(k) Software shall not use flashing or blinking text, objects, or
+								other elements having a flash or blink frequency greater than 2 Hz
+								and lower than 55 Hz.
+							</td>
+
+							<td>
+								Not applicable
+							</td>
+
+							<td>
+								&nbsp;
+							</td>
+						</tr>
+
+						<!-- =============================================================== -->
+
+						<tr>
+							<td>
+								(l) When electronic forms are used, the form shall allow people using
+								Assistive Technology to access the information, field elements, and
+								functionality required for completion and submission of the form,
+								including all directions and cues.
+							</td>
+
+							<td>
+								Not applicable
+							</td>
+
+							<td>
+								&nbsp;
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<% include ../partials/footer %>
+
+	<!-- JAVASCRIPT -->
+	<% include ../partials/js-includes %>
+
+</body>
+</html>

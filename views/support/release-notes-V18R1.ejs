@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+	<!-- PAGE TITLE -->
+	<title>Release Notes Pointwise V18.0 R1</title>
+
+	<!-- OG TAGS -->
+	<meta property="og:url" content="https://www.pointwise.com/support/release-notes-V18R1.html" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Release Notes Pointwise V18.0 R1" />
+	<meta property="og:description" content="These release notes are provided as a reference for the new features included in the latest version of Pointwise as well as any known issues that were resolved." />
+
+	<!-- META DATA -->
+	<meta name="description" content="These release notes are provided as a reference for the new features included in the latest version of Pointwise as well as any known issues that were resolved.">
+	<meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+	<!-- CSS FILES -->
+	<% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+	<!-- TOP NAVIGATION -->
+	<% include ../partials/navbar %>
+
+	<!-- Page Content -->
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-8">
+				<h1>Pointwise Release Notes</h1>
+
+				<ul class="list-unstyled">
+					<li>Version: Pointwise V18.0 R1</li>
+					<li>Release Date: September 2016</li>
+					<li>News Release: <a href="../news/2016/Unstructured-Quadrilaterals-Hexahedral-Layers-Added-to-Pointwise.html">www.pointwise.com/news/Unstructured-Quadrilaterals-Hexahedral-Layers-Added-to-Pointwise.html</a></li>
+				</ul>
+
+				<ul class="list-unstyled release-nav">
+					<li><a href="#overview" class="page-scroll">Overview</a></li>
+					<li><a href="#new-features" class="page-scroll">New Features</a></li>
+					<li><a href="#resolved-issues" class="page-scroll">Resolved Issues</a></li>
+					<li><a href="#platform-support" class="page-scroll">Platform Support</a></li>
+				</ul>
+
+				<section id="overview">
+					<h2 class="rn-head">Overview</h2>
+
+					<p>
+						Pointwise is our leading mesh generation software product for CFD, encompassing nearly three decades of technology development. The product features a modern software framework and workflow and provides tools like 64-bit support, multi-threading, and Windows/Linux/Mac portability.
+					</p>
+
+					<p>
+						These release notes are provided as a reference for the new features included in the latest version of Pointwise as well as any known issues that were resolved.
+					</p>
+				</section>
+
+				<section id="new-features">
+
+					<h2>New Features</h2>
+
+					<ul>
+
+						<li>Pointwise now provides a new entity type for controlling local isotropic cell size for unstructured blocks. This new entity type, called a Source, provides a way to specify a target cell size in a geometric region that is independent of the grid entities and topology. For example, wake refinement can be achieved by creating a Source entity box located in the wake region with the appropriate target cell size, and any unstructured blocks that overlap this Source entity box will use the target cell size in that region when it is being initialized or refined.</li>
+
+						<li>The <em>Draw Shapes</em> command has been added to Pointwise to provide the ability to quickly create boxes, cylinders, spheres, and polyhedral for use as database entities or sources.</li>
+
+						<li>T-Rex can now directly create triangles and/or quads in 2D and mixed element blocks containing tetrahedra, pyramid, prism and hex cells in 3D. Controls for creating mixed cell domains and blocks can be found within the Grid, Solve command.</li>
+
+						<li>Pointwise can now generate quad-dominant isotropic domains consisting of triangles and/or quads using the <em>Delaunay</em>, <em>Advancing Front</em>, or <em>Advancing Front Ortho</em> algorithms.</li>
+
+						<li>Quad-dominant domains in Pointwise can be extruded into blocks via an updated normal extrusion algorithm.</li>
+
+						<li>Mixed cell blocks containing tetrahedra, pyramids, prisms, and hexes can now be imported and exported to CGNS.</li>
+
+						<li>Database shell entities (i.e. faceted surfaces) can be imported with any arbitrary polygonal shape. This includes triangles, quads, arbitrary polygons, and polygons with interior holes.</li>
+
+						<li>The T-Rex cell combination option available upon exporting a mesh has been relocated to a Combine T-Rex Cells command within the Edit menu. This allows users to combine T-Rex meshes from previous versions of Pointwise without having to re-initialize those meshes in Grid, Solve. The legacy Convert T-Rex to Prisms Edit menu command available in previous versions of Pointwise has been deprecated, but its functionality within Glyph is still available for those users who require it.</li>
+
+						<li>Pointwise now uses the Reprise License Manager (RLM) for license management.</li>
+
+						<li>Multiple blocks of varying types (i.e. structured, prism, unstructured) can now be joined into a single unstructured block in a manner similar to how unstructured domains are joined.</li>
+
+						<li>In <em>Examine</em>, the <em>Cell Type</em> (formerly the <em>None</em> option) function now allows volume grid cells to be colored by their type (hex, tet, prism, pyramid).  This function also enables users to choose which volume cells are visible by type.</li>
+
+						<li>Information regarding number and source of the associated databases is now displayed in <em>Examine</em> for the <em>Database Associativity</em> function.</li>
+
+						<li>Quad cell warp is now a supported metric in <em>Examine</em>. <em>Warp</em> is the angle between the normal vectors of triangles that result from diagonalizing a quad. Since a quad can be diagonalized two different ways, the reported value is the maximum of the two diagonalizations.</li>
+
+						<li>Pointwise now supports high-resolution (e.g. QHD, UHD, 4K) monitors with graphics that scale up crisply with no loss in GUI or graphics interaction.</li>
+
+						<li>The <em>Cell Count</em> command has been updated to include itemization for an expanded set of entity types (connectors, domains, blocks) and cell types (quads and triangles). The command is now selection sensitive and provides both selection and project totals for each entity type. A new toolbar item has been added to print the table summary directly to the Messages window without having to open the command's panel.</li>
+
+						<li>The direction of rotational extrusion can now be specified implicitly by entering a negative angle of rotation.</li>
+
+						<li>The <em>Set Boundary Conditions</em> command now contains an option that allows previously assigned boundary conditions to be hidden from the Display window and from subsequent selection.</li>
+
+						<li>The right-click context menu now supports changing entity attributes.</li>
+
+						<li>Break points on database-constrained connectors can now be created at user-specified values of the U or V parametric coordinate.</li>
+
+						<li>Clickable links are now supported in the message window. Hovering and clicking on these links will perform various actions.</li>
+
+					</ul>
+
+				</section>
+
+
+				<section id="resolved-issues">
+
+					<h2>Resolved Issues</h2>
+
+					<div class="table-responsive">
+						<table class="table table-bordered table-striped">
+
+							<tr>
+								<th>SPR</th>
+								<th>Description</th>
+							</tr>
+
+							<tr>
+								<td class="no-wrap">PW-20066</td>
+								<td>Two intersecting models could not be trimmed by each other with the <em>Edit, Trim By Surface</em> command.</td>
+							</tr>
+
+							<tr>
+								<td>PW-20062</td>
+								<td>Structured domains were copied, pasted, and mirrored. The interior of the resulting mirrored domains did not look like the original domains.</td>
+							</tr>
+
+							<tr>
+								<td>PW-20035</td>
+								<td>In Pointwise V18.0 Beta, T-Rex layers stopped prematurely off a convex 90 degree corner. The same mesh could be initialized with more layers off the corner in Pointwise V17.3 R5.</td>
+							</tr>
+
+							<tr>
+								<td>PW-20015</td>
+								<td>A domain was selected in the Display window while the <em>CAE, Set Boundary Conditions</em> command panel was open. The boundary condition to which the domain was assigned did not highlight when the domain was selected.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19989</td>
+								<td>Negative volume cells were generated in a T-Rex block initialized in Pointwise.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19946</td>
+								<td>A Pointwise project (.pw) file containing a single connector was opened in Pointwise V17.3 R5 and V18.0 Beta 1. The connector had the correct distribution and length in V17.3R5. In V18.0 Beta 1, the connector had a different dimension, length, and shape.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19925</td>
+								<td>Pointwise was unable to export a grid to the CRUNCH CAE solver.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19901</td>
+								<td>Pointwise exited prematurely when trying to initialize a mixed cell T-Rex block.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19874</td>
+								<td>A source was copied, pasted, and mirrored. The mirrored copy appeared displayed in gray instead of orange.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19863</td>
+								<td>For an isolated domain, the <em>Examine</em> diagnostic functions of <em>Equiangle Skewness</em> and <em>Max</em>. <em>Included Angle</em> provided different results dependent on whether the domain's associated database surface was present.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19804</td>
+								<td>Pointwise was very slow exporting a large T-Rex grid to the Cobalt CAE solver.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19802</td>
+								<td>Creating an unstructured domain on a portion of a cylinder failed.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19776</td>
+								<td>An unstructured block initialized with large tetrahedra in the volume mesh if the <em>Initial Memory Size</em> attribute in <em>Grid</em>, <em>Solve</em> was set to a non-zero value.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19772</td>
+								<td>Pointwise was unable to use shaders with an AMD video card that had the latest graphics drivers.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19737</td>
+								<td>A structured grid containing a large block (699x1073x665) was exported to Plot3D in <em>Double Precision, Unformatted</em>.  The resulting file could not be imported back into Pointwise.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19730</td>
+								<td>Users were unable to create 2 point curves on Ubuntu workstations where the <em>Regional Format</em> was set to something other than <em>English (US)</em>.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19709</td>
+								<td>Pointwise exited prematurely when scaling a spherical shape.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19708</td>
+								<td>Clicking <em>Cancel</em> in <em>Grid, Re-extrude</em> without performing any operations caused Pointwise to exit prematurely for a particular grid.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19704</td>
+								<td>Glyph did not have a command that would allow users to select groups interactively in a script.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19702</td>
+								<td>Many Pointwise features became unresponsive after <em>Edit, Tweak</em> was used on a block.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19696</td>
+								<td>A domain that could be initialized in Pointwise V17.3 R5 could not be initialized in Pointwise V18.0 Beta 1.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19695</td>
+								<td>Poor quality pyramids were created on structured or quad-dominant domains in a T-Rex block.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19689</td>
+								<td>Assembling several quilts into one quilt took longer than expected in Pointwise.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19678</td>
+								<td>An ANSYS Fluent .cas file exported from Pointwise failed to import into ANSYS Fluent with errors about Face IDs being out of range.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19676</td>
+								<td>A T-Rex domain was failing to grow layers at various locations along the connectors assigned to Wall boundary conditions.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19675</td>
+								<td>A grid containing a large number of interior Fan boundary conditions took several hours to export to the CFD++ CAE Solver. The same mesh was exported to ANSYS Fluent in a few minutes.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19651</td>
+								<td>Pointwise was unable to import some of the facets in an STL file.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19647</td>
+								<td>Information about the growth of T-Rex layers was no longer appearing in the Pointwise Messages window (or to the terminal for batch operations) during T-Rex block initialization.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19645</td>
+								<td>A 2D T-Rex domain on a propeller blade surface could not be initialized.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19642</td>
+								<td>A T-Rex block with structured domains in the face was generating zero height pyramids off the quads during initialization.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19626</td>
+								<td>A connector was created on a database curve, then projected onto a database surface. When the resulting projected connector was split, Bezier curves resulted containing poor quality tangents at the ends.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19610</td>
+								<td>A connector could not be split in Pointwise.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19596<br />PW-19421</td>
+								<td>A database constrained connector's distribution was set to TanH but did not display a TanH distribution of points for the provided spacing constraints.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19592</td>
+								<td>The Pointwise User Manual incorrectly stated that Volume Conditions were supported for the Gridgen Generic CAE solver.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19584</td>
+								<td>Pointwise took a long time to import a Gridgen .GG file without its associated composite (.dba) file.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19581</td>
+								<td>A STAR-CCM+ CAE solver file exported from Pointwise failed to pass Loci-Chem's mesh converter. </td>
+							</tr>
+
+							<tr>
+								<td>PW-19565</td>
+								<td>The Glyph function <span class="code">pw::Entity sort entities</span> contained several typos.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19536</td>
+								<td>Fan boundary conditions in ANSYS Fluent CAE solver files were being exported in separate zones.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19519<br />PW-19148</td>
+								<td>An existing solid model was copied, pasted, and mirrored. The two resulting models could not be assembled into one model.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19494</td>
+								<td>Pointwise exited prematurely when joining two connectors.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19493</td>
+								<td>Pointwise exited prematurely when mirroring a partial conical surface.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19492</td>
+								<td>Splitting a database conic curve resulted in significant changes to the shapes of the two resulting curves.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19489</td>
+								<td>Creating an unstructured domain on a database surface with the Create, On Database Entities command produced different numbers of bounding connectors for different versions of Pointwise.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19474</td>
+								<td>A Plot3D file would import into Pointwise V17.3R1 and V17.3 R5, but it would not import into Pointwise V17.3R4.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19460</td>
+								<td>The ADS CAE solver export had incorrect information being printed to the header of the export files.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19429</td>
+								<td>The CMSoft-Aero CAE solver export was incorrectly using a &ldquo;3&rdquo; for an eight node hex Element Type Number instead of &ldquo;6&rdquo;.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19414</td>
+								<td>The <code>pw::Database import</code> Glyph command manual page contained a typo.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19398</td>
+								<td>When an unstructured T-Rex domain was initialized, isotropic cells instead of anisotropic cells were generated off one section of the bounding connectors.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19397</td>
+								<td>When trying to create an unstructured domain with multiple edges, the domain could only be created if the first edge's orientation was flipped.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19396</td>
+								<td>In <em>Examine, Database Associativity</em>, a user saw white nodes instead of red/green on a Linux workstation with an ATI/AMD graphics card.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19391</td>
+								<td>When creating a 2 point connector, Pointwise was unable to snap correctly to the second node selected if the Model Size was set to 25.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19379</td>
+								<td>A T-Rex block initialized in Pointwise V17.3 R1 but failed to initialize in Pointwise V17.3 R3.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19329</td>
+								<td>When a Parasolid file was imported into Pointwise V17.3 R4, one end of the geometry was rendered incorrectly.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19327</td>
+								<td>The Suggar++ assembler could not be run from Pointwise if the CAE solver physical types were set to any values other than <em>Unspecified</em>.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19302</td>
+								<td>Pointwise exited prematurely when importing a Solidworks CAD file.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19297</td>
+								<td>ANSYS Fluent .cas files exported from Pointwise V17.3R3 caused Tecplot to exit prematurely.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19278</td>
+								<td>Pointwise exited prematurely when Edit, Convert T-Rex to Prisms was used on a T-Rex block.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19163</td>
+								<td>Domains projected using <em>Closest Point</em> Type are projected to an unexpected, remote location.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19150</td>
+								<td>A domain could not be created directly on a quilt with the <em>Domains on Database Entities</em> toolbar command after the quilt was scaled.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19122</td>
+								<td>Suggar++ could not be run from Pointwise for an axisymmetric grid.</td>
+							</tr>
+
+							<tr>
+								<td>PW-19087</td>
+								<td>A T-Rex mesh initialized in Pointwise V17.3 contained large tetrahedra in a refined area of the volume mesh.</td>
+							</tr>
+
+							<tr>
+								<td>PW-18775</td>
+								<td>A quilt and its associated model were copied, pasted, and translated. The resulting copy of the quilt could not be selected.</td>
+							</tr>
+
+							<tr>
+								<td>PW-18494</td>
+								<td>When a CATpart file was imported into Pointwise, one of the models was not imported.</td>
+							</tr>
+
+							<tr>
+								<td>PW-18280</td>
+								<td>A grid exported to the OVERFLOW CAE solver could not be read into OVERFLOW.</td>
+							</tr>
+
+							<tr>
+								<td>PW-17949</td>
+								<td>When initializing a T-Rex block with the <em>Isotropic Seed Layers</em> attribute turned on, additional clustering of cells in the isotropic tet mesh were occurring away from the model.</td>
+							</tr>
+
+							<tr>
+								<td>PW-17290</td>
+								<td>Unstructured blocks could not be initialized on CentOS 5.7.</td>
+							</tr>
+
+							<tr>
+								<td>PW-16937</td>
+								<td>Several domains were run in the elliptic grid solver with the <em>Floating</em> boundary condition applied to their shared edges. The solver diverged while solving on the domains.</td>
+							</tr>
+
+							<tr>
+								<td>PW-16855</td>
+								<td>Several domains which shared a common node were run in the elliptic grid solver with a <em>Floating</em> boundary condition applied to their shared edges. The resulting domains had poor quality cells near the shared node.</td>
+							</tr>
+
+							<tr>
+								<td>PW-16522</td>
+								<td>Pointwise was unable to initialize an unstructured domain with T-Rex.</td>
+							</tr>
+
+							<tr>
+								<td>PW-16173</td>
+								<td>Several blocks were run in the elliptic grid solver with the Floating boundary condition applied to their shared faces. The <em>Examine, Min. Included Angle</em> quality metric showed that the mesh was not improved.</td>
+							</tr>
+
+							<tr>
+								<td>PW-15243</td>
+								<td>A structured domain was projected onto a database surface. Several grid points are not projected to the correct locations on the database surface.</td>
+							</tr>
+
+						</table>
+					</div>
+
+				</section>
+
+
+				<section id="platform-support">
+					<h2>Platform Support</h2>
+
+					<p>
+						Minimum Requirements for All Platforms:
+					</p>
+
+					<ul>
+						<li>2 GB RAM (8 GB recommended)</li>
+						<li>2 GB disk space</li>
+						<li>Ethernet card</li>
+						<li>OpenGL capable color display monitor</li>
+						<li>1280x1024 screen resolution (4K monitor support now included)</li>
+						<li>Graphics adapter supporting 3D hardware-accelerated OpenGL and 24-bit RGB double-buffering</li>
+						<li>Up-to-date graphics accelerator drivers</li>
+					</ul>
+
+					<p>
+						<strong>Note:</strong> Pointwise V18.0 R1 and later will not be supported on 32-bit platforms.
+					</p>
+
+						<div class="table-responsive">
+
+							<table class="table">
+
+								<tr>
+									<th>&nbsp;</th>
+									<th>Hardware</th>
+									<th>64-bit</th>
+								</tr>
+
+								<tr>
+									<td>
+										<img data-src="images/windows-icon-48x48.png" alt="Microsoft Windows" class="release-notes-img img-fluid" />
+										<br />
+										Microsoft Windows
+									</td>
+
+									<td>
+										Intel
+										<br />
+										AMD
+									</td>
+
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+
+								</tr>
+
+								<tr>
+									<td>
+										<img data-src="images/linux-icon-48x48.png" alt="Linux" class="release-notes-img img-fluid" />
+										<br />
+										Linux
+									</td>
+
+									<td>
+										Intel
+										<br />
+										AMD
+									</td>
+
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+
+								</tr>
+
+								<tr>
+									<td>
+										<img data-src="images/mac-icon-48x48.png" alt="Mac OS X" class="release-notes-img img-fluid" />
+										<br />
+										Mac OS X
+									</td>
+
+									<td>
+										Intel
+									</td>
+
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+
+								</tr>
+
+							</table>
+						</div>
+
+					<h2>Requirements for All Platforms</h2>
+
+					<p>
+						Minimum Requirements:
+					</p>
+
+					<ul>
+						<li>2 GB RAM (8 GB recommended)</li>
+						<li>2 GB disk space</li>
+						<li>Ethernet card</li>
+						<li>OpenGL capable color display monitor</li>
+						<li>1280x1024 screen resolution (4K monitor support now included) </li>
+						<li>Graphics adapter supporting 3D hardware-accelerated OpenGL and 24-bit RGB double-buffering</li>
+						<li>Up-to-date graphics accelerator drivers</li>
+					</ul>
+
+					<p>
+						Important Notes:
+					</p>
+
+					<ul>
+						<li>
+							Pointwise does not support 32-bit platforms.
+						</li>
+						<li>
+							Pointwise does not support remote execution. However, <a href="../gethelp/">a FAQ with remote execution workarounds</a> is avaiable.
+						</li>
+					</ul>
+
+					<h2>Microsoft Windows</h2>
+
+						<div class="table-responsive">
+							<table class="table">
+
+								<tr>
+									<th>Operating System</th>
+									<th>64-bit</th>
+									<th>&nbsp;</th>
+								</tr>
+
+								<tr>
+
+									<td>Windows 7</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+									<td>
+										<img data-src="images/EN-w7-comp_rgb_S.png" alt="Windows 7 Compatible" class="release-notes-img img-fluid"/>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Windows 8.1</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+									<td>
+										<img data-src="images/EN_W8_Comp_Blk_1_rgb.png" alt="Windows 8.1 Compatible" class="release-notes-img img-fluid" />
+									</td>
+								</tr>
+
+								<tr>
+									<td>Windows 10</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+									<td>
+										<img data-src="images/badge_w10.png" width="60px;" alt="Windows 10 Compatible" class="release-notes-img img-fluid"/>
+									</td>
+								</tr>
+
+							</table>
+						</div>
+
+					<p><small>
+						*There is a <a href="http://en.community.dell.com/support-forums/software-os/f/3526/t/19634253" target="_blank" rel="noreferrer nooopener">known incompatibility</a> on Microsoft Windows between Dell Backup &amp; Recovery software and Pointwise V18. If you experience problems opening or saving a file from Pointwise, Dell Backup &amp; Recovery software should be disabled or uninstalled.</small>
+					</p>
+
+					<h2>Linux</h2>
+
+						<div class="table-responsive">
+							<table class="table">
+
+								<tr>
+									<th>Operating System</th>
+									<th>Version</th>
+									<th>64-bit</th>
+								</tr>
+
+								<tr>
+									<td>CentOS</td>
+									<td>6</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Red Hat Enterprise Linux</td>
+									<td>6</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+								</tr>
+
+								<tr>
+									<td>SUSE Enterprise Linux Desktop</td>
+									<td>12 SP1</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Ubuntu Desktop</td>
+									<td>14.04</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+								</tr>
+
+							</table>
+						</div>
+
+					<h3>Linux Library Dependencies</h3>
+
+					<p>
+						Listed below are the specific versions of library packages that we have on our test machines where we know Pointwise works. Other dependences (e.g. libGL) are not explicitly listed below as they should be part of any standard install that includes the packages listed below.
+					</p>
+
+					<h3>CentOS 6.4</h3>
+
+					<p>
+						expat-2.0.1-11.el6_2<br />
+						fontconfig-2.8.0-3.el6<br />
+						freetype-2.3.11-14.el6_3.1<br />
+						libgcc-4.4.7-4.el6<br />
+						libstdc++-4.4.7-3.el6<br />
+						libX11-1.5.0-4.el6<br />
+						libXau-1.0.6-4.el6<br />
+						libxcb-1.8.1-1.el6<br />
+						libXext-1.3.1-2.el6<br />
+						libXft-2.3.1-2.el6<br />
+						libXrender-0.9.7-2.el6<br />
+						zlib-1.2.3-29.el6
+					</p>
+
+					<h3>Red Hat Enterprise Linux 6</h3>
+
+					<p>
+						expat-2.0.1-11.el6_2<br />
+						fontconfig-2.8.0-5.el6<br />
+						freetype-2.3.11-15.el6_6.1<br />
+						libgcc-4.4.7-16.el6<br />
+						libstdc++-4.4.7-16.el6<br />
+						libX11-1.6.0-6.el6<br />
+						libXau-1.0.6-4.el6<br />
+						libxcb-1.9.1-3.el6<br />
+						libXext-1.3.2-2.1.el6<br />
+						libXft-2.3.1-2.el6<br />
+						libXrender-0.9.8-2.1.el6<br />
+						zlib-1.2.3-29.el6
+					</p>
+
+					<h3>SUSE Enterprise Linux Desktop 12 SP1</h3>
+
+					<div class="row">
+						<div class="col-lg-6">
+							<p>
+								fontconfig<br />
+								libbz2-1<br />
+								libexpat1<br />
+								libffi4<br />
+								libfreetype6<br />
+								libgcc_s1<br />
+								libglib-2_0-0<br />
+								libGLU1<br />
+								libgobject-2_0-0<br />
+								libgthread-2_0-0<br />
+								libpcre1<br />
+								libpng16-16<br />
+								libstdc++6<br />
+								libX11-6<br />
+								libXau6<br />
+								libxcb1<br />
+								libXext6<br />
+								libXft2<br />
+								libXrender1<br />
+								libz1<br />
+							</p>
+						</div>
+
+						<div class="col-lg-6">
+							<p>
+								2.11.0-4.19<br />
+								1.0.6-29.2<br />
+								2.1.0-17.1<br />
+								5.3.1+r233831-9.1<br />
+								2.5.5-7.5.1<br />
+								5.3.1+r233831-9.1<br />
+								2.38.2-5.12<br />
+								9.0.0-15.1<br />
+								2.38.2-5.12<br />
+								2.38.2-5.12<br />
+								8.33-3.314<br />
+								1.6.8-11.1<br />
+								5.3.1+r233831-9.1<br />
+								1.6.2-4.12<br />
+								1.0.8-4.58<br />
+								1.10-3.1<br />
+								1.3.2-3.61<br />
+								2.3.1-9.32<br />
+								0.9.8-3.56<br />
+								1.2.8-5.1
+							</p>
+						</div>
+					</div>
+
+
+					<h3>Ubuntu 14.04</h3>
+
+					<div class="row">
+						<div class="col-lg-6">
+							<p>
+								libexpat1<br />
+								libffi6<br />
+								libfontconfig1<br />
+								libfreetype6<br />
+								libgcc1<br />
+								libpcre3<br />
+								libpng12-0<br />
+								libstdc++6<br />
+								libx11-6<br />
+								libxau6<br />
+								libxcb1<br />
+								libxdmcp6<br />
+								libxext6<br />
+								libxft2<br />
+								libxrender1<br />
+								zlib1g
+							</p>
+						</div>
+
+						<div class="col-lg-6">
+							<p>
+								2.1.0-4ubuntu1.1<br />
+								3.1~rc1+r3.0.13-12<br />
+								2.11.0-0ubuntu4.1<br />
+								2.5.2-1ubuntu2.5<br />
+								1:4.9.1-0ubuntu1<br />
+								1:8.31-2ubuntu2<br />
+								1.2.50-1ubuntu2.14.04.1<br />
+								4.8.4-2ubuntu1~14.04.1<br />
+								2:1.6.2-1ubuntu2<br />
+								1:1.0.8-1<br />
+								1.10-2ubuntu1<br />
+								1:1.1.1-1<br />
+								2:1.3.2-1<br />
+								2.3.1-2<br />
+								1:0.9.8-1<br />
+								1:1.2.8.dfsg-1ubuntu1
+							</p>
+						</div>
+					</div>
+
+					<h2>Mac OS X</h2>
+
+						<div class="table-responsive">
+							<table class="table">
+
+								<tr>
+									<th>Operating System</th>
+									<th>Version</th>
+									<th>64-bit</th>
+								</tr>
+
+								<tr>
+									<td>Mountain Lion</td>
+									<td>10.8</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Mavericks</td>
+									<td>10.9</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Yosemite</td>
+									<td>10.10</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+								</tr>
+
+								<tr>
+									<td>El Capitan</td>
+									<td>10.11</td>
+									<td>
+										<span class="fa fa-check"></span>
+									</td>
+								</tr>
+
+							</table>
+						</div>
+
+					<p>
+						<strong>Important:</strong> Pointwise V18.1 R1 will not support Mac OS X versions older than 10.10.
+					</p>
+
+				</section>
+
+			</div>
+
+			<!-- Space between columns -->
+			<div class="col-lg-1">
+			</div>
+
+			<!-- Column Contents -->
+			<div class="col-lg-3">
+				<div class="page-nav">
+					<h4>More Support</h4>
+					<svg class="nav-lines">
+						<line class="nav-blue-social" x1="0" y1="1" x2="140" y2="1"/>
+						<line class="nav-grey-social" x1="140" y1="1" x2="275" y2="1"/>
+					</svg>
+					<div class="side-nav">
+						<p><a href="mailto:support@pointwise.com">Email Support</a></p>
+
+						<p><a href="../gethelp/">Get Help</a></p>
+
+						<p><a href="../downloads/">Downloads</a></p>
+
+						<p><a href="../licenses/">Request a License</a></p>
+
+						<p><a href="../training/">Register for Training</a></p>
+
+						<p><a href="../support/release-notes.html">Release Notes</a></p>
+
+						<p><a href="../glyph/">Glyph Scripting</a></p>
+
+						<p><a href="../plugins/">Plugin SDK</a></p>
+
+						<p><a href="../sales/">International Tech Support</a></p>
+
+						<p><a href="../doc/user-manual/index.html">User Manual</a></p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<% include ../partials/footer %>
+
+	<!-- JAVASCRIPT -->
+	<% include ../partials/js-includes %>
+</body>
+</html>

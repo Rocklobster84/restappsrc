@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+    <!-- PAGE TITLE -->
+    <title><%- whitePaper.title %>></title>
+
+    <% if (whitePaper.gated === true) { %>
+        <meta name="robots" content="noindex">
+    <% } %>
+
+    <% if (whitePaper.gated === false) { %>
+        <!-- OG TAGS -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="<%- whitePaper.title %>" />
+        <meta property="og:description" content="<%- whitePaper.description %>" />
+
+        <!-- META DATA -->
+        <meta name="description" content="<%- whitePaper.title %>">
+        <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+    <% } %>
+
+
+    <!-- CSS FILES -->
+    <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+<!-- TOP NAVIGATION -->
+<% include ../partials/navbar %>
+
+<div class="container confirmation-body">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+           <%- whitePaper.copy %>
+
+        </div>
+
+        <div class="col-lg-1">
+        </div>
+
+        <!--Right column-->
+        <div class="col-lg-3">
+
+            <div class="lets-talk-nav">
+                <h4>You May Also Like</h4>
+                <svg class="nav-lines">
+                    <line class="nav-blue-ymal" x1="0" y1="1" x2="180" y2="1"/>
+                    <line class="nav-grey-ymal" x1="180" y1="1" x2="275" y2="1"/>
+                </svg>
+
+                <img data-src="../images/<%- whitePaper.ymal1Img %>" class="img-fluid" alt="<%- whitePaper.ymal1Alt %>" />
+                <p>
+                    <a href="<%- whitePaper.ymal1Url %>"><%- whitePaper.ymal1Title %></a>
+                </p>
+
+                <hr />
+
+                <img data-src="../images/<%- whitePaper.ymal2Img %>" class="img-fluid" alt="<%- whitePaper.ymal2Alt %>" />
+                <p>
+                    <a href="<%- whitePaper.ymal2Url %>"><%- whitePaper.ymal2Title %></a>
+                </p>
+
+                <hr />
+
+                <img data-src="../images/<%- whitePaper.ymal3Img %>" class="img-fluid" alt="<%- whitePaper.ymal3Alt %>" />
+                <p>
+                    <a href="<%- whitePaper.ymal3Url %>"><%- whitePaper.ymal3Title %></a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<% include ../partials/footer %>
+
+<!-- JAVASCRIPT -->
+<% include ../partials/js-includes %>
+
+</body>
+</html>

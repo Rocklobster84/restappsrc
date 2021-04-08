@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title>Release Notes Pointwise V18.2 R2</title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/support/release-notes.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Release Notes Pointwise V18.2 R2" />
+  <meta property="og:description" content="These release notes are provided as a reference for the new features included in the latest version of Pointwise as well as any known issues that were resolved." />
+
+  <!-- META DATA -->
+  <meta name="description" content="These release notes are provided as a reference for the new features included in the latest version of Pointwise as well as any known issues that were resolved.">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+	<!-- TOP NAVIGATION -->
+	<% include ../partials/navbar %>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8">
+        <h1>Pointwise Release Notes</h1>
+
+        <ul class="list-unstyled">
+          <li>Version: Pointwise V18.2 R2</li>
+          <li>Release Date: February 2019</li>
+          <li>News Release: <a href="../news/2019/Pointwise-Adds-Native-Interface-Conceptual-Design-Software-ESP.html">www.pointwise.com/news/2019/Pointwise-Adds-Native-Interface-Conceptual-Design-Software-ESP.html</a></li>
+        </ul>
+
+        <ul class="list-unstyled release-nav">
+          <li><a href="#overview" class="page-scroll">Overview</a></li>
+          <li><a href="#new-features" class="page-scroll">New Features</a></li>
+          <li><a href="#resolved-issues" class="page-scroll">Resolved Issues</a></li>
+          <li><a href="#platform-support" class="page-scroll">Platform Support</a></li>
+          <li><a href="#previous-versions" class="page-scroll">Previous Versions</a></li>
+        </ul>
+
+        <section id="overview">
+          <h2 class="rn-head">Overview</h2>
+
+          <p>
+            Pointwise is our leading mesh generation software product for CFD, encompassing nearly three decades of technology development. The product features a modern software framework and workflow and provides tools like 64-bit support, multi-threading, and Windows/Linux/Mac portability.
+          </p>
+
+          <p>
+            These release notes are provided as a reference for the new features included in the latest version of Pointwise as well as any known issues that were resolved.
+          </p>
+        </section>
+
+        <section id="new-features">
+
+          <h2>New Features</h2>
+
+          <ul>
+            <li>
+              EGADS native CAD import has been added
+            </li>
+
+            <li>
+              All break points on selected connectors can be deleted using a new toolbar button.
+            </li>
+
+            <li>
+              The Project command now includes the ability to show constrained grid points in the Display window in the same manner as Examine, Database Associativity.
+            </li>
+          </ul>
+
+        </section>
+
+        <section id="resolved-issues">
+
+          <h2>Resolved Issues</h2>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+
+              <tr>
+                <th>SPR</th>
+                <th>Description</th>
+              </tr>
+
+              <tr>
+                <td>PW-21637</td>
+                <td>The pw:Application exit function was not working when using the Glyph server. </td>
+              </tr>
+
+              <tr>
+                <td class="no-wrap">PW-21635</td>
+                <td>Using a “\” in a CAE boundary condition renders the .pw file unusable. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21630</td>
+                <td>Joining connectors unintentionally deleted an adjacent domain. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21628</td>
+                <td>T-Rex bug resulted in failed face processing on export. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21616</td>
+                <td>On Linux systems, the target reticle for the mouse could be inaccurate. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21609</td>
+                <td>A block was not initializing successfully and causing an unexpected exit. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21597</td>
+                <td>Having a floating and roaming license used simultaneously caused Pointwise to close.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21594</td>
+                <td>A domain with a source was causing initialization (of the domain or the block) to fail and Pointwise to close unexpectedly.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21588</td>
+                <td>Spacings were being removed from a Named Spacing when the distribution of the connector was changed to equal spacing.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21586</td>
+                <td>Initializing multiple domains with triangles and quads caused an unexpected exit.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21575</td>
+                <td>A block surrounded by other blocks could not be elevated on export when exported by itself.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21563</td>
+                <td>Edit, Split was failing if a split location was too close to an end node.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21562</td>
+                <td>Two dimensional CGNS files were not be imported correctly.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21560</td>
+                <td>Two domains could not be initialized due to poor boundary triangulation.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21555</td>
+                <td>The syntax description for the function getValueAtPoint was missing in the Glyph manual pages.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21548</td>
+                <td>Two connectors could not be joined.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21546</td>
+                <td>Structured domains had directional ambiguity in Edit, Orient. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21538</td>
+                <td>Copying a block and then adjusting a named spacing was causing an unexpected exit. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21537</td>
+                <td>A script setting the dimension using the size field was taking significantly longer than previous versions. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21534</td>
+                <td>The end spacing could not be changed after joining two connectors.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21532</td>
+                <td>The T-Rex Reduced Pyramids algorithm was not matching Match domains correctly.</td>
+              </tr>
+
+              <tr>
+                <td>PW-21521</td>
+                <td>The &ldquo;All and Reduce Pyramids&rdquo; option was still using 5 pyramids rather than a single capping pyramid. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21508</td>
+                <td>Improved error reporting when an unstructured block is unable to be initialized. </td>
+              </tr>
+
+              <tr>
+                <td>PW-21506</td>
+                <td>Two structured blocks were unable to be joined. </td>
+              </tr>
+
+              <tr>
+                <td>PW-16958</td>
+                <td>Multi-segment is now a file option for the USM3D exporter.</td>
+              </tr>
+
+              <tr>
+                <td>PW-16955</td>
+                <td>USM3D can now export grids greater than 100 million cells. </td>
+              </tr>
+
+            </table>
+          </div>
+        </section>
+
+        <section id="platform-support">
+          <h2>Platform Support</h2>
+
+          <p>
+            Minimum Requirements for All Platforms:
+          </p>
+
+          <ul>
+            <li>2 GB RAM (8 GB recommended)</li>
+            <li>2 GB disk space</li>
+            <li>Ethernet card</li>
+            <li>OpenGL capable color display monitor</li>
+            <li>1280x1024 screen resolution (4K monitor support now included)</li>
+            <li>Graphics adapter supporting 3D hardware-accelerated OpenGL and 24-bit RGB double-buffering</li>
+            <li>Up-to-date graphics accelerator drivers</li>
+          </ul>
+
+          <p>
+            <strong>Note:</strong>  Pointwise V18.0R1 and later will not be supported on 32-bit platforms.
+          </p>
+          
+            <div class="table-responsive">
+              <table class="table">
+
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>Hardware</th>
+                  <th>64-bit</th>
+                </tr>
+
+                <tr>
+                  <td>
+                    <img data-src="images/windows-icon-48x48.png" alt="Microsoft Windows" class="release-notes-img img-fluid"/>
+                    <br />
+                    Microsoft Windows
+                  </td>
+
+                  <td>
+                    Intel
+                    <br />
+                    AMD
+                  </td>
+
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <img data-src="images/linux-icon-48x48.png" alt="Linux" class="release-notes-img img-fluid" />
+                    <br />
+                    Linux
+                  </td>
+
+                  <td>
+                    Intel
+                    <br />
+                    AMD
+                  </td>
+
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <img data-src="images/mac-icon-48x48.png" alt="macOS" class="release-notes-img img-fluid" />
+                    <br />
+                    macOS
+                  </td>
+
+                  <td>
+                    Intel
+                  </td>
+
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+
+          <h2>Requirements for All Platforms</h2>
+
+          <p>
+            Minimum Requirements:
+          </p>
+
+          <ul>
+            <li>2 GB RAM (8 GB recommended)</li>
+            <li>2 GB disk space</li>
+            <li>Ethernet card</li>
+            <li>OpenGL capable color display monitor</li>
+            <li>1280x1024 screen resolution (4K monitor support now included) </li>
+            <li>Graphics adapter supporting 3D hardware-accelerated OpenGL and 24-bit RGB double-buffering</li>
+            <li>Up-to-date graphics accelerator drivers</li>
+          </ul>
+
+          <p>
+            Important Notes:
+          </p>
+
+          <ul>
+            <li>
+              Pointwise does not support 32-bit platforms.
+            </li>
+            <li>
+              Pointwise does not support remote execution. However, <a href="../gethelp/">a FAQ with remote execution workarounds</a> is avaiable.
+            </li>
+          </ul>
+
+          <h2>Microsoft Windows</h2>
+
+            <div class="table-responsive">
+              <table class="table">
+
+                <tr>
+                  <th>Operating System</th>
+                  <th>64-bit</th>
+                  <th>&nbsp;</th>
+                </tr>
+
+                <tr>
+                  <td>Windows 7</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                  <td>
+                    <img data-src="images/EN-w7-comp_rgb_S.png" class="release-notes-img img-fluid" alt="Windows 7 Compatible"/>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Windows 8.1</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                  <td>
+                    <img data-src="images/EN_W8_Comp_Blk_1_rgb.png" class="release-notes-img img-fluid" alt="Windows 8 Compatible" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Windows 10</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                  <td>
+                    <img data-src="images/badge_w10.png" alt="Windows 10 Compatible" class="release-notes-img img-fluid" width="60px;"/>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+
+          <p>
+            <small>*There is a <a href="http://en.community.dell.com/support-forums/software-os/f/3526/t/19634253" target="_blank" rel="noreferrer noopener">known incompatibility</a> on Microsoft Windows between Dell Backup &amp; Recovery software and Pointwise V18. If you experience problems opening or saving a file from Pointwise, Dell Backup &amp; Recovery software should be disabled or uninstalled.</small>
+          </p>
+
+          <h2>Linux</h2>
+
+            <div class="table-responsive">
+              <table class="table">
+
+                <tr>
+                  <th>Operating System</th>
+                  <th>Version</th>
+                  <th>64-bit</th>
+                </tr>
+
+                <tr>
+                  <td>CentOS</td>
+                  <td>6</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Red Hat Enterprise Linux</td>
+                  <td>6</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>SUSE Enterprise Linux Desktop</td>
+                  <td>12 SP1</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Ubuntu Desktop</td>
+                  <td>14.04</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+
+          <h3>Linux Library Dependencies</h3>
+
+          <p>
+            Listed below are the specific versions of library packages that we have on our test machines where we know Pointwise works. Other dependences (e.g. libGL) are not explicitly listed below as they should be part of any standard install that includes the packages listed below.
+          </p>
+
+          <h3>CentOS 6.4</h3>
+
+          <p>
+            expat-2.0.1-11.el6_2<br />
+            fontconfig-2.8.0-3.el6<br />
+            freetype-2.3.11-14.el6_3.1<br />
+            libgcc-4.4.7-4.el6<br />
+            libstdc++-4.4.7-3.el6<br />
+            libX11-1.5.0-4.el6<br />
+            libXau-1.0.6-4.el6<br />
+            libxcb-1.8.1-1.el6<br />
+            libXext-1.3.1-2.el6<br />
+            libXft-2.3.1-2.el6<br />
+            libXrender-0.9.7-2.el6<br />
+            zlib-1.2.3-29.el6
+          </p>
+
+          <h3>Red Hat Enterprise Linux 6</h3>
+
+          <p>
+            expat-2.0.1-11.el6_2<br />
+            fontconfig-2.8.0-5.el6<br />
+            freetype-2.3.11-15.el6_6.1<br />
+            libgcc-4.4.7-16.el6<br />
+            libstdc++-4.4.7-16.el6<br />
+            libX11-1.6.0-6.el6<br />
+            libXau-1.0.6-4.el6<br />
+            libxcb-1.9.1-3.el6<br />
+            libXext-1.3.2-2.1.el6<br />
+            libXft-2.3.1-2.el6<br />
+            libXrender-0.9.8-2.1.el6<br />
+            zlib-1.2.3-29.el6
+          </p>
+
+          <h3>SUSE Enterprise Linux Desktop 12 SP1</h3>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <p>
+                fontconfig<br />
+                libbz2-1<br />
+                libexpat1<br />
+                libffi4<br />
+                libfreetype6<br />
+                libgcc_s1<br />
+                libglib-2_0-0<br />
+                libGLU1<br />
+                libgobject-2_0-0<br />
+                libgthread-2_0-0<br />
+                libpcre1<br />
+                libstdc++6<br />
+                libX11-6<br />
+                libXau6<br />
+                libxcb1<br />
+                libXext6<br />
+                libXft2<br />
+                libXrender1<br />
+                libz1<br />
+              </p>
+            </div>
+
+            <div class="col-lg-6">
+              <p>
+                2.11.0-4.19<br />
+                1.0.6-29.2<br />
+                2.1.0-17.1<br />
+                5.3.1+r233831-9.1<br />
+                2.5.5-7.5.1<br />
+                5.3.1+r233831-9.1<br />
+                2.38.2-5.12<br />
+                9.0.0-15.1<br />
+                2.38.2-5.12<br />
+                2.38.2-5.12<br />
+                8.33-3.314<br />
+                1.6.8-11.1<br />
+                5.3.1+r233831-9.1<br />
+                1.6.2-4.12<br />
+                1.0.8-4.58<br />
+                1.10-3.1<br />
+                1.3.2-3.61<br />
+                2.3.1-9.32<br />
+                0.9.8-3.56<br />
+                1.2.8-5.1
+              </p>
+            </div>
+          </div>
+
+
+          <h3>Ubuntu 14.04</h3>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <p>
+                libexpat1<br />
+                libffi6<br />
+                libfontconfig1<br />
+                libfreetype6<br />
+                libgcc1<br />
+                libpcre3<br />
+                libstdc++6<br />
+                libx11-6<br />
+                libxau6<br />
+                libxcb1<br />
+                libxdmcp6<br />
+                libxext6<br />
+                libxft2<br />
+                libxrender1<br />
+                zlib1g
+              </p>
+            </div>
+
+            <div class="col-lg-6">
+              <p>
+                2.1.0-4ubuntu1.1<br />
+                3.1~rc1+r3.0.13-12<br />
+                2.11.0-0ubuntu4.1<br />
+                2.5.2-1ubuntu2.5<br />
+                1:4.9.1-0ubuntu1<br />
+                1:8.31-2ubuntu2<br />
+                1.2.50-1ubuntu2.14.04.1<br />
+                4.8.4-2ubuntu1~14.04.1<br />
+                2:1.6.2-1ubuntu2<br />
+                1:1.0.8-1<br />
+                1.10-2ubuntu1<br />
+                1:1.1.1-1<br />
+                2:1.3.2-1<br />
+                2.3.1-2<br />
+                1:0.9.8-1<br />
+                1:1.2.8.dfsg-1ubuntu1
+              </p>
+            </div>
+          </div>
+
+          <h2>macOS</h2>
+
+            <div class="table-responsive">
+              <table class="table">
+
+                <tr>
+                  <th>Operating System</th>
+                  <th>Version</th>
+                  <th>64-bit</th>
+                </tr>
+
+                <tr>
+                  <td>El Capitan</td>
+                  <td>10.11</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Sierra</td>
+                  <td>10.12</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>High Sierra</td>
+                  <td>10.13</td>
+                  <td>
+                    <span class="fa fa-check"></span>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+
+          <p>
+            <strong>Important:</strong> Pointwise V18.1 R1 will not support macOS versions older than 10.10.
+          </p>
+
+        </section>
+
+        <section id="previous-versions">
+          <h2>Previous Versions</h2>
+
+          <p>
+            <a href="release-notes-V182R1.html">Pointwise V18.2 R1</a><br />
+            <a href="release-notes-V181R2.html">Pointwise V18.1 R2</a><br />
+            <a href="release-notes-V181R1.html">Pointwise V18.1 R1</a><br />
+            <a href="release-notes-V18R4.html">Pointwise V18.0 R4</a><br />
+            <a href="release-notes-V18R3.html">Pointwise V18.0 R3</a><br />
+            <a href="release-notes-V18R2.html">Pointwise V18.0 R2</a><br />
+            <a href="release-notes-V18R1.html">Pointwise V18.0 R1</a>
+          </p>
+
+        </section>
+
+      </div>
+
+      <!-- Space between columns -->
+      <div class="col-lg-1">
+      </div>
+
+      <!-- Column Contents -->
+      <div class="col-lg-3">
+        <div class="page-nav">
+          <h4>More Support</h4>
+          <svg class="nav-lines">
+            <line class="nav-blue-social" x1="0" y1="1" x2="140" y2="1"/>
+            <line class="nav-grey-social" x1="140" y1="1" x2="275" y2="1"/>
+          </svg>
+          <div class="side-nav">
+            <p><a href="mailto:support@pointwise.com">Email Support</a></p>
+
+            <p><a href="../gethelp/">Get Help</a></p>
+
+            <p><a href="../downloads/">Downloads</a></p>
+
+            <p><a href="../licenses/">Request a License</a></p>
+
+            <p><a href="../training/">Register for Training</a></p>
+
+            <p><a href="../support/release-notes.html">Release Notes</a></p>
+
+            <p><a href="../glyph/">Glyph Scripting</a></p>
+
+            <p><a href="../plugins/">Plugin SDK</a></p>
+
+            <p><a href="../sales/">International Tech Support</a></p>
+
+            <p><a href="../doc/user-manual/index.html">User Manual</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <% include ../partials/footer %>
+
+    <!-- JAVASCRIPT -->
+    <% include ../partials/js-includes %>
+</body>
+</html>

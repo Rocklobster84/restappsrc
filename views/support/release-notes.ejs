@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Analytics -->
+    <% include ../partials/ga-includes %>
+
+    <!-- META SETTINGS -->
+    <% include ../partials/meta-settings.ejs %>
+
+  <!-- PAGE TITLE -->
+  <title>Release Notes Pointwise V18.4 R3</title>
+
+  <!-- OG TAGS -->
+  <meta property="og:url" content="https://www.pointwise.com/support/release-notes.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Release Notes Pointwise V18.4 R3" />
+  <meta property="og:description" content="These release notes are provided as a reference for the new features included in the latest version of Pointwise as well as any known issues that were resolved." />
+
+  <!-- META DATA -->
+  <meta name="description" content="These release notes are provided as a reference for the new features included in the latest version of Pointwise as well as any known issues that were resolved.">
+  <meta name="keywords" content="cfd meshing, mesh generation, grid generation, computational fluid dynamics, mesh generator, cfd software, cfd consultants, mesh software, grid software, fluid dynamics modeling" />
+
+  <!-- CSS FILES -->
+  <% include ../partials/css-includes %>
+
+</head>
+
+<body id="page-top">
+
+	<!-- TOP NAVIGATION -->
+	<% include ../partials/navbar %>
+
+  <!-- Page Content -->
+  <div class="container">
+      <div class="row">
+  
+        <div class="col-lg-8">
+          <h1>Pointwise Release Notes</h1>
+  
+          <ul class="list-unstyled">
+            <li>Version: Pointwise V18.4 Release 3</li>
+            <li>Release Date: February 2021</li>
+            <li>News Release: <a href="../news/2021/azorecfd-support-now-built-in-to-latest-pointwise-meshing-software">www.pointwise.com/news/2021/azorecfd-support-now-built-in-to-latest-pointwise-meshing-software</a></li>
+          </ul>
+  
+          <ul class="list-unstyled release-nav">
+            <li><a href="#overview" class="page-scroll">Overview</a></li>
+            <li><a href="#new-features" class="page-scroll">New Features</a></li>
+            <li><a href="#resolved-issues" class="page-scroll">Resolved Issues</a></li>
+            <li><a href="#platform-support" class="page-scroll">Platform Support</a></li>
+            <li><a href="#previous-versions" class="page-scroll">Previous Versions</a></li>
+          </ul>
+  
+          <section id="overview">
+            <h2 class="rn-head">Overview</h2>
+  
+            <p>
+              Pointwise is our leading mesh generation software product for CFD, encompassing nearly three decades of technology development. The product features a modern software framework and workflow and provides tools like 64-bit support, multi-threading, and Windows/Linux/Mac portability.
+            </p>
+  
+            <p>
+              These release notes are provided as a reference for the new features included in the latest version of Pointwise as well as any known issues that were resolved.
+            </p>
+          </section>
+  
+          <section id="new-features">
+  
+            <h2>New Features</h2>
+  
+            <ul>
+              <li>
+                  AzoreCFD is now supported as a CAE Solver.
+              </li>
+  
+              <li>
+                  The default CAE solver and Overset Assembler can now be set in Edit, Preferences
+              </li>
+
+              <li>
+                  ANSYS CFX now allows spaces in boundary condition names.
+              </li>
+
+            </ul>
+  
+          </section>
+  
+          <section id="resolved-issues">
+  
+            <h2>Resolved Issues</h2>
+  
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+  
+                <tr>
+                  <th>SPR</th>
+                  <th>Description</th>
+                </tr>
+
+              <tr>
+                  <td class="no-wrap">PW-20641</td>
+                  <td>Projection to a plane caused a domain to incorrectly change shape.</td>
+              </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-22190</td>
+                      <td>Mirroring a database model resulted in errors and the model being corrupted.</td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23235</td>
+                      <td>A structured block’s solved interior was not being preserved when the file was saved. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23242</td>
+                      <td>Using Edit, Extract with an imported .obj file led to an expected exit. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23257</td>
+                      <td>When a domain’s view setting was set to Boundaries Only, the interior was not being displayed in Grid, Solve. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23259</td>
+                      <td>Export to CGNS failed due to opposing normals on a Match domain.</td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23261</td>
+                      <td>A very large block could not be initialized. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23263</td>
+                      <td>Glyph manual page has been updated with current distribution types</td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23265</td>
+                      <td>There was a lack of agreement between a glyph script and the GUI when a specific distribution type was set in the script.  </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23269</td>
+                      <td>Database lines from a very old file were not able to be group selected and deleted.</td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23272</td>
+                      <td>Changing the Dimension using Grid, Dimension caused a domain to not properly acknowledge a source. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23274</td>
+                      <td>Database associativity was incorrectly causing cell count to be too high. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23275</td>
+                      <td>An ANSYS .cas file was not being imported correctly. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23303</td>
+                      <td>A valid EGADS file could not be imported. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23310</td>
+                      <td>A 320 million cell mesh was not able to be exported in P2 higher order. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23313</td>
+                      <td>CART3D exporter was not recognizing more than one volume condition. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23322</td>
+                      <td>A connection with a block in an off layer was selectable in the CAE, Boundary Conditions.</td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23324</td>
+                      <td>GMSH Volume conditions were being lost when exporting files with an order higher than one.</td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23336</td>
+                      <td>A block initialization was ignoring the user set decay value. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23374</td>
+                      <td>Connectors with Automatic Distribution could not be joined if the angle between them was high.</td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23377</td>
+                      <td>An error occurred when joining multiple unstructured blocks. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23378</td>
+                      <td>Details have been added to the user manual as to why surface quads may be split during block initialization.</td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23381</td>
+                      <td>A copied source was not visible if the original’s display type was set to wireframe. </td>
+                  </tr>
+
+                  <tr>
+                      <td class="no-wrap">PW-23392</td>
+                      <td>A connector distribution was being disproportionately altered by the block solver.</td>
+                  </tr>
+              </table>
+            </div>
+          </section>
+  
+          <section id="platform-support">
+            <h2>Platform Support</h2>
+
+              <div class="table-responsive">
+  
+                <table class="table">
+  
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th>Hardware</th>
+                    <th>64-bit</th>
+                  </tr>
+  
+                  <tr>
+                    <td>
+                      <img data-src="images/windows-icon-48x48.png" alt="Microsoft Windows" class="release-notes-img img-fluid"/>
+                      <br />
+                      Microsoft Windows
+                    </td>
+  
+                    <td>
+                      Intel
+                      <br />
+                      AMD
+                    </td>
+  
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td>
+                      <img data-src="images/linux-icon-48x48.png" alt="Linux" class="release-notes-img img-fluid" />
+                      <br />
+                      Linux
+                    </td>
+  
+                    <td>
+                      Intel
+                      <br />
+                      AMD
+                    </td>
+  
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td>
+                      <img data-src="images/mac-icon-48x48.png" alt="macOS" class="release-notes-img img-fluid" />
+                      <br />
+                      macOS
+                    </td>
+  
+                    <td>
+                      Intel
+                    </td>
+  
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                  </tr>
+  
+                </table>
+              </div>
+  
+            <h2>Requirements for All Platforms</h2>
+  
+            <p>
+              Minimum Requirements:
+            </p>
+  
+            <ul>
+              <li>At least 16 GB RAM (64 GB recommended)</li>
+              <li>At least 2 GB disk space (512 GB recommended)</li>
+              <li>Ethernet card</li>
+              <li>OpenGL compatible monitor with at least 1280x1024 screen resolution (up to 4K)</li>
+              <li>Dedicated professional graphics card supporting 3D hardware-accelerated OpenGL and 24-bit RGB double-buffering</li>
+              <li>Up-to-date graphics card drivers</li>
+            </ul>
+  
+            <p>
+              Important Notes:
+            </p>
+  
+            <ul>
+              <li>
+                Pointwise does not support 32-bit platforms.
+              </li>
+              <li>
+                Pointwise does not support remote execution. However, <a href="../gethelp/">a FAQ with remote execution workarounds</a> is avaiable.
+              </li>
+            </ul>
+  
+            <h2>Microsoft Windows</h2>
+
+              <div class="table-responsive">
+                <table class="table">
+  
+                  <tr>
+                    <th>Operating System</th>
+                    <th>64-bit</th>
+                    <th>&nbsp;</th>
+                  </tr>
+  
+                  <tr>
+                    <td>Windows 8.1</td>
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      <img data-src="images/EN_W8_Comp_Blk_1_rgb.png" class="release-notes-img img-fluid" alt="Windows 8 Compatible" />
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td>Windows 10</td>
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      <img data-src="images/badge_w10.png" alt="Windows 10 Compatible" class="release-notes-img img-fluid" width="60px;"/>
+                    </td>
+                  </tr>
+  
+                </table>
+              </div>
+  
+            <p>
+              <small>*There is a <a href="http://en.community.dell.com/support-forums/software-os/f/3526/t/19634253">known incompatibility</a> on Microsoft Windows between Dell Backup &amp; Recovery software and Pointwise V18. If you experience problems opening or saving a file from Pointwise, Dell Backup &amp; Recovery software should be disabled or uninstalled.</small>
+            </p>
+  
+            <h2>Linux</h2>
+
+              <div class="table-responsive">
+                <table class="table">
+  
+                  <tr>
+                    <th>Operating System</th>
+                    <th>Version</th>
+                    <th>64-bit</th>
+                  </tr>
+  
+                  <tr>
+                    <td>CentOS</td>
+                    <td>7</td>
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td>Red Hat Enterprise Linux</td>
+                    <td>7.4</td>
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td>SUSE Enterprise Linux Desktop</td>
+                    <td>12.3</td>
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td>Ubuntu Desktop</td>
+                    <td>16.04</td>
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                  </tr>
+  
+                </table>
+              </div>
+  
+            <h3>Linux Library Dependencies</h3>
+  
+            <p>
+              Listed below are the specific versions of library packages that we have on our test machines where we know Pointwise works. Other dependences (e.g. libGL) are not explicitly listed below as they should be part of any standard install that includes the packages listed below.
+            </p>
+  
+            <h3>CentOS 7</h3>
+  
+            <p>
+              bzip2-libs-1.0.6-13.el7<br />
+              expat-2.1.0-8.el7<br />
+              fontconfig-2.10.95-7.el7<br />
+              freetype-2.8-14.el7<br />
+              glibc-2.17-307.el7.1<br />
+              libdrm-2.4.60-3.el7<br />
+              libgcc-4.8.5-4.el7<br />
+              libpng-2:1.5.13-7.el7_2<br />
+              libselinux-2.2.2-6.el7<br />
+              libstdc++-4.8.5-4.el7<br />
+              libX11-1.6.3-2.el7<br />
+              libXau-1.0.8-2.1.el7<br />
+              libxcb-1.13-1.el7<br />
+              libXdamage-1.1.4-4.1.el7<br />
+              libXext-1.3.3-3.el7<br />
+              libXfixes-5.0.1-2.1.el7<br />
+              libxkbcommon-0.7.1-3.el7<br />
+              libxkbcommon-x11-0.7.1-3.el7<br />
+              libxshmfence-1.2-1.el7<br />
+              libXxf86vm-1.1.3-2.1.el7<br />
+              mesa-libGL-10.6.5-3.20150824.el7<br />
+              mesa-libglapi-10.6.5-3.20150824.el7<br />
+              mesa-libGLU-9.0.0-4.el7<br />
+              pcre-8.32-15.el7<br />
+              xcb-util-0.4.0-2.el7<br />
+              xcb-util-image-0.4.0-2.el7<br />
+              xcb-util-keysyms-0.4.0-1.el7<br />
+              xcb-util-renderutil-0.3.9-3.el7<br />
+              xcb-util-wm-0.4.1-5.el7<br />
+              xz-libs-5.1.2-12alpha.el7<br />
+              zlib-1.2.7-18.el7
+            </p>
+  
+            <h3>Red Hat Enterprise Linux 7.4</h3>
+  
+            <p>
+              bzip2-libs-1.0.6-13.el7<br />
+              expat-2.1.0-10.el7_3<br />
+              fontconfig-2.10.95-11.el7<br />
+              freetype-2.8-14.el7<br />
+              glibc-2.17-196.el7<br />
+              libdrm-2.4.74-1.el7<br />
+              libgcc-4.8.5-16.el7<br />
+              libpng-2:1.5.13-7.el7_2.x86_64<br />
+              libselinux-2.5-11.el7<br />
+              libstdc++-4.8.5-16.el7<br />
+              libX11-1.6.5-1.el7<br />
+              libXau-1.0.8-2.1.el7<br />
+              libxcb-1.12-1.el7<br />
+              libXdamage-1.1.4-4.1.el7<br />
+              libXext-1.3.3-3.el7<br />
+              libXfixes-5.0.3-1.el7<br />
+              libxkbcommon-0.7.1-1.el7<br />
+              libxkbcommon-x11-0.7.1-1.el7<br />
+              libxshmfence-1.2-1.el7<br />
+              libXxf86vm-1.1.4-1.el7<br />
+              mesa-libGL-17.0.1-6.20170307.el7<br />
+              mesa-libglapi-17.0.1-6.20170307.el7<br />
+              pcre-8.32-17.el7<br />
+              xcb-util-0.4.0-2.el7<br />
+              xcb-util-image-0.4.0-2.el7<br />
+              xcb-util-keysyms-0.4.0-1.el7<br />
+              xcb-util-renderutil-0.3.9-3.el7<br />
+              xcb-util-wm-0.4.1-5.el7<br />
+              zlib-1.2.7-17.el7
+            </p>
+
+            <h3>Red Hat Enterprise Linux 8.2</h3>
+
+            <p>
+              bzip2-libs-1.0.6-26.el8<br />
+              expat-2.2.5-3.el8<br />
+              fontconfig-2.13.1-3.el8<br />
+              freetype-2.9.1-4.el8<br />
+              glibc-2.28-101.el8<br />
+              libgcc-8.3.1-5.el8<br />
+              libglvnd-1.2.0-6.el8<br />
+              libglvnd-glx-1.2.0-6.el8<br />
+              libpng-1.6.34-5.el8<br />
+              libstdc++-8.3.1-5.el8<br />
+              libuuid-2.32.1-22.el8<br />
+              libX11-1.6.8-3.el8<br />
+              libX11-xcb-1.6.8-3.el8<br />
+              libXau-1.0.8-13.el8<br />
+              libxcb-1.13.1-1.el8<br />
+              libXext-1.3.3-9.el8<br />
+              libxkbcommon-0.9.1-1.el8<br />
+              libxkbcommon-x11-0.9.1-1.el8<br />
+              xcb-util-0.4.0-10.el8<br />
+              xcb-util-image-0.4.0-9.el8<br />
+              xcb-util-keysyms-0.4.0-7.el8<br />
+              xcb-util-renderutil-0.3.9-10.el8<br />
+              xcb-util-wm-0.4.1-12.el8<br />
+              zlib-1.2.11-13.el8<br />
+            </p>
+  
+            <h3>SUSE Enterprise Linux Desktop 12.3</h3>
+
+                <p>
+                  fontconfig<br />
+                  glibc<br />
+                  libbz2-1<br />
+                  libdrm2<br />
+                  libexpat1<br />
+                  libfreetype6<br />
+                  libgcc_s1<br />
+                  libpng16-16<br />
+                  libstdc++6<br />
+                  libX11-6<br />
+                  libX11-xcb1<br />
+                  libXau6<br />
+                  libxcb-dri2-0<br />
+                  libxcb-dri3-0<br />
+                  libxcb-glx0<br />
+                  libxcb-icccm4<br />
+                  libxcb-image0<br />
+                  libxcb-keysyms1<br />
+                  libxcb-present0<br />
+                  libxcb-randr0<br />
+                  libxcb-render-util0<br />
+                  libxcb-render0<br />
+                  libxcb-shape0<br />
+                  libxcb-shm0<br />
+                  libxcb-sync1<br />
+                  libxcb-util1<br />
+                  libxcb-xfixes0<br />
+                  libxcb-xinerama0<br />
+                  libxcb-xkb1<br />
+                  libxcb1<br />
+                  libXdamage1<br />
+                  libXext6<br />
+                  libXfixes3<br />
+                  libxkbcommon-x11-0<br />
+                  libxkbcommon0<br />
+                  libxshmfence1<br />
+                  libXxf86vm1<br />
+                  libz1<br />
+                  Mesa-libGL1<br />
+                  Mesa-libglapi0<br />
+                </p>
+  
+            <h3>Ubuntu 16.04</h3>
+  
+            <p>
+              libc6-2.23-0ubuntu3<br />
+              libdrm2-2.4.67-1<br />
+              libexpat1-2.1.0-7<br />
+              libfontconfig1-2.11.94-0ubuntu1<br />
+              libfreetype6-2.6.1-0.1ubuntu2<br />
+              libgcc1-1:6.0.1-0ubuntu1<br />
+              libgl1-mesa-glx-11.2.0-1ubuntu2<br />
+              libglapi-mesa-11.2.0-1ubuntu2<br />
+              libglu1-mesa-9.0.0-2.1<br />
+              libpng12-0-1.2.54-1ubuntu1<br />
+              libstdc++6-5.3.1-14ubuntu2<br />
+              libx11-6-2:1.6.3-1ubuntu2<br />
+              libx11-xcb1-2:1.6.3-1ubuntu2<br />
+              libxau6-1:1.0.8-1<br />
+              libxcb-dri2-0-1.11.1-1ubuntu1<br />
+              libxcb-dri3-0-1.11.1-1ubuntu1<br />
+              libxcb-glx0-1.11.1-1ubuntu<br />
+              libxcb-icccm4-0.4.1-1ubuntu1<br />
+              libxcb-image0-0.4.0-1build1<br />
+              libxcb-keysyms1-0.4.0-1<br />
+              libxcb-present0-1.11.1-1ubuntu1<br />
+              libxcb-randr0-1.11.1-1ubuntu1<br />
+              libxcb-render-util0-0.3.9-1<br />
+              libxcb-render0-1.11.1-1ubuntu1<br />
+              libxcb-shape0-1.11.1-1ubuntu1<br />
+              libxcb-shm0-1.11.1-1ubuntu1<br />
+              libxcb-sync1-1.11.1-1ubuntu1<br />
+              libxcb-util1-0.4.0-0ubuntu3<br />
+              libxcb-xfixes0-1.11.1-1ubuntu1<br />
+              libxcb-xinerama0-1.11.1-1ubuntu1<br />
+              libxcb-xkb1-1.11.1-1ubuntu1<br />
+              libxcb1-1.11.1-1ubuntu1<br />
+              libxdamage1-1:1.1.4-2<br />
+              libxdmcp6-1:1.1.2-1.1<br />
+              libxext6-2:1.3.3-1<br />
+              libxfixes3-1:5.0.1-2<br />
+              libxkbcommon-x11-0-0.5.0-1ubuntu2<br />
+              libxkbcommon0-0.5.0-1ubuntu2<br />
+              libxshmfence1-1.2-1<br />
+              libxxf86vm1-1:1.1.4-1<br />
+              zlib1g-1:1.2.8.dfsg-2ubuntu4
+            </p>
+  
+            <h2>macOS</h2>
+
+              <div class="table-responsive">
+                <table class="table">
+  
+                  <tr>
+                    <th>Operating System</th>
+                    <th>Version</th>
+                    <th>64-bit</th>
+                  </tr>
+  
+                  <tr>
+                    <td>High Sierra</td>
+                    <td>10.13</td>
+                    <td>
+                      <span class="fa fa-check"></span>
+                    </td>
+                  </tr>
+  
+                </table>
+              </div>
+  
+          </section>
+  
+          <section id="previous-versions">
+            <h2>Previous Versions</h2>
+  
+            <p>
+              <a href="release-notes-V183R2.html">Pointwise V18.3 R2</a><br />
+              <a href="release-notes-V183R1.html">Pointwise V18.3 R1</a><br />
+              <a href="release-notes-V182R2.html">Pointwise V18.2 R2</a><br />
+              <a href="release-notes-V182R1.html">Pointwise V18.2 R1</a><br />
+              <a href="release-notes-V181R2.html">Pointwise V18.1 R2</a><br />
+              <a href="release-notes-V181R1.html">Pointwise V18.1 R1</a><br />
+              <a href="release-notes-V18R4.html">Pointwise V18.0 R4</a><br />
+              <a href="release-notes-V18R3.html">Pointwise V18.0 R3</a><br />
+              <a href="release-notes-V18R2.html">Pointwise V18.0 R2</a><br />
+              <a href="release-notes-V18R1.html">Pointwise V18.0 R1</a>
+            </p>
+  
+          </section>
+  
+        </div>
+
+      <!-- Space between columns -->
+      <div class="col-lg-1">
+      </div>
+
+      <!-- Column Contents -->
+      <div class="col-lg-3">
+        <div class="page-nav">
+          <h4>More Support</h4>
+          <svg class="nav-lines">
+            <line class="nav-blue-social" x1="0" y1="1" x2="140" y2="1"/>
+            <line class="nav-grey-social" x1="140" y1="1" x2="275" y2="1"/>
+          </svg>
+          <div class="side-nav">
+            <p><a href="mailto:support@pointwise.com">Email Support</a></p>
+
+            <p><a href="../gethelp/">Get Help</a></p>
+
+            <p><a href="../downloads/">Downloads</a></p>
+
+            <p><a href="../licenses/">Request a License</a></p>
+
+            <p><a href="../training/">Register for Training</a></p>
+
+            <p><a href="../support/release-notes.html">Release Notes</a></p>
+
+            <p><a href="../glyph/">Glyph Scripting</a></p>
+
+            <p><a href="../plugins/">Plugin SDK</a></p>
+
+            <p><a href="../sales/">International Tech Support</a></p>
+
+            <p><a href="../doc/user-manual/index.html">User Manual</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <% include ../partials/footer %>
+
+    <!-- JAVASCRIPT -->
+    <% include ../partials/js-includes %>
+</body>
+</html>
